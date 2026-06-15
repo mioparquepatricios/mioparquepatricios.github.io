@@ -745,6 +745,121 @@
     .lm-sep   { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); }
     .lm-talle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); }
     .lm-dot   { font-size: 0.6rem; color: var(--gold); padding: 0 0.4rem; opacity: 0.6; }
+
+    /* ── BANNER CAMPAÑA JUNIO ── */
+    .banner-campania {
+      position: relative;
+      background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6b 40%, #0d1f3c 100%);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+      padding: 2.8rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .banner-campania::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, rgba(184,150,90,0.04) 0px, rgba(184,150,90,0.04) 1px, transparent 1px, transparent 12px),
+        repeating-linear-gradient(-45deg, rgba(184,150,90,0.04) 0px, rgba(184,150,90,0.04) 1px, transparent 1px, transparent 12px);
+      pointer-events: none;
+    }
+    .banner-campania-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .banner-campania-mes {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .banner-campania-mes::before,
+    .banner-campania-mes::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .banner-campania-titulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .banner-campania-titulo span {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .banner-campania-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 1.2rem;
+      opacity: 0.8;
+    }
+    .banner-campania-ofertas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .banner-campania-oferta {
+      padding: 0.7rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+    }
+    .banner-campania-oferta:first-child {
+      border-right: 1px solid rgba(184,150,90,0.4);
+    }
+    .banner-campania-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .banner-campania-desc {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .banner-campania-o {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      padding: 0 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      .banner-campania { padding: 2rem 1rem; }
+      .banner-campania-oferta:first-child { border-right: none; border-bottom: 1px solid rgba(184,150,90,0.4); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+      .banner-campania-o { display: none; }
+      .banner-campania-ofertas { flex-direction: column; gap: 0.8rem; }
+    }
   </style>
 </head>
 <body>
@@ -805,6 +920,26 @@
         <span class="bm-dot">✦</span>
         <span class="bm-item"><em class="bm-gold">10% de Descuento</em> <span class="bm-sep">·</span> <span class="bm-sub">Pagando en Efectivo</span></span>
         <span class="bm-dot">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER CAMPAÑA JUNIO -->
+  <div class="banner-campania">
+    <div class="banner-campania-inner">
+      <div class="banner-campania-mes">✦ &nbsp; Junio 2025 &nbsp; ✦</div>
+      <div class="banner-campania-titulo">Camperas &amp; <span>Chalecos</span></div>
+      <div class="banner-campania-divider"></div>
+      <div class="banner-campania-ofertas">
+        <div class="banner-campania-oferta">
+          <div class="banner-campania-num">6 Cuotas</div>
+          <div class="banner-campania-desc">Sin Interés · Visa &amp; Mastercard</div>
+        </div>
+        <div class="banner-campania-o">o</div>
+        <div class="banner-campania-oferta">
+          <div class="banner-campania-num">15% Off</div>
+          <div class="banner-campania-desc">Descuento en Efectivo</div>
+        </div>
       </div>
     </div>
   </div>
