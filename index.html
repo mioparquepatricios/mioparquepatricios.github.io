@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="Más de 50 años vistiendo al hombre porteño. Las mejores marcas de indumentaria masculina, en un solo lugar."/>
   <meta name="twitter:image" content="https://mioparquepatricios.github.io/wrangler_montana.webp"/>
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' font-weight='700' fill='%23b8965a' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"/>
+  <link rel="icon" type="image/png" href="logo-mio.png"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
 
@@ -51,6 +51,7 @@
       --off-white: #faf8f5;
       --gold: #b8965a;
       --gold-light: #d4b078;
+      --promo-h: 2.6rem;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,10 +66,61 @@
       overflow-x: hidden;
     }
 
+    /* ── PROMO BAR ── */
+    @keyframes promo-scroll-ltr {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .promo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+      height: var(--promo-h);
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      color: var(--black);
+      overflow: hidden;
+    }
+
+    .promo-marquee-wrap {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .promo-marquee-track {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: max-content;
+      animation: promo-scroll-ltr 16s linear infinite;
+    }
+
+    .promo-marquee-track:hover { animation-play-state: paused; }
+
+    .promo-item {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      padding: 0 1.6rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .promo-item em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: var(--promo-h); left: 0; right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
@@ -80,12 +132,15 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.12em;
+      display: flex;
+      align-items: center;
       text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 44px;
+      width: 44px;
+      display: block;
     }
 
     .nav-links {
@@ -164,7 +219,7 @@
       position: relative;
       z-index: 2;
       max-width: 900px;
-      padding: 8rem 4rem 4rem;
+      padding: calc(8rem + var(--promo-h)) 4rem 4rem;
     }
 
     .hero-eyebrow {
@@ -651,11 +706,14 @@
     }
 
     footer .foot-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      display: inline-block;
+    }
+
+    footer .foot-logo img {
+      height: 56px;
+      width: 56px;
+      display: block;
+      margin: 0 auto;
     }
 
     footer .foot-copy {
@@ -672,7 +730,7 @@
       .nav-links {
         display: none;
         position: fixed;
-        top: 64px; left: 0; right: 0;
+        top: calc(var(--promo-h) + 64px); left: 0; right: 0;
         background: rgba(10,10,10,0.97);
         flex-direction: column;
         align-items: center;
@@ -683,7 +741,10 @@
 
       .nav-links.open { display: flex; }
 
-      .hero-content { padding: 7rem 1.5rem 3rem; }
+      .hero-content { padding: calc(7rem + var(--promo-h)) 1.5rem 3rem; }
+
+      .promo-item { font-size: 0.68rem; letter-spacing: 0.08em; padding: 0 1rem; }
+      .promo-item em { font-size: 0.85rem; }
 
       .hero-badge { display: none; }
 
@@ -898,9 +959,25 @@
 </head>
 <body>
 
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    <div class="promo-marquee-wrap">
+      <div class="promo-marquee-track">
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+      </div>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">MIO</a>
+    <a class="nav-logo" href="#">
+      <img src="logo-mio.png" alt="MIO — La Rioja 2186"/>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#marcas">Marcas</a></li>
@@ -1241,9 +1318,18 @@
             <div class="contact-item">
               <div class="contact-icon">📱</div>
               <div>
-                <div class="contact-label">Teléfono / WhatsApp</div>
+                <div class="contact-label">WhatsApp</div>
                 <div class="contact-value">
                   <a href="tel:+541170583706">11 7058-3706</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">☎️</div>
+              <div>
+                <div class="contact-label">Línea Fija</div>
+                <div class="contact-value">
+                  <a href="tel:+541149433076">11 4943-3076</a>
                 </div>
               </div>
             </div>
@@ -1282,7 +1368,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="foot-logo">MIO</div>
+    <div class="foot-logo"><img src="logo-mio.png" alt="MIO — La Rioja 2186"/></div>
     <div class="foot-copy">© 2026 MIO — Indumentaria Masculina · La Rioja 2186, Parque Patricios, CABA · Todos los derechos reservados</div>
   </footer>
 
