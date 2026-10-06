@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mioparquepatricios.github.io/sitemap.xml
+Sitemap: https://mioparquepatricios.com/sitemap.xml
