@@ -539,6 +539,38 @@
 
     .temporada-grid .gallery-item img { min-height: 260px; }
 
+    .temporada-chombas {
+      max-width: 1040px;
+      margin: 4.5rem auto 0;
+    }
+
+    .temporada-chombas-head {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .temporada-chombas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .temporada-chombas-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 900px) {
+      .temporada-chombas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .temporada-chombas-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── GALLERY ── */
     .gallery {
       background: var(--off-white);
@@ -1253,6 +1285,22 @@
           <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Bermuda Beige — Corte Clásico</div>
         </div>
 
+      </div>
+
+      <div class="temporada-chombas">
+        <div class="temporada-chombas-head">
+          <div class="section-eyebrow" style="color:var(--gold)">Novedades</div>
+          <h2 class="section-title">Nueva <em>colección</em> verano</h2>
+          <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+        </div>
+        <div class="temporada-chombas-grid">
+          <img src="chombas-taverniti.jpg" alt="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta" loading="lazy"/>
+          <img src="chombas-ysl.jpg" alt="YSL — chombas nueva colección verano 2026/27" loading="lazy"/>
+          <img src="novedad-village-polos.jpg" alt="Village Polo Club — chombas, oferta $31.500 efectivo" loading="lazy"/>
+          <img src="novedad-village-bermudas.jpg" alt="Village Polo Club — bermudas gabardina beige, negro y azul" loading="lazy"/>
+          <img src="novedad-south.jpg" alt="South — colección Essential, chombas de algodón pima con bolsillo" loading="lazy"/>
+          <img src="novedad-posto5.jpg" alt="Posto 5 — buzo con capucha celeste" loading="lazy"/>
+        </div>
       </div>
     </div>
   </section>
