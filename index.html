@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MIO — Ropa de Hombre | Parque Patricios, Buenos Aires</title>
-  <meta name="description" content="MIO: boutique de indumentaria masculina en Parque Patricios desde 1971. Wrangler, Taverniti, YSL y más marcas. La Rioja 2186, CABA. Hasta talle 64."/>
+  <meta name="description" content="MIO: boutique de indumentaria masculina en Parque Patricios desde 1968. Wrangler, Taverniti, YSL y más marcas. La Rioja 2186, CABA. Hasta talle 64."/>
   <link rel="canonical" href="https://mioparquepatricios.github.io/"/>
 
   <meta property="og:type" content="website"/>
@@ -27,7 +27,7 @@
     "@context": "https://schema.org",
     "@type": "ClothingStore",
     "name": "MIO",
-    "description": "Boutique de indumentaria masculina en Parque Patricios desde 1971.",
+    "description": "Boutique de indumentaria masculina en Parque Patricios desde 1968.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "La Rioja 2186",
@@ -219,6 +219,7 @@
       position: relative;
       z-index: 2;
       max-width: 900px;
+      flex: 1 1 54%;
       padding: calc(8rem + var(--promo-h)) 4rem 4rem;
     }
 
@@ -318,8 +319,34 @@
     .hero-badge {
       position: absolute;
       bottom: 3rem;
-      right: 4rem;
-      text-align: right;
+      left: 4rem;
+      text-align: left;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 46%;
+      padding: calc(7rem + var(--promo-h)) 4rem 4rem 0;
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(184,150,90,0.55);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      top: calc(7rem + var(--promo-h) + 14px);
+      right: calc(4rem - 14px);
+      bottom: calc(4rem - 14px);
+      left: 14px;
+      border: 1px solid rgba(184,150,90,0.25);
+      pointer-events: none;
     }
 
     .hero-badge-num {
@@ -807,6 +834,11 @@
 
       .hero-badge { display: none; }
 
+      .hero { flex-direction: column; align-items: stretch; }
+      .hero-content { flex: none; }
+      .hero-visual { flex: none; padding: 0 1.5rem 3rem; }
+      .hero-visual::after { display: none; }
+
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-image-wrap { order: -1; }
       .about-image-wrap img { height: 300px; }
@@ -1068,8 +1100,11 @@
         <a href="https://www.instagram.com/mioparquepatricios" target="_blank" class="btn-outline">Instagram ↗</a>
       </div>
     </div>
+    <div class="hero-visual">
+      <img src="local-mio.jpg" alt="Frente del local MIO — La Rioja 2186, Parque Patricios" width="1400" height="1203" fetchpriority="high"/>
+    </div>
     <div class="hero-badge">
-      <div class="hero-badge-num">54</div>
+      <div class="hero-badge-num">58</div>
       <div class="hero-badge-text">años de historia</div>
     </div>
   </section>
@@ -1124,14 +1159,14 @@
           <h2 class="section-title">Una <em>tradición</em><br>que viste bien</h2>
           <div class="divider"></div>
           <p class="section-body">
-            MIO es una boutique de indumentaria masculina ubicada en el corazón de Parque Patricios. Desde 1971 ofrecemos a los hombres porteños las marcas más reconocidas del mercado: desde el denim icónico hasta el estilo premium.
+            MIO es una boutique de indumentaria masculina ubicada en el corazón de Parque Patricios. Desde 1968 ofrecemos a los hombres porteños las marcas más reconocidas del mercado: desde el denim icónico hasta el estilo premium.
           </p>
           <p class="section-body">
             Nuestro objetivo es simple: que cada cliente encuentre exactamente lo que busca, con la mejor atención personalizada y un surtido cuidadosamente seleccionado.
           </p>
           <div class="stats-row">
             <div class="stat-item">
-              <div class="stat-num">54</div>
+              <div class="stat-num">58</div>
               <div class="stat-label">Años</div>
             </div>
             <div class="stat-item">
