@@ -47,6 +47,10 @@
     "image": "https://mioparquepatricios.github.io/og-local.jpg",
     "logo": "https://mioparquepatricios.github.io/logo-mio.png",
     "foundingDate": "1968",
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:30", "closes": "13:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "15:30", "closes": "19:30"}
+    ],
     "sameAs": ["https://www.instagram.com/mioparquepatricios"]
   }
   </script>
@@ -1089,6 +1093,10 @@
     .novedades-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem .2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; -webkit-overflow-scrolling: touch; }
     .novedades-track img { flex: 0 0 auto; height: 440px; width: auto; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
     .novedades-hint { text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #7d5f2a; }
+    .estado-local { display: inline-block; margin-top: .5rem; padding: .25rem .7rem; border: 1px solid currentColor; font-family: 'Barlow Condensed', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .estado-local[hidden] { display: none; }
+    .estado-local.abierto { color: #6ee7a0; }
+    .estado-local.cerrado { color: #fca5a5; }
     .talles-strip .leyenda-talles-wrap { margin-top: 0; }
     @media (max-width: 900px) { .temporada-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .6rem !important; } }
     @media (max-width: 600px) { .novedades-track img { height: 360px; } .gi-label { font-size: .64rem; letter-spacing: .1em; padding: 1.2rem .5rem .5rem; } .temporada { padding: 4.5rem 1rem !important; } }
@@ -1423,6 +1431,17 @@
               </div>
             </div>
             <div class="contact-item">
+              <div class="contact-icon">🕒</div>
+              <div>
+                <div class="contact-label">Horario de atención</div>
+                <div class="contact-value">
+                  Lunes a sábados<br>
+                  9:30 a 13:30 hs y 15:30 a 19:30 hs<br>
+                  <span id="estadoLocal" class="estado-local" hidden></span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
               <div class="contact-icon">📱</div>
               <div>
                 <div class="contact-label">WhatsApp</div>
@@ -1518,6 +1537,22 @@
     const promoTrack = document.getElementById('promoTrack');
     if (promoTrack && promoTrack.children.length === 1) {
       for (let i = 0; i < 5; i++) promoTrack.appendChild(promoTrack.children[0].cloneNode(true));
+    }
+
+    // Horario: lunes a sábados de 9:30 a 13:30 y de 15:30 a 19:30 (hora de Buenos Aires)
+    function localAbierto(fecha) {
+      const p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Argentina/Buenos_Aires', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(fecha);
+      const dia = p.find(x => x.type === 'weekday').value;
+      const min = parseInt(p.find(x => x.type === 'hour').value, 10) * 60 + parseInt(p.find(x => x.type === 'minute').value, 10);
+      if (dia === 'Sun') return false;
+      return (min >= 570 && min < 810) || (min >= 930 && min < 1170);
+    }
+    const estadoEl = document.getElementById('estadoLocal');
+    if (estadoEl) {
+      const abierto = localAbierto(new Date());
+      estadoEl.textContent = abierto ? 'Abierto ahora' : 'Cerrado ahora';
+      estadoEl.classList.add(abierto ? 'abierto' : 'cerrado');
+      estadoEl.hidden = false;
     }
 
     // Ver más prendas
