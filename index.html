@@ -12,13 +12,21 @@
   <meta property="og:url" content="https://mioparquepatricios.github.io/"/>
   <meta property="og:title" content="MIO — Ropa de Hombre | Parque Patricios, Buenos Aires"/>
   <meta property="og:description" content="Más de 50 años vistiendo al hombre porteño. Las mejores marcas de indumentaria masculina, en un solo lugar."/>
-  <meta property="og:image" content="https://mioparquepatricios.github.io/wrangler_montana.webp"/>
+  <meta property="og:image" content="https://mioparquepatricios.github.io/og-local.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Frente del local MIO, La Rioja 2186, Parque Patricios"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MIO — Ropa de Hombre | Parque Patricios, Buenos Aires"/>
   <meta name="twitter:description" content="Más de 50 años vistiendo al hombre porteño. Las mejores marcas de indumentaria masculina, en un solo lugar."/>
-  <meta name="twitter:image" content="https://mioparquepatricios.github.io/wrangler_montana.webp"/>
+  <meta name="twitter:image" content="https://mioparquepatricios.github.io/og-local.jpg"/>
 
+  <link rel="icon" href="favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" href="logo-mio.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
 
@@ -36,6 +44,9 @@
     },
     "telephone": "+541170583706",
     "url": "https://mioparquepatricios.github.io/",
+    "image": "https://mioparquepatricios.github.io/og-local.jpg",
+    "logo": "https://mioparquepatricios.github.io/logo-mio.png",
+    "foundingDate": "1968",
     "sameAs": ["https://www.instagram.com/mioparquepatricios"]
   }
   </script>
@@ -1046,19 +1057,56 @@
       .banner-campania-o { display: none; }
       .banner-campania-ofertas { flex-direction: column; gap: 0.8rem; }
     }
+
+    /* ── MEJORAS: accesibilidad, contraste, movimiento ── */
+    .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 300; background: var(--gold); color: var(--black); padding: .7rem 1.2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: top .2s; }
+    .skip-link:focus { top: 1rem; }
+    :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+    button.hamburger { background: none; border: 0; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; flex-direction: column; }
+    .brand-tag { color: #9a9288 !important; }
+    .brand-card:hover .brand-tag { color: var(--light-gray) !important; }
+    footer .foot-copy { color: #9a9288 !important; }
+    .hero-subtitle { color: #b3ada3 !important; }
+    .hero-badge-num { color: rgba(184,150,90,0.45) !important; }
+    .hero-badge-text { color: #b3ada3 !important; }
+    .about .section-eyebrow, .temporada .section-eyebrow { color: #7d5f2a !important; }
+    .about .section-title em, .temporada .section-title em { color: #9a7a3c; }
+    .contact-value a { display: inline-block; padding: .55rem 0; }
+    .brands-grid { grid-template-columns: repeat(5, 1fr) !important; }
+    @media (max-width: 900px) { .brands-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+
+    .gi-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); padding: 1.6rem .8rem .8rem; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; line-height: 1.3; }
+    .temporada-grid { grid-template-columns: repeat(4, 1fr) !important; }
+    .temporada-grid .gallery-item { aspect-ratio: 3 / 4; }
+    .temporada-grid .gallery-item img { height: 100%; min-height: 0 !important; object-fit: cover; }
+    .temporada-grid .is-extra { display: none; }
+    .temporada-grid.show-all .is-extra { display: block; }
+    .temporada-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2.5rem; }
+    .btn-dark { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid #7d5f2a; color: #7d5f2a; background: transparent; padding: .9rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .3s, color .3s; }
+    .btn-dark:hover { background: #7d5f2a; color: #fff; }
+    .novedades { margin: 4.5rem 0 0; }
+    .novedades-head { text-align: center; margin-bottom: 1.8rem; }
+    .novedades-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem .2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; -webkit-overflow-scrolling: touch; }
+    .novedades-track img { flex: 0 0 auto; height: 440px; width: auto; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    .novedades-hint { text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #7d5f2a; }
+    .talles-strip .leyenda-talles-wrap { margin-top: 0; }
+    @media (max-width: 900px) { .temporada-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .6rem !important; } }
+    @media (max-width: 600px) { .novedades-track img { height: 360px; } .gi-label { font-size: .64rem; letter-spacing: .1em; padding: 1.2rem .5rem .5rem; } .temporada { padding: 4.5rem 1rem !important; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .promo-marquee-track, .banner-marquee-track, .leyenda-marquee-track { transform: none !important; }
+      .promo-marquee-wrap, .leyenda-marquee-wrap { overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- PROMO BAR -->
   <div class="promo-bar">
     <div class="promo-marquee-wrap">
-      <div class="promo-marquee-track">
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+      <div class="promo-marquee-track" id="promoTrack">
         <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
       </div>
     </div>
@@ -1067,21 +1115,21 @@
   <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#">
-      <img src="logo-mio.png" alt="MIO — La Rioja 2186"/>
+      <img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#marcas">Marcas</a></li>
       <li><a href="#temporada">Nueva Temporada</a></li>
-      <li><a href="#galeria">Colección</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a href="https://wa.me/541170583706" target="_blank" class="nav-cta">WhatsApp</a></li>
+      <li><a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer" class="nav-cta">WhatsApp</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </nav>
 
+  <main id="contenido">
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-bg"></div>
@@ -1097,38 +1145,18 @@
       </p>
       <div class="hero-actions">
         <a href="#marcas" class="btn-primary">Ver marcas</a>
-        <a href="https://www.instagram.com/mioparquepatricios" target="_blank" class="btn-outline">Instagram ↗</a>
+        <a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer" class="btn-outline">Instagram ↗</a>
       </div>
     </div>
     <div class="hero-visual">
       <img src="local-mio.jpg" alt="Frente del local MIO — La Rioja 2186, Parque Patricios" width="1400" height="1203" fetchpriority="high"/>
     </div>
     <div class="hero-badge">
-      <div class="hero-badge-num">58</div>
+      <div class="hero-badge-num" data-anios>58</div>
       <div class="hero-badge-text">años de historia</div>
     </div>
   </section>
 
-
-  <!-- BANNER PAGOS -->
-  <div class="banner-pagos">
-    <div class="banner-marquee-wrap">
-      <div class="banner-marquee-track">
-        <span class="bm-item"><em class="bm-gold">3 Cuotas Sin Interés</em> <span class="bm-sep">·</span> <span class="bm-sub">Tarjetas Visa &amp; Mastercard</span></span>
-        <span class="bm-dot">✦</span>
-        <span class="bm-item"><em class="bm-gold">10% de Descuento</em> <span class="bm-sep">·</span> <span class="bm-sub">Pagando en Efectivo</span></span>
-        <span class="bm-dot">✦</span>
-        <span class="bm-item"><em class="bm-gold">3 Cuotas Sin Interés</em> <span class="bm-sep">·</span> <span class="bm-sub">Tarjetas Visa &amp; Mastercard</span></span>
-        <span class="bm-dot">✦</span>
-        <span class="bm-item"><em class="bm-gold">10% de Descuento</em> <span class="bm-sep">·</span> <span class="bm-sub">Pagando en Efectivo</span></span>
-        <span class="bm-dot">✦</span>
-        <span class="bm-item"><em class="bm-gold">3 Cuotas Sin Interés</em> <span class="bm-sep">·</span> <span class="bm-sub">Tarjetas Visa &amp; Mastercard</span></span>
-        <span class="bm-dot">✦</span>
-        <span class="bm-item"><em class="bm-gold">10% de Descuento</em> <span class="bm-sep">·</span> <span class="bm-sub">Pagando en Efectivo</span></span>
-        <span class="bm-dot">✦</span>
-      </div>
-    </div>
-  </div>
 
   <!-- BANNER CAMPAÑA TEMPORADA -->
   <div class="banner-campania">
@@ -1166,7 +1194,7 @@
           </p>
           <div class="stats-row">
             <div class="stat-item">
-              <div class="stat-num">58</div>
+              <div class="stat-num" data-anios>58</div>
               <div class="stat-label">Años</div>
             </div>
             <div class="stat-item">
@@ -1180,11 +1208,7 @@
           </div>
         </div>
         <div class="about-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80"
-            alt="Interior de MIO - Tienda de ropa masculina"
-            onerror="this.src='https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80'"
-          />
+          <img src="about-vidriera.jpg" alt="Vidriera de MIO con las marcas Yves Saint Laurent y Lacoste" width="700" height="890" loading="lazy" decoding="async"/>
         </div>
       </div>
     </div>
@@ -1227,6 +1251,10 @@
           <div class="brand-tag">Haute · Prestige</div>
         </div>
         <div class="brand-card">
+          <div class="brand-name">Lacoste</div>
+          <div class="brand-tag">Polo · Clásico</div>
+        </div>
+        <div class="brand-card">
           <div class="brand-name">Village Polo Club</div>
           <div class="brand-tag">Sport · Élite</div>
         </div>
@@ -1242,213 +1270,125 @@
   <section class="temporada" id="temporada">
     <div class="container">
       <div class="temporada-header">
-        <div class="section-eyebrow" style="color:var(--gold)">Nueva Temporada</div>
+        <div class="section-eyebrow">Nueva Temporada</div>
         <h2 class="section-title">Primavera <em>·</em> Verano 2026/27</h2>
         <div class="divider"></div>
         <p class="section-body">Ya llegaron las primeras prendas de la temporada: remeras, polos, jeans y bermudas para el calor porteño.</p>
       </div>
 
-      <div class="gallery-grid temporada-grid">
+      <div class="gallery-grid temporada-grid" id="temporadaGrid">
 
         <div class="gallery-item">
-          <img src="wrnzone-remera-beige.jpg" alt="WRN Zone — remera lifestyle beige hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">WRN Zone — Remera Lifestyle</div>
+          <img src="polo-celeste.jpg" alt="Polo algodón con bolsillo celeste hombre" width="900" height="1183"/>
+          <div class="gi-label">Polo Algodón con Bolsillo</div>
         </div>
 
         <div class="gallery-item">
-          <img src="polo-celeste.jpg" alt="Polo algodón con bolsillo celeste hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Polo Algodón con Bolsillo</div>
+          <img src="taverniti-polo-turquesa.jpg" alt="Taverniti — polo turquesa hombre" width="900" height="1183"/>
+          <div class="gi-label">Taverniti — Polo Turquesa</div>
         </div>
 
         <div class="gallery-item">
-          <img src="taverniti-remera-gris.jpg" alt="Taverniti — remera básica gris hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Remera Básica</div>
+          <img src="posto5-remera-verde.jpg" alt="Posto 5 — remera estampada verde hombre" width="900" height="1183"/>
+          <div class="gi-label">Posto 5 — Remera Estampada</div>
         </div>
 
         <div class="gallery-item">
-          <img src="posto5-remera-verde.jpg" alt="Posto 5 — remera estampada verde hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Posto 5 — Remera Estampada</div>
+          <img src="remera-denim-brooklyn.jpg" alt="Remera estampada Brooklyn denim hombre blanca" width="900" height="1183"/>
+          <div class="gi-label">Remera Estampada — Brooklyn</div>
         </div>
 
         <div class="gallery-item">
-          <img src="remera-denim-brooklyn.jpg" alt="Remera estampada Brooklyn denim hombre blanca"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Remera Estampada — Brooklyn</div>
+          <img src="villagepolo-jean-azul.jpg" alt="Village Polo Club — jean azul hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Village Polo Club — Jean Azul</div>
         </div>
 
         <div class="gallery-item">
-          <img src="special-edition-remera.jpg" alt="Remera Special Edition verde agua hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Special Edition — Remera</div>
+          <img src="jean-negro.jpg" alt="Jean negro corte clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Jean Negro — Corte Clásico</div>
         </div>
 
         <div class="gallery-item">
-          <img src="taverniti-polo-turquesa.jpg" alt="Taverniti — polo turquesa hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Polo Turquesa</div>
+          <img src="villagepolo-bermuda-beige-1.jpg" alt="Village Polo Club — bermuda beige hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Village Polo Club — Bermuda Beige</div>
         </div>
 
         <div class="gallery-item">
-          <img src="jean-negro.jpg" alt="Jean negro corte clásico hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Jean Negro — Corte Clásico</div>
+          <img src="wrangler-jean-montana.jpg" alt="Wrangler Montana Regular Fit — jean azul hombre" width="900" height="1298" loading="lazy" decoding="async"/>
+          <div class="gi-label">Wrangler Montana — Regular Fit</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="taverniti-jean-clarito.jpg" alt="Taverniti — jean clarito hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Jean Clarito</div>
+        <div class="gallery-item is-extra">
+          <img src="wrnzone-remera-beige.jpg" alt="WRN Zone — remera lifestyle beige hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">WRN Zone — Remera Lifestyle</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="taverniti-jean-gris.jpg" alt="Taverniti — jean gris hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Jean Gris</div>
+        <div class="gallery-item is-extra">
+          <img src="taverniti-remera-gris.jpg" alt="Taverniti — remera básica gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Taverniti — Remera Básica</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="villagepolo-jean-azul.jpg" alt="Village Polo Club — jean azul hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Jean Azul</div>
+        <div class="gallery-item is-extra">
+          <img src="special-edition-remera.jpg" alt="Remera Special Edition verde agua hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Special Edition — Remera</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="jogger-beige.jpg" alt="Pantalón jogger beige hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Pantalón Jogger — Beige</div>
+        <div class="gallery-item is-extra">
+          <img src="wrangler-remera-celeste.jpg" alt="Wrangler — remera con logo hombre" width="900" height="1298" loading="lazy" decoding="async"/>
+          <div class="gi-label">Wrangler — Remera</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="villagepolo-bermuda-beige-1.jpg" alt="Village Polo Club — bermuda beige hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Bermuda Beige</div>
+        <div class="gallery-item is-extra">
+          <img src="taverniti-jean-clarito.jpg" alt="Taverniti — jean clarito hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Taverniti — Jean Clarito</div>
         </div>
 
-        <div class="gallery-item">
-          <img src="bermuda-beige-2.jpg" alt="Bermuda beige corte clásico hombre"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Bermuda Beige — Corte Clásico</div>
+        <div class="gallery-item is-extra">
+          <img src="taverniti-jean-gris.jpg" alt="Taverniti — jean gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label">Taverniti — Jean Gris</div>
+        </div>
+
+        <div class="gallery-item is-extra">
+          <img src="jogger-beige.jpg" alt="Pantalón jogger beige hombre" width="900" height="1182" loading="lazy" decoding="async"/>
+          <div class="gi-label">Pantalón Jogger — Beige</div>
+        </div>
+
+        <div class="gallery-item is-extra">
+          <img src="bermuda-beige-2.jpg" alt="Bermuda beige corte clásico hombre" width="900" height="1182" loading="lazy" decoding="async"/>
+          <div class="gi-label">Bermuda Beige — Corte Clásico</div>
         </div>
 
       </div>
 
-      <div class="temporada-chombas">
-        <div class="temporada-chombas-head">
-          <div class="section-eyebrow" style="color:var(--gold)">Novedades</div>
+      <div class="temporada-actions">
+        <button type="button" class="btn-dark" id="verMas" aria-expanded="false" aria-controls="temporadaGrid">Ver más prendas</button>
+        <a class="btn-dark" href="https://wa.me/541170583706?text=Hola%2C%20quiero%20consultar%20por%20talles%20y%20colores%20de%20la%20nueva%20temporada" target="_blank" rel="noopener noreferrer">Consultá talles y colores ↗</a>
+      </div>
+
+      <div class="novedades">
+        <div class="novedades-head">
+          <div class="section-eyebrow">Novedades</div>
           <h2 class="section-title">Nueva <em>colección</em> verano</h2>
           <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
         </div>
-        <div class="temporada-chombas-grid">
-          <img src="chombas-taverniti.jpg" alt="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta" loading="lazy"/>
-          <img src="chombas-ysl.jpg" alt="YSL — chombas nueva colección verano 2026/27" loading="lazy"/>
-          <img src="novedad-village-polos.jpg" alt="Village Polo Club — chombas, oferta $31.500 efectivo" loading="lazy"/>
-          <img src="novedad-village-bermudas.jpg" alt="Village Polo Club — bermudas gabardina beige, negro y azul" loading="lazy"/>
-          <img src="novedad-south.jpg" alt="South — colección Essential, chombas de algodón pima con bolsillo" loading="lazy"/>
-          <img src="novedad-posto5.jpg" alt="Posto 5 — buzo con capucha celeste" loading="lazy"/>
+        <div class="novedades-track" tabindex="0" role="region" aria-label="Novedades de la colección, deslizá para ver más">
+          <img src="chombas-taverniti.jpg" alt="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta" width="572" height="916" loading="lazy" decoding="async"/>
+          <img src="chombas-ysl.jpg" alt="YSL — chombas nueva colección verano 2026/27" width="572" height="902" loading="lazy" decoding="async"/>
+          <img src="novedad-village-polos.jpg" alt="Village Polo Club — chombas, oferta $31.500 efectivo" width="572" height="1024" loading="lazy" decoding="async"/>
+          <img src="novedad-village-bermudas.jpg" alt="Village Polo Club — bermudas gabardina beige, negro y azul" width="572" height="918" loading="lazy" decoding="async"/>
+          <img src="novedad-south.jpg" alt="South — colección Essential, chombas de algodón pima con bolsillo" width="572" height="1024" loading="lazy" decoding="async"/>
+          <img src="novedad-posto5.jpg" alt="Posto 5 — buzo con capucha celeste" width="572" height="885" loading="lazy" decoding="async"/>
         </div>
+        <div class="novedades-hint">Deslizá para ver más →</div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="gallery" id="galeria">
-    <div class="container">
-      <div class="gallery-header">
-        <div class="section-eyebrow">Colección</div>
-        <h2 class="section-title">El <em>estilo</em> hecho ropa</h2>
-        <div class="divider"></div>
-      </div>
-
-      <!-- ═══════════════════════════════════════════════════
-           GALERÍA DE FOTOS - PARA AGREGAR FOTOS:
-           Reemplazá los bloques <div class="gallery-placeholder">
-           por <div class="gallery-item"><img src="TU-FOTO.jpg" alt="descripción"/></div>
-      ════════════════════════════════════════════════════ -->
-      <div class="gallery-grid">
-
-        <!-- Village Polo Club — pantalones jean hombre (foto tall) -->
-        <div class="gallery-item tall">
-          <img
-            src="https://villagepoloclub.com.ar/wp-content/uploads/2023/10/capa_0027_075-1-scaled.jpg"
-            alt="Village Polo Club — pantalones jean hombre"
-            onerror="this.src='https://villagepoloclub.com.ar/wp-content/uploads/2023/10/capa_0028_074-2-scaled.jpg'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:1rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club</div>
-        </div>
-
-        <!-- Village Polo Club — pantalones jean varios colores -->
-        <div class="gallery-item">
-          <img
-            src="https://villagepoloclub.com.ar/wp-content/uploads/2023/10/capa_0025_076-1-scaled.jpg"
-            alt="Village Polo Club — jeans varios colores"
-            onerror="this.src='https://villagepoloclub.com.ar/wp-content/uploads/2023/10/capa_0022_077-2-scaled.jpg'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Jeans</div>
-        </div>
-
-        <!-- Wrangler Montana — jean Regular Fit (foto oficial) -->
-        <div class="gallery-item">
-          <img
-            src="wrangler_montana.webp"
-            alt="Wrangler Montana Regular Fit — jean azul hombre"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Wrangler Montana — Regular Fit</div>
-        </div>
-
-        <!-- Wrangler — remera con logo (foto oficial subida) -->
-        <div class="gallery-item">
-          <img
-            src="wrangler_remera.jpg"
-            alt="Wrangler — remera con logo hombre"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Wrangler — Remera</div>
-        </div>
-
-        <!-- Traje negro hombre -->
-        <div class="gallery-item tall">
-          <img
-            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&q=80&fit=crop&crop=top"
-            alt="Traje negro hombre elegante"
-            onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Traje Negro — Hombre</div>
-        </div>
-
-        <!-- Saco sport hombre -->
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=700&q=80&fit=crop&crop=top"
-            alt="Saco sport blazer hombre casual"
-            onerror="this.src='https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=700&q=80'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Saco Sport — Hombre</div>
-        </div>
-
-        <!-- Posto 5 — Jean Rígido Regular (CDN oficial posto5.com.ar) -->
-        <div class="gallery-item">
-          <img
-            src="https://acdn-us.mitiendanube.com/stores/001/100/911/products/5010-d98f627c7ab043028b17545746223464-1024-1024.webp"
-            alt="Posto 5 — jean rígido regular hombre"
-            onerror="this.src='https://acdn-us.mitiendanube.com/stores/001/100/911/products/5010-d98f627c7ab043028b17545746223464-480-0.webp'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Posto 5 — Jean</div>
-        </div>
-
-        <!-- Stone — jean hombre urbano -->
-        <div class="gallery-item">
-          <img
-            src="https://acdn-us.mitiendanube.com/stores/004/757/576/products/jean-stone-hombre1.jpg"
-            alt="Stone — jean hombre urbano"
-            onerror="this.src='https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=700&q=80&fit=crop'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Stone — Jean</div>
-        </div>
-
-        <!-- New Man — jeans hombre -->
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=700&q=80"
-            alt="New Man — jeans hombre"
-            onerror="this.src='https://images.unsplash.com/photo-1542272604-787c3835535d?w=700&q=80'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">New Man — Jeans</div>
-        </div>
-
-      </div>
-      <!-- LEYENDA TALLES -->
-      <div class="leyenda-talles-wrap">
-        <div class="leyenda-marquee-wrap">
-          <div class="leyenda-marquee-track">
+  <!-- TALLES -->
+  <div class="talles-strip">
+    <div class="leyenda-talles-wrap">
+      <div class="leyenda-marquee-wrap">
+        <div class="leyenda-marquee-track">
             <span class="lm-item"><em class="lm-gold">Ambos y Sacos</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 64</strong></span>
             <span class="lm-dot">✦</span>
             <span class="lm-item"><em class="lm-gold">Remeras y Chombas</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 5XL</strong></span>
@@ -1461,12 +1401,10 @@
             <span class="lm-dot">✦</span>
             <span class="lm-item"><em class="lm-gold">Remeras y Chombas</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 5XL</strong></span>
             <span class="lm-dot">✦</span>
-          </div>
         </div>
       </div>
-
     </div>
-  </section>
+  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contacto">
@@ -1507,16 +1445,18 @@
               <div>
                 <div class="contact-label">Instagram</div>
                 <div class="contact-value">
-                  <a href="https://www.instagram.com/mioparquepatricios" target="_blank">@mioparquepatricios</a>
+                  <a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer">@mioparquepatricios</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div style="margin-top:2.5rem;">
-            <a href="https://wa.me/541170583706?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20marcas%20disponibles" target="_blank" class="btn-primary">
+          <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;">
+            <a href="https://wa.me/541170583706?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20marcas%20disponibles" target="_blank" rel="noopener noreferrer" class="btn-primary">
               Escribinos por WhatsApp ↗
             </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=La+Rioja+2186%2C+Parque+Patricios%2C+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Cómo llegar ↗</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Mio+El+Buen+Vestir+La+Rioja+2186+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver opiniones en Google ↗</a>
           </div>
         </div>
 
@@ -1535,14 +1475,16 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
-    <div class="foot-logo"><img src="logo-mio.png" alt="MIO — La Rioja 2186"/></div>
-    <div class="foot-copy">© 2026 MIO — Indumentaria Masculina · La Rioja 2186, Parque Patricios, CABA · Todos los derechos reservados</div>
+    <div class="foot-logo"><img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/></div>
+    <div class="foot-copy">© <span id="anio">2026</span> MIO — Indumentaria Masculina · La Rioja 2186, Parque Patricios, CABA · Todos los derechos reservados</div>
   </footer>
 
   <!-- WHATSAPP FLOAT -->
-  <a class="wa-float" href="https://wa.me/541170583706?text=Hola%2C%20consulta%20desde%20la%20web" target="_blank" aria-label="WhatsApp">
+  <a class="wa-float" href="https://wa.me/541170583706?text=Hola%2C%20consulta%20desde%20la%20web" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -1551,32 +1493,62 @@
   <script>
     function toggleMenu() {
       const nav = document.getElementById('navLinks');
-      nav.classList.toggle('open');
+      const btn = document.getElementById('hamburger');
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     }
 
-    // Cerrar menu al hacer click en un link
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('open');
+        const btn = document.getElementById('hamburger');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Abrir menú');
       });
     });
 
-    // Smooth reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.15 });
+    // Años de historia (fundación 1968) y año del pie: se actualizan solos
+    const anioActual = new Date().getFullYear();
+    document.querySelectorAll('[data-anios]').forEach(el => { el.textContent = anioActual - 1968; });
+    const anioEl = document.getElementById('anio');
+    if (anioEl) anioEl.textContent = anioActual;
 
-    document.querySelectorAll('.brand-card, .gallery-item, .contact-item, .stat-item').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
+    // Cinta superior: se escribe una sola vez en el HTML y acá se repite para que no tenga cortes
+    const promoTrack = document.getElementById('promoTrack');
+    if (promoTrack && promoTrack.children.length === 1) {
+      for (let i = 0; i < 5; i++) promoTrack.appendChild(promoTrack.children[0].cloneNode(true));
+    }
+
+    // Ver más prendas
+    const verMas = document.getElementById('verMas');
+    if (verMas) {
+      verMas.addEventListener('click', () => {
+        const grid = document.getElementById('temporadaGrid');
+        const abierto = grid.classList.toggle('show-all');
+        verMas.textContent = abierto ? 'Ver menos' : 'Ver más prendas';
+        verMas.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      });
+    }
+
+    // Aparición suave al hacer scroll (se desactiva si la persona pidió menos movimiento)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.brand-card, .gallery-item, .contact-item, .stat-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    }
   </script>
 
 </body>
