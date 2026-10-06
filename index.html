@@ -512,6 +512,33 @@
 
     .brand-card:hover .brand-tag { color: var(--warm-gray); }
 
+    /* ── TEMPORADA ── */
+    .temporada {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--off-white) 100%);
+      padding: 7rem 2rem;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid rgba(184,150,90,0.2);
+    }
+
+    .temporada-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .temporada-header .divider {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .temporada-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .temporada-grid .gallery-item img { min-height: 260px; }
+
     /* ── GALLERY ── */
     .gallery {
       background: var(--off-white);
@@ -963,12 +990,12 @@
   <div class="promo-bar">
     <div class="promo-marquee-wrap">
       <div class="promo-marquee-track">
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
-        <span class="promo-item">✦ <em>6 Cuotas Sin Interés</em> en Camperas y Chalecos · Con Tarjeta de Crédito</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
+        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
       </div>
     </div>
   </div>
@@ -981,6 +1008,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#temporada">Nueva Temporada</a></li>
       <li><a href="#galeria">Colección</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="https://wa.me/541170583706" target="_blank" class="nav-cta">WhatsApp</a></li>
@@ -1035,16 +1063,21 @@
     </div>
   </div>
 
-  <!-- BANNER CAMPAÑA AGOSTO -->
+  <!-- BANNER CAMPAÑA TEMPORADA -->
   <div class="banner-campania">
     <div class="banner-campania-inner">
-      <div class="banner-campania-mes">✦ &nbsp; Agosto 2026 &nbsp; ✦</div>
-      <div class="banner-campania-titulo">Camperas &amp; <span>Chalecos</span></div>
+      <div class="banner-campania-mes">✦ &nbsp; Llegó la Nueva Temporada &nbsp; ✦</div>
+      <div class="banner-campania-titulo">Primavera &amp; <span>Verano</span> 2026/27</div>
       <div class="banner-campania-divider"></div>
       <div class="banner-campania-ofertas">
-        <div class="banner-campania-oferta" style="border-right:none;">
-          <div class="banner-campania-num">6 Cuotas Sin Interés</div>
-          <div class="banner-campania-desc">Con Tarjeta de Crédito · Durante Todo Agosto</div>
+        <div class="banner-campania-oferta">
+          <div class="banner-campania-num">3 Cuotas</div>
+          <div class="banner-campania-desc">Sin Interés · Visa &amp; Mastercard</div>
+        </div>
+        <div class="banner-campania-o">+</div>
+        <div class="banner-campania-oferta">
+          <div class="banner-campania-num">10% Off</div>
+          <div class="banner-campania-desc">Pagando en Efectivo</div>
         </div>
       </div>
     </div>
@@ -1138,6 +1171,92 @@
     </div>
   </section>
 
+  <!-- NUEVA TEMPORADA -->
+  <section class="temporada" id="temporada">
+    <div class="container">
+      <div class="temporada-header">
+        <div class="section-eyebrow" style="color:var(--gold)">Nueva Temporada</div>
+        <h2 class="section-title">Primavera <em>·</em> Verano 2026/27</h2>
+        <div class="divider"></div>
+        <p class="section-body">Ya llegaron las primeras prendas de la temporada: remeras, polos, jeans y bermudas para el calor porteño.</p>
+      </div>
+
+      <div class="gallery-grid temporada-grid">
+
+        <div class="gallery-item">
+          <img src="wrnzone-remera-beige.jpg" alt="WRN Zone — remera lifestyle beige hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">WRN Zone — Remera Lifestyle</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="polo-celeste.jpg" alt="Polo algodón con bolsillo celeste hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Polo Algodón con Bolsillo</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="taverniti-remera-gris.jpg" alt="Taverniti — remera básica gris hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Remera Básica</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="posto5-remera-verde.jpg" alt="Posto 5 — remera estampada verde hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Posto 5 — Remera Estampada</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="remera-denim-brooklyn.jpg" alt="Remera estampada Brooklyn denim hombre blanca"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Remera Estampada — Brooklyn</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="special-edition-remera.jpg" alt="Remera Special Edition verde agua hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Special Edition — Remera</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="taverniti-polo-turquesa.jpg" alt="Taverniti — polo turquesa hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Polo Turquesa</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="jean-negro.jpg" alt="Jean negro corte clásico hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Jean Negro — Corte Clásico</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="taverniti-jean-clarito.jpg" alt="Taverniti — jean clarito hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Jean Clarito</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="taverniti-jean-gris.jpg" alt="Taverniti — jean gris hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Jean Gris</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="villagepolo-jean-azul.jpg" alt="Village Polo Club — jean azul hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Jean Azul</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="jogger-beige.jpg" alt="Pantalón jogger beige hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Pantalón Jogger — Beige</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="villagepolo-bermuda-beige-1.jpg" alt="Village Polo Club — bermuda beige hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Bermuda Beige</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="bermuda-beige-2.jpg" alt="Bermuda beige corte clásico hombre"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Bermuda Beige — Corte Clásico</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- GALLERY -->
   <section class="gallery" id="galeria">
     <div class="container">
@@ -1151,7 +1270,6 @@
            GALERÍA DE FOTOS - PARA AGREGAR FOTOS:
            Reemplazá los bloques <div class="gallery-placeholder">
            por <div class="gallery-item"><img src="TU-FOTO.jpg" alt="descripción"/></div>
-           O pedile a Claude que las agregue por vos
       ════════════════════════════════════════════════════ -->
       <div class="gallery-grid">
 
@@ -1173,26 +1291,6 @@
             onerror="this.src='https://villagepoloclub.com.ar/wp-content/uploads/2023/10/capa_0022_077-2-scaled.jpg'"
           />
           <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Village Polo Club — Jeans</div>
-        </div>
-
-        <!-- Taverniti — Chomba Secundino piqué manga larga -->
-        <div class="gallery-item">
-          <img
-            src="https://taverniti.vtexassets.com/arquivos/ids/286511-800-960?v=638828394409570000&width=700&height=960&aspect=true"
-            alt="Taverniti Secundino — chomba piqué manga larga"
-            onerror="this.src='https://taverniti.vtexassets.com/arquivos/ids/286512-800-960?v=638828394409570000&width=700&height=960&aspect=true'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Piqué M/L</div>
-        </div>
-
-        <!-- Taverniti — Chomba Secundino segunda vista con jeans -->
-        <div class="gallery-item">
-          <img
-            src="https://taverniti.vtexassets.com/arquivos/ids/286513-800-960?v=638828394409570000&width=700&height=960&aspect=true"
-            alt="Taverniti — chomba y jeans"
-            onerror="this.src='https://taverniti.vtexassets.com/arquivos/ids/286514-800-960?v=638828394409570000&width=700&height=960&aspect=true'"
-          />
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">Taverniti — Jeans</div>
         </div>
 
         <!-- Wrangler Montana — jean Regular Fit (foto oficial) -->
@@ -1263,18 +1361,6 @@
           <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:0.8rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;">New Man — Jeans</div>
         </div>
 
-        <!-- Espacio para tus fotos propias -->
-        <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-placeholder-icon">📷</div>
-            <div class="gallery-placeholder-text">Agregá tu foto aquí</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="gallery-note">
-        <strong>📌 ¿Querés agregar fotos?</strong> Pedile a Claude que reemplace los espacios con tus propias imágenes, o enviá el link de las fotos y las incorporamos en minutos.
       </div>
       <!-- LEYENDA TALLES -->
       <div class="leyenda-talles-wrap">
