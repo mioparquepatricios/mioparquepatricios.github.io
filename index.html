@@ -1105,6 +1105,14 @@
     .talles-strip .leyenda-talles-wrap { margin-top: 0; }
     @media (max-width: 900px) { .temporada-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .6rem !important; } }
     @media (max-width: 600px) { .novedades-track img { height: 360px; } .gi-label { font-size: .64rem; letter-spacing: .1em; padding: 1.2rem .5rem .5rem; } .temporada { padding: 4.5rem 1rem !important; } }
+    .temporada-grid .gi-label { padding: 3.2rem 1rem 1rem; background: linear-gradient(transparent, rgba(20,16,10,.35) 30%, rgba(20,16,10,.82)); text-transform: none; letter-spacing: 0; display: flex; flex-direction: column; gap: .2rem; }
+    .gi-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.22rem; line-height: 1.1; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.35); }
+    .gi-colors { font-family: 'Barlow', sans-serif; font-weight: 400; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: #eadfca; }
+    .gi-price { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #fff; margin-top: .15rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; }
+    .gi-price s { color: #cfc6b6; text-decoration-thickness: 1px; }
+    .gi-efvo { color: #e8cf9a; font-style: italic; }
+    .gi-efvo b { font-style: normal; font-weight: 700; font-size: 1.15rem; color: #f1d9a4; }
+    @media (max-width: 600px) { .temporada-grid .gi-label { padding: 2.4rem .55rem .6rem; } .gi-name { font-size: 1.02rem; } .gi-colors { font-size: .58rem; letter-spacing: .06em; } .gi-price { font-size: .9rem; gap: 0 .4rem; } .gi-efvo b { font-size: .98rem; } }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1320,83 +1328,83 @@
       <div class="gallery-grid temporada-grid" id="temporadaGrid">
 
         <div class="gallery-item">
-          <img src="polo-celeste.jpg" alt="Polo algodón con bolsillo celeste hombre" width="900" height="1183"/>
-          <div class="gi-label">Polo Algodón con Bolsillo</div>
+          <img src="polo-celeste.jpg" alt="Chomba Worren con bolsillo celeste hombre" width="900" height="1183"/>
+          <div class="gi-label"><span class="gi-name">Chomba Worren c/ bolsillo</span><span class="gi-price"><span class="gi-lista">$42.000</span> <span class="gi-efvo"><b>$37.800</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="taverniti-polo-turquesa.jpg" alt="Taverniti — polo turquesa hombre" width="900" height="1183"/>
-          <div class="gi-label">Taverniti — Polo Turquesa</div>
+          <img src="taverniti-polo-turquesa.jpg" alt="Chomba Taverniti micropiqué hombre" width="900" height="1183"/>
+          <div class="gi-label"><span class="gi-name">Chomba Taverniti micropiqué</span><span class="gi-colors">Varios colores</span><span class="gi-price"><span class="gi-lista">$46.000</span> <span class="gi-efvo"><b>$41.400</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="posto5-remera-verde.jpg" alt="Posto 5 — remera estampada verde hombre" width="900" height="1183"/>
-          <div class="gi-label">Posto 5 — Remera Estampada</div>
+          <img src="posto5-remera-verde.jpg" alt="Remera Posto 5 estampada hombre" width="900" height="1183"/>
+          <div class="gi-label"><span class="gi-name">Remera Posto 5</span><span class="gi-colors">Negro · Verde · Natural</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="remera-denim-brooklyn.jpg" alt="Remera estampada Brooklyn denim hombre blanca" width="900" height="1183"/>
-          <div class="gi-label">Remera Estampada — Brooklyn</div>
+          <img src="remera-denim-brooklyn.jpg" alt="Remera Worren estampada hombre" width="900" height="1183"/>
+          <div class="gi-label"><span class="gi-name">Remera Worren</span><span class="gi-colors">Negro · Beige</span><span class="gi-price"><span class="gi-lista">$26.000</span> <span class="gi-efvo"><b>$23.400</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="villagepolo-jean-azul.jpg" alt="Village Polo Club — jean azul hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Village Polo Club — Jean Azul</div>
+          <img src="villagepolo-jean-azul.jpg" alt="Jean Village Polo Club azul hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Jean Village Polo Club</span><span class="gi-price"><span class="gi-lista">$45.000</span> <span class="gi-efvo"><b>$40.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="jean-negro.jpg" alt="Jean negro corte clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Jean Negro — Corte Clásico</div>
+          <img src="jean-negro.jpg" alt="Jean Village Polo Club negro corte clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Jean Village Polo Club negro clásico</span><span class="gi-price"><span class="gi-lista">$45.000</span> <span class="gi-efvo"><b>$40.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
-          <img src="villagepolo-bermuda-beige-1.jpg" alt="Village Polo Club — bermuda beige hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Village Polo Club — Bermuda Beige</div>
+          <img src="villagepolo-bermuda-beige-1.jpg" alt="Bermuda de gabardina Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Bermuda gabardina Village Polo Club</span><span class="gi-colors">Azul · Negro · Beige</span><span class="gi-price"><span class="gi-lista">$39.000</span> <span class="gi-efvo"><b>$35.000</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item">
           <img src="wrangler-jean-montana.jpg" alt="Wrangler Montana Regular Fit — jean azul hombre" width="900" height="1298" loading="lazy" decoding="async"/>
-          <div class="gi-label">Wrangler Montana — Regular Fit</div>
+          <div class="gi-label"><span class="gi-name">Wrangler Montana · Regular Fit</span></div>
         </div>
 
         <div class="gallery-item is-extra">
-          <img src="wrnzone-remera-beige.jpg" alt="WRN Zone — remera lifestyle beige hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">WRN Zone — Remera Lifestyle</div>
+          <img src="wrnzone-remera-beige.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Remera Worren</span><span class="gi-colors">Mostaza · Natural · Salmón</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item is-extra">
-          <img src="taverniti-remera-gris.jpg" alt="Taverniti — remera básica gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Taverniti — Remera Básica</div>
+          <img src="taverniti-remera-gris.jpg" alt="Remera Taverniti súper liviana hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Remera Taverniti súper liviana</span></div>
         </div>
 
         <div class="gallery-item is-extra">
-          <img src="special-edition-remera.jpg" alt="Remera Special Edition verde agua hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Special Edition — Remera</div>
+          <img src="special-edition-remera.jpg" alt="Remera Posto 5 hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Remera Posto 5</span><span class="gi-colors">Verde · Blanco</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item is-extra">
           <img src="wrangler-remera-celeste.jpg" alt="Wrangler — remera con logo hombre" width="900" height="1298" loading="lazy" decoding="async"/>
-          <div class="gi-label">Wrangler — Remera</div>
+          <div class="gi-label"><span class="gi-name">Wrangler · Remera</span></div>
         </div>
 
         <div class="gallery-item is-extra">
           <img src="taverniti-jean-clarito.jpg" alt="Taverniti — jean clarito hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Taverniti — Jean Clarito</div>
+          <div class="gi-label"><span class="gi-name">Taverniti · Jean Clarito</span></div>
         </div>
 
         <div class="gallery-item is-extra">
           <img src="taverniti-jean-gris.jpg" alt="Taverniti — jean gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label">Taverniti — Jean Gris</div>
+          <div class="gi-label"><span class="gi-name">Taverniti · Jean Gris</span></div>
         </div>
 
         <div class="gallery-item is-extra">
-          <img src="jogger-beige.jpg" alt="Pantalón jogger beige hombre" width="900" height="1182" loading="lazy" decoding="async"/>
-          <div class="gi-label">Pantalón Jogger — Beige</div>
+          <img src="jogger-beige.jpg" alt="Pantalón de lino hombre" width="900" height="1182" loading="lazy" decoding="async"/>
+          <div class="gi-label"><span class="gi-name">Pantalón de lino</span><span class="gi-colors">Beige · Negro</span><span class="gi-price"><span class="gi-lista">$65.000</span> <span class="gi-efvo"><b>$58.500</b> efectivo</span></span></div>
         </div>
 
         <div class="gallery-item is-extra">
           <img src="bermuda-beige-2.jpg" alt="Bermuda beige corte clásico hombre" width="900" height="1182" loading="lazy" decoding="async"/>
-          <div class="gi-label">Bermuda Beige — Corte Clásico</div>
+          <div class="gi-label"><span class="gi-name">Bermuda Beige · Corte Clásico</span></div>
         </div>
 
       </div>
