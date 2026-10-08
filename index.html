@@ -266,9 +266,9 @@
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 10vw, 9rem);
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
       font-weight: 300;
-      line-height: 0.9;
+      line-height: 1;
       color: var(--off-white);
       margin-bottom: 1.5rem;
       letter-spacing: -0.02em;
@@ -277,6 +277,15 @@
     .hero-title span {
       color: var(--gold);
       font-style: italic;
+    }
+
+    .hero-title-extra {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: 0.42em;
+      font-style: normal;
+      line-height: 1.2;
+      color: var(--off-white);
     }
 
     .hero-subtitle {
@@ -1120,6 +1129,31 @@
       .promo-marquee-wrap, .leyenda-marquee-wrap { overflow-x: auto; }
     }
 
+    /* Pedidos por WhatsApp */
+    .hero-wa { margin-top: 1.6rem; font-family: 'Barlow Condensed', sans-serif; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); }
+    .hero-wa a { color: var(--gold-light); }
+    .comprar { background: var(--charcoal); color: var(--off-white); padding: 6rem 2rem; border-top: 1px solid rgba(184,150,90,.3); }
+    .comprar-head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+    .comprar .section-title { color: var(--off-white); }
+    .comprar .section-title em { color: var(--gold); }
+    .comprar-intro { color: var(--light-gray); line-height: 1.8; font-size: 1rem; }
+    .comprar-pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .comprar-paso { border: 1px solid rgba(184,150,90,.35); padding: 2rem 1.6rem; text-align: center; }
+    .comprar-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1; color: var(--gold); margin-bottom: .6rem; }
+    .comprar-paso h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--off-white); margin-bottom: .6rem; }
+    .comprar-paso p { color: var(--light-gray); font-size: .95rem; line-height: 1.7; }
+    .comprar-mas { max-width: 1000px; margin: 2rem auto 0; padding: 1.3rem 1.6rem; background: rgba(184,150,90,.12); border-left: 3px solid var(--gold); color: var(--light-gray); line-height: 1.7; }
+    .comprar-mas strong { color: var(--gold-light); }
+    .comprar-cta { text-align: center; margin-top: 2.5rem; }
+    @media (max-width: 800px) { .comprar { padding: 4.5rem 1rem; } .comprar-pasos { grid-template-columns: 1fr; } }
+    .temporada-tip { font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #7d5f2a; }
+    .temporada-mas { text-align: center; margin: 2rem auto 0; max-width: 640px; color: #5a524a; line-height: 1.7; }
+    .temporada-mas a { color: #7d5f2a; font-weight: 600; }
+    .contact-nota { font-size: .85rem; color: var(--gold-light); }
+    .prenda-wa { position: absolute; inset: 0; z-index: 2; }
+    .prenda-wa-tag { position: absolute; top: .6rem; right: .6rem; background: #1e8e4e; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .6rem; border-radius: 3px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nov-wa { position: relative; flex: 0 0 auto; scroll-snap-align: start; display: block; }
+    .nov-wa img { display: block; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .hero-title .sr-only { color: inherit; font-style: normal; }
     .faq { background: var(--off-white); padding: 6rem 2rem; border-top: 1px solid rgba(184,150,90,0.2); }
@@ -1139,6 +1173,9 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {"@type": "Question", "name": "¿Cómo compro?", "acceptedAnswer": {"@type": "Answer", "text": "Escribinos por WhatsApp al 11 7058-3706. Te atendemos de forma personalizada: te asesoramos con el talle, el color y el modelo, te confirmamos disponibilidad y coordinamos el envío o el retiro en el local."}},
+      {"@type": "Question", "name": "¿Hacen envíos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, hacemos envíos a toda la Capital Federal (CABA). Coordinamos todo por WhatsApp. También podés retirar tu pedido en el local, en La Rioja 2186."}},
+      {"@type": "Question", "name": "¿Tienen prendas que no están en la web?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, muchas. En la web mostramos solo una parte de lo que tenemos. Si buscás algo en particular, consultanos por WhatsApp aunque no lo veas acá."}},
       {"@type": "Question", "name": "¿MIO y \"El buen vestir\" son la misma tienda?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. MIO, El buen vestir, es el nombre completo de nuestra tienda de ropa de hombre en La Rioja 2186, Parque Patricios, Ciudad de Buenos Aires."}},
       {"@type": "Question", "name": "¿Dónde queda MIO?", "acceptedAnswer": {"@type": "Answer", "text": "Estamos en La Rioja 2186, Parque Patricios, Ciudad Autónoma de Buenos Aires."}},
       {"@type": "Question", "name": "¿Cuál es el horario de atención?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos de lunes a sábados de 9:30 a 13:30 hs y de 15:30 a 19:30 hs."}},
@@ -1169,6 +1206,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#como-comprar">Cómo comprar</a></li>
       <li><a href="#temporada">Nueva Temporada</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer" class="nav-cta">WhatsApp</a></li>
@@ -1187,16 +1225,18 @@
       <div class="hero-eyebrow">Ropa de hombre · Parque Patricios · Buenos Aires</div>
       <h1 class="hero-title">
         <span class="sr-only">MIO, El buen vestir. Ropa de hombre en Parque Patricios: </span>
-        Moda<br>
-        <span>para él</span>
+        Desde 1968<br>
+        <span>vistiendo a los hombres.</span>
+        <em class="hero-title-extra">Incluso cuando encontrar talle es difícil.</em>
       </h1>
       <p class="hero-subtitle">
-        Más de 50 años vistiendo al hombre porteño. Las mejores marcas de ropa de hombre, en un solo lugar.
+        Las mejores marcas de ropa de hombre, en un solo lugar.
       </p>
       <div class="hero-actions">
         <a href="#marcas" class="btn-primary">Ver marcas</a>
         <a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer" class="btn-outline">Instagram ↗</a>
       </div>
+      <p class="hero-wa">Pedidos por <a href="#como-comprar">WhatsApp</a> con atención personalizada · Envíos a toda la Capital</p>
     </div>
     <div class="hero-visual">
       <img src="local-mio.jpg" alt="Frente del local MIO — La Rioja 2186, Parque Patricios" width="1400" height="1203" fetchpriority="high"/>
@@ -1315,6 +1355,41 @@
     </div>
   </section>
 
+  <!-- CÓMO COMPRAR -->
+  <section class="comprar" id="como-comprar">
+    <div class="container">
+      <div class="comprar-head">
+        <div class="section-eyebrow">Cómo comprar</div>
+        <h2 class="section-title">Comprá por <em>WhatsApp</em>,<br>con atención personalizada</h2>
+        <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+        <p class="comprar-intro">Vendemos por WhatsApp con el mismo asesoramiento que te damos en el local. Te ayudamos a elegir el talle, el color y el modelo justo para vos.</p>
+      </div>
+      <div class="comprar-pasos">
+        <div class="comprar-paso">
+          <div class="comprar-num">1</div>
+          <h3>Escribinos</h3>
+          <p>Mandanos la foto de la prenda que te gustó o contanos qué estás buscando.</p>
+        </div>
+        <div class="comprar-paso">
+          <div class="comprar-num">2</div>
+          <h3>Te asesoramos</h3>
+          <p>Te confirmamos talles, colores y disponibilidad, y te recomendamos opciones.</p>
+        </div>
+        <div class="comprar-paso">
+          <div class="comprar-num">3</div>
+          <h3>Lo recibís</h3>
+          <p>Hacemos envíos a toda la Capital Federal. Si preferís, lo retirás en el local.</p>
+        </div>
+      </div>
+      <div class="comprar-mas">
+        <strong>¿No encontrás lo que buscás?</strong> En la web mostramos solo una parte: en el local tenemos mucha más variedad de prendas, marcas y talles. Consultanos igual.
+      </div>
+      <div class="comprar-cta">
+        <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">Hacé tu pedido por WhatsApp ↗</a>
+      </div>
+    </div>
+  </section>
+
   <!-- NUEVA TEMPORADA -->
   <section class="temporada" id="temporada">
     <div class="container">
@@ -1323,6 +1398,7 @@
         <h2 class="section-title">Primavera <em>·</em> Verano 2026/27</h2>
         <div class="divider"></div>
         <p class="section-body">Ya llegaron las primeras prendas de la temporada: remeras, polos, jeans y bermudas para el calor porteño.</p>
+        <p class="temporada-tip">Tocá cualquier prenda para pedirla o consultarla por WhatsApp</p>
       </div>
 
       <div class="gallery-grid temporada-grid" id="temporadaGrid">
@@ -1409,6 +1485,8 @@
 
       </div>
 
+      <p class="temporada-mas">¿Buscás otra prenda? Esto es solo una parte: tenemos mucha más variedad. <a href="https://wa.me/541170583706?text=Hola%2C%20busco%20una%20prenda%20que%20no%20vi%20en%20la%20web" target="_blank" rel="noopener noreferrer">Consultanos por WhatsApp</a>.</p>
+
       <div class="temporada-actions">
         <button type="button" class="btn-dark" id="verMas" aria-expanded="false" aria-controls="temporadaGrid">Ver más prendas</button>
         <a class="btn-dark" href="https://wa.me/541170583706?text=Hola%2C%20quiero%20consultar%20por%20talles%20y%20colores%20de%20la%20nueva%20temporada" target="_blank" rel="noopener noreferrer">Consultá talles y colores ↗</a>
@@ -1462,6 +1540,18 @@
         <div class="section-eyebrow">Preguntas frecuentes</div>
         <h2 class="section-title">Lo que más <em>nos preguntan</em></h2>
       </div>
+      <details>
+        <summary>¿Cómo compro?</summary>
+        <p>Escribinos por <a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">WhatsApp al 11 7058-3706</a>. Te atendemos de forma personalizada: te asesoramos con el talle, el color y el modelo, te confirmamos disponibilidad y coordinamos el envío o el retiro en el local.</p>
+      </details>
+      <details>
+        <summary>¿Hacen envíos?</summary>
+        <p>Sí, hacemos envíos a toda la Capital Federal (CABA). Coordinamos todo por WhatsApp. También podés retirar tu pedido en el local, en La Rioja 2186.</p>
+      </details>
+      <details>
+        <summary>¿Tienen prendas que no están en la web?</summary>
+        <p>Sí, muchas. En la web mostramos solo una parte de lo que tenemos. Si buscás algo en particular, consultanos por WhatsApp aunque no lo veas acá.</p>
+      </details>
       <details>
         <summary>¿MIO y "El buen vestir" son la misma tienda?</summary>
         <p>Sí. MIO, "El buen vestir", es el nombre completo de nuestra tienda de ropa de hombre en La Rioja 2186, Parque Patricios, Ciudad de Buenos Aires.</p>
@@ -1519,9 +1609,10 @@
             <div class="contact-item">
               <div class="contact-icon">📱</div>
               <div>
-                <div class="contact-label">WhatsApp</div>
+                <div class="contact-label">WhatsApp · Pedidos y asesoramiento</div>
                 <div class="contact-value">
-                  <a href="tel:+541170583706">11 7058-3706</a>
+                  <a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">11 7058-3706</a><br>
+                  <span class="contact-nota">Envíos a toda la Capital Federal</span>
                 </div>
               </div>
             </div>
@@ -1546,8 +1637,8 @@
           </div>
 
           <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;">
-            <a href="https://wa.me/541170583706?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20marcas%20disponibles" target="_blank" rel="noopener noreferrer" class="btn-primary">
-              Escribinos por WhatsApp ↗
+            <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Hacé tu pedido por WhatsApp ↗
             </a>
             <a href="https://www.google.com/maps/dir/?api=1&destination=La+Rioja+2186%2C+Parque+Patricios%2C+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Cómo llegar ↗</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Mio+El+Buen+Vestir+La+Rioja+2186+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver opiniones en Google ↗</a>
@@ -1640,6 +1731,32 @@
         verMas.setAttribute('aria-expanded', abierto ? 'true' : 'false');
       });
     }
+
+    // Fotos de prendas: al tocarlas se abre WhatsApp con el nombre de la prenda
+    function linkWhatsApp(prenda) {
+      return 'https://wa.me/541170583706?text=' + encodeURIComponent('Hola! Vi en la web: ' + prenda + '. ¿Me pasás talles y colores disponibles?');
+    }
+    function crearLinkPrenda(prenda, clase) {
+      const a = document.createElement('a');
+      a.className = clase;
+      a.href = linkWhatsApp(prenda);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.setAttribute('aria-label', 'Pedir por WhatsApp: ' + prenda);
+      a.innerHTML = '<span class="prenda-wa-tag">Pedir por WhatsApp</span>';
+      return a;
+    }
+    document.querySelectorAll('.temporada-grid .gallery-item').forEach(item => {
+      const nombre = item.querySelector('.gi-name');
+      const img = item.querySelector('img');
+      const prenda = nombre ? nombre.textContent.trim() : (img ? img.alt : 'una prenda');
+      item.appendChild(crearLinkPrenda(prenda, 'prenda-wa'));
+    });
+    document.querySelectorAll('.novedades-track > img').forEach(img => {
+      const a = crearLinkPrenda(img.alt, 'nov-wa');
+      img.parentNode.insertBefore(a, img);
+      a.insertBefore(img, a.firstChild);
+    });
 
     // Aparición suave al hacer scroll (se desactiva si la persona pidió menos movimiento)
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
