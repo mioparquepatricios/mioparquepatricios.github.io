@@ -1076,6 +1076,15 @@
       .banner-campania-ofertas { flex-direction: column; gap: 0.8rem; }
     }
 
+    /* ── GIFT CARD ── */
+    .giftcard { background: var(--charcoal); border-top: 1px solid rgba(184,150,90,.35); border-bottom: 1px solid rgba(184,150,90,.35); padding: 3.2rem 2rem; text-align: center; }
+    .giftcard-inner { max-width: 760px; margin: 0 auto; }
+    .giftcard-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+    .giftcard-titulo { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--off-white); line-height: 1.1; margin-bottom: .9rem; }
+    .giftcard-texto { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 3vw, 1.7rem); color: var(--light-gray); line-height: 1.4; margin-bottom: 1.8rem; }
+    .giftcard-texto em { color: var(--gold-light); }
+    @media (max-width: 600px) { .giftcard { padding: 2.4rem 1rem; } }
+
     /* ── MEJORAS: accesibilidad, contraste, movimiento ── */
     .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 300; background: var(--gold); color: var(--black); padding: .7rem 1.2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: top .2s; }
     .skip-link:focus { top: 1rem; }
@@ -1300,6 +1309,16 @@
       <div class="comprar-cta">
         <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">Hacé tu pedido por WhatsApp ↗</a>
       </div>
+    </div>
+  </section>
+
+  <!-- GIFT CARD -->
+  <section class="giftcard" id="gift-card" aria-label="Gift Card">
+    <div class="giftcard-inner">
+      <div class="giftcard-eyebrow">✦ &nbsp; Gift Card MIO &nbsp; ✦</div>
+      <h2 class="giftcard-titulo">¿No sabés qué regalarle?</h2>
+      <p class="giftcard-texto">Regalale una <em>Gift Card de MIO</em> y que él elija.</p>
+      <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20una%20Gift%20Card%20de%20MIO" target="_blank" rel="noopener noreferrer" class="btn-primary">Pedí tu Gift Card por WhatsApp ↗</a>
     </div>
   </section>
 
