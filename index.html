@@ -1685,7 +1685,7 @@
   <footer>
     <div class="foot-logo"><img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/></div>
     <div class="foot-copy">© <span id="anio">2026</span> MIO, El buen vestir — Indumentaria Masculina · La Rioja 2186, Parque Patricios, CABA · Todos los derechos reservados</div>
-    <div class="foot-version" style="margin-top:8px;padding-bottom:4px;font-size:11px;color:#9a9288;letter-spacing:.05em;">Versión <span id="web-version">1.1</span> · actualizada el 14/10/2026</div>
+    <div class="foot-version" style="margin-top:8px;padding-bottom:4px;font-size:11px;color:#9a9288;letter-spacing:.05em;">Versión <span id="web-version">1.2</span> · actualizada el 28/10/2026</div>
   </footer>
 
   <!-- WHATSAPP FLOAT -->
@@ -1798,5 +1798,149 @@
     }
   </script>
 
+  <!-- ══ HALLOWEEN (se muestra solo hasta el 1/11; para quitarla, borrar este bloque) ══ -->
+  <style>
+    .hw-deco { position: absolute; pointer-events: none; z-index: 5; }
+    .hw-web { width: 180px; height: 180px; opacity: .55; }
+    .hw-web-l { top: var(--hw-top, 0); left: 0; }
+    .hw-web-r { top: var(--hw-top, 0); right: 0; transform: scaleX(-1); }
+    .hw-spider { top: var(--hw-top, 0); left: 40%; width: 34px; animation: hw-drop 5s ease-in-out infinite alternate; transform-origin: top center; }
+    .hw-spider .hw-hilo { width: 1px; background: rgba(240,236,228,.6); margin: 0 auto; height: 120px; }
+    @keyframes hw-drop { 0% { transform: translateY(-60px); } 100% { transform: translateY(20px); } }
+    .hw-bat { width: 46px; top: 22%; left: -60px; opacity: .85; animation: hw-fly 14s linear infinite; }
+    .hw-bat.b2 { width: 32px; top: 38%; animation-duration: 19s; animation-delay: -7s; }
+    .hw-bat.b3 { width: 26px; top: 12%; animation-duration: 23s; animation-delay: -15s; }
+    .hw-bat svg { animation: hw-flap .35s ease-in-out infinite alternate; transform-origin: center; }
+    @keyframes hw-fly { 0% { left: -60px; transform: translateY(0); } 25% { transform: translateY(-30px); } 50% { transform: translateY(15px); } 75% { transform: translateY(-20px); } 100% { left: 105%; transform: translateY(0); } }
+    @keyframes hw-flap { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
+    .hw-cartel {
+      position: relative; z-index: 6; margin-bottom: 1.4rem;
+      display: inline-flex; align-items: center; gap: .7rem; white-space: nowrap;
+      background: rgba(10,10,10,.82); border: 1px solid var(--gold); color: var(--cream);
+      padding: .55rem 1.3rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase; font-size: .8rem;
+    }
+    .hw-cartel em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: .02em; font-size: 1.15rem; color: #e8892b; }
+    .hw-cartel svg { width: 26px; height: 26px; flex: none; }
+    @media (max-width: 700px) {
+      .hw-web { width: 110px; height: 110px; }
+      .hw-spider { left: 70%; }
+      .hw-cartel { font-size: .68rem; padding: .45rem .9rem; white-space: normal; }
+      .hw-cartel em { font-size: 1rem; }
+    }
+    .hw-titulo { display: inline-block; width: .9em; height: .9em; margin-right: .3em; vertical-align: -.08em; }
+    .hw-grupo { position: absolute; bottom: 0; z-index: 3; pointer-events: none; display: flex; align-items: flex-end; gap: 4px; }
+    .hw-grupo.izq { left: 1.5rem; } .hw-grupo.der { right: 1.5rem; flex-direction: row-reverse; }
+    .hw-grupo svg:nth-child(1) { width: 64px; height: 64px; }
+    .hw-grupo svg:nth-child(2) { width: 42px; height: 42px; }
+    .hw-grupo svg:nth-child(3) { width: 30px; height: 30px; }
+    .hw-grupo .hw-cara { animation: hw-vela 2.4s ease-in-out infinite alternate; }
+    @keyframes hw-vela { from { fill: #ffcf5a; } to { fill: #ff9a1f; } }
+    @media (max-width: 700px) {
+      .hw-grupo svg:nth-child(1) { width: 44px; height: 44px; }
+      .hw-grupo svg:nth-child(2) { width: 30px; height: 30px; }
+      .hw-grupo svg:nth-child(3) { display: none; }
+    }
+    .hw-tela { position: absolute; top: 0; z-index: 3; pointer-events: none; width: 130px; height: 130px; opacity: .45; }
+    .hw-tela.izq { left: 0; } .hw-tela.der { right: 0; transform: scaleX(-1); }
+    .hw-tela .hw-mini { animation: hw-mini 4s ease-in-out infinite alternate; }
+    @keyframes hw-mini { from { transform: translateY(0); } to { transform: translateY(14px); } }
+    @media (max-width: 700px) { .hw-tela { width: 80px; height: 80px; } }
+    @media (prefers-reduced-motion: reduce) { .hw-grupo .hw-cara, .hw-tela .hw-mini { animation: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hw-spider, .hw-bat, .hw-bat svg { animation: none; }
+      .hw-bat { left: 70%; }
+    }
+  </style>
+  <template id="hwTpl">
+    <svg class="hw-deco hw-web hw-web-l" viewBox="0 0 100 100" fill="none" stroke="#f0ece4" stroke-width=".6" aria-hidden="true">
+      <path d="M0 0 L100 0 M0 0 L95 35 M0 0 L70 70 M0 0 L35 95 M0 0 L0 100"/>
+      <path d="M20 0 Q17 7 19 7 Q14 12 14 14 Q9 16 7 19 Q7 17 0 20"/>
+      <path d="M45 0 Q40 14 43 16 Q33 26 32 32 Q26 33 16 43 Q14 40 0 45"/>
+      <path d="M72 0 Q64 22 68 25 Q52 40 50 50 Q40 52 25 68 Q22 64 0 72"/>
+      <path d="M100 0 Q88 30 93 35 Q72 58 70 70 Q58 72 35 93 Q30 88 0 100"/>
+    </svg>
+    <svg class="hw-deco hw-web hw-web-r" viewBox="0 0 100 100" fill="none" stroke="#f0ece4" stroke-width=".6" aria-hidden="true">
+      <path d="M0 0 L100 0 M0 0 L95 35 M0 0 L70 70 M0 0 L35 95 M0 0 L0 100"/>
+      <path d="M20 0 Q17 7 19 7 Q14 12 14 14 Q9 16 7 19 Q7 17 0 20"/>
+      <path d="M45 0 Q40 14 43 16 Q33 26 32 32 Q26 33 16 43 Q14 40 0 45"/>
+      <path d="M72 0 Q64 22 68 25 Q52 40 50 50 Q40 52 25 68 Q22 64 0 72"/>
+    </svg>
+    <div class="hw-deco hw-spider" aria-hidden="true">
+      <div class="hw-hilo"></div>
+      <svg viewBox="0 0 40 34" width="34">
+        <g stroke="#d4b078" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M14 15 L4 6 L1 12 M14 18 L2 18 L0 24 M15 21 L5 28 L4 33 M16 23 L10 32"/>
+          <path d="M26 15 L36 6 L39 12 M26 18 L38 18 L40 24 M25 21 L35 28 L36 33 M24 23 L30 32"/>
+        </g>
+        <ellipse cx="20" cy="20" rx="7" ry="8" fill="#d4b078"/>
+        <circle cx="20" cy="10" r="4.5" fill="#d4b078"/>
+        <circle cx="18.3" cy="9.5" r="1" fill="#0a0a0a"/><circle cx="21.7" cy="9.5" r="1" fill="#0a0a0a"/>
+      </svg>
+    </div>
+    <div class="hw-deco hw-bat b1" aria-hidden="true"><svg viewBox="0 0 64 28"><path fill="#b8965a" d="M32 8c2-4 3-6 3-6l1 4c2 0 3 1 4 2 4-4 12-6 24-4-5 2-7 6-7 10-3-2-7-2-9 1-2-2-5-2-7 1-3-1-6 1-9 6-3-5-6-7-9-6-2-3-5-3-7-1-2-3-6-3-9-1 0-4-2-8-7-10 12-2 20 0 24 4 1-1 2-2 4-2l1-4s1 2 3 6z"/></svg></div>
+    <div class="hw-deco hw-bat b2" aria-hidden="true"><svg viewBox="0 0 64 28"><path fill="#b8965a" d="M32 8c2-4 3-6 3-6l1 4c2 0 3 1 4 2 4-4 12-6 24-4-5 2-7 6-7 10-3-2-7-2-9 1-2-2-5-2-7 1-3-1-6 1-9 6-3-5-6-7-9-6-2-3-5-3-7-1-2-3-6-3-9-1 0-4-2-8-7-10 12-2 20 0 24 4 1-1 2-2 4-2l1-4s1 2 3 6z"/></svg></div>
+    <div class="hw-deco hw-bat b3" aria-hidden="true"><svg viewBox="0 0 64 28"><path fill="#b8965a" d="M32 8c2-4 3-6 3-6l1 4c2 0 3 1 4 2 4-4 12-6 24-4-5 2-7 6-7 10-3-2-7-2-9 1-2-2-5-2-7 1-3-1-6 1-9 6-3-5-6-7-9-6-2-3-5-3-7-1-2-3-6-3-9-1 0-4-2-8-7-10 12-2 20 0 24 4 1-1 2-2 4-2l1-4s1 2 3 6z"/></svg></div>
+    <div class="hw-cartel">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 7c0-3 1-4 3-5" stroke="#5a7a3a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="10" cy="19" rx="8" ry="10" fill="#c96a1b"/><ellipse cx="22" cy="19" rx="8" ry="10" fill="#c96a1b"/>
+        <ellipse cx="16" cy="19" rx="7" ry="11" fill="#e8892b"/>
+        <path d="M9 16l3 3H6zM23 16l3 3h-6z" fill="#0a0a0a"/>
+        <path d="M8 23q8 6 16 0l-2 2-2-1-2 2-2-2-2 2-2-2-2 1z" fill="#0a0a0a"/>
+      </svg>
+      <span><em>Feliz Halloween</em> · Te esperamos en La Rioja 2186</span>
+    </div>
+  </template>
+  <script>
+    (function () {
+      var hoy = new Date(), fin = new Date(2026, 10, 2); // se apaga solo el 2/11/2026
+      if (hoy >= fin) return;
+      var hero = document.getElementById('inicio');
+      if (!hero) return;
+      if (getComputedStyle(hero).position === 'static') hero.style.position = 'relative';
+      var nav = document.querySelector('nav');
+      if (nav) hero.style.setProperty('--hw-top', nav.getBoundingClientRect().bottom + 'px');
+      hero.appendChild(document.getElementById('hwTpl').content.cloneNode(true));
+      var cartel = hero.querySelector('.hw-cartel');
+      var cont = hero.querySelector('.hero-content');
+      if (cartel && cont) cont.insertBefore(cartel, cont.firstChild);
+
+      // calabazas en el resto de la página
+      function calabaza(cara) {
+        var c = cara ? '<path class="hw-cara" d="M9 16l3 3H6zM23 16l3 3h-6zM8 23q8 6 16 0l-2 2-2-1-2 2-2-2-2 2-2-2-2 1z" fill="#ffcf5a"/>' : '';
+        return '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 9c0-3 1-5 3-6" stroke="#5a7a3a" stroke-width="2.2" fill="none" stroke-linecap="round"/>' +
+          '<ellipse cx="10" cy="20" rx="8" ry="10" fill="#c96a1b"/><ellipse cx="22" cy="20" rx="8" ry="10" fill="#c96a1b"/>' +
+          '<ellipse cx="16" cy="20" rx="7" ry="11" fill="#e8892b"/>' + c + '</svg>';
+      }
+      document.querySelectorAll('main section:not(#inicio) h2').forEach(function (h) {
+        h.insertAdjacentHTML('afterbegin', calabaza(true).replace('<svg ', '<svg class="hw-titulo" '));
+      });
+      var lado = 0;
+      document.querySelectorAll('main section:not(#inicio), footer').forEach(function (sec) {
+        if (getComputedStyle(sec).position === 'static') sec.style.position = 'relative';
+        sec.insertAdjacentHTML('beforeend', '<div class="hw-grupo ' + (lado++ % 2 ? 'der' : 'izq') + '">' +
+          calabaza(true) + calabaza(false) + calabaza(true) + '</div>');
+      });
+      // telarañas arriba de cada sección, del lado contrario a las calabazas
+      function tela(conArana) {
+        var a = conArana ? '<g class="hw-mini"><path d="M50 50 V62" stroke-width=".5"/><circle cx="50" cy="65" r="3" fill="#7a7068" stroke="none"/>' +
+          '<path d="M47 64l-4-3M47 66l-4 1M53 64l4-3M53 66l4 1" stroke="#7a7068" stroke-width=".8"/></g>' : '';
+        return '<svg class="hw-tela" viewBox="0 0 100 100" fill="none" stroke="#9a9288" stroke-width=".7" aria-hidden="true">' +
+          '<path d="M0 0 L100 0 M0 0 L95 35 M0 0 L70 70 M0 0 L35 95 M0 0 L0 100"/>' +
+          '<path d="M20 0 Q17 7 19 7 Q14 12 14 14 Q9 16 7 19 Q7 17 0 20"/>' +
+          '<path d="M45 0 Q40 14 43 16 Q33 26 32 32 Q26 33 16 43 Q14 40 0 45"/>' +
+          '<path d="M72 0 Q64 22 68 25 Q52 40 50 50 Q40 52 25 68 Q22 64 0 72"/>' +
+          '<path d="M100 0 Q88 30 93 35 Q72 58 70 70 Q58 72 35 93 Q30 88 0 100"/>' + a + '</svg>';
+      }
+      var n = 0;
+      document.querySelectorAll('main section:not(#inicio), footer').forEach(function (sec) {
+        var html = tela(n % 3 === 0).replace('class="hw-tela"', 'class="hw-tela ' + (n % 2 ? 'izq' : 'der') + '"');
+        sec.insertAdjacentHTML('beforeend', html);
+        n++;
+      });
+    })();
+  </script>
+  <!-- ══ FIN HALLOWEEN ══ -->
 </body>
 </html>
