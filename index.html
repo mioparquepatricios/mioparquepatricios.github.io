@@ -26,11 +26,11 @@
   <link rel="icon" href="favicon.ico" sizes="any"/>
   <link rel="icon" type="image/png" href="logo-mio.png"/>
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-  <meta name="theme-color" content="#0a0a0a"/>
+  <meta name="theme-color" content="#141414"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Prata&display=swap" rel="stylesheet"/>
 
   <script type="application/ld+json">
   {
@@ -60,1563 +60,850 @@
   }
   </script>
   <style>
+    /* MIO v1.6 — catálogo limpio sobre lino; negro, dorado y lino como en Instagram */
     :root {
-      --black: #0a0a0a;
-      --charcoal: #1a1a1a;
-      --dark: #242424;
-      --mid: #3a3a3a;
-      --warm-gray: #7a7068;
-      --light-gray: #c8c4bc;
-      --cream: #f0ece4;
-      --off-white: #faf8f5;
-      --gold: #b8965a;
-      --gold-light: #d4b078;
-      --promo-h: 2.6rem;
+      --negro: #141414;
+      --tinta: #2b2925;
+      --gris: #6f685f;
+      --linea: #ddd5c8;
+      --lino: #f0ece4;
+      --blanco: #faf8f4;
+      --oro: #c2a05a;
+      --oro-osc: #7d5f2a;
+      --crema: #eadfca;
+      --verde-wa: #1e8e4e;
+      --verde-wa-osc: #187340;
+      --f-tit: 'Prata', Georgia, 'Times New Roman', serif;
+      --f-txt: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      --cab-h: 64px;
+      color-scheme: light;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--off-white);
-      color: var(--charcoal);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── PROMO BAR ── */
-    @keyframes promo-scroll-ltr {
-      0%   { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .promo-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 101;
-      height: var(--promo-h);
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-      color: var(--black);
-      overflow: hidden;
-    }
-
-    .promo-marquee-wrap {
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .promo-marquee-track {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      width: max-content;
-      animation: promo-scroll-ltr 16s linear infinite;
-    }
-
-    .promo-marquee-track:hover { animation-play-state: paused; }
-
-    .promo-item {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.6rem;
-      padding: 0 1.6rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .promo-item em {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: var(--promo-h); left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2.5rem;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(184,150,90,0.2);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 44px;
-      width: 44px;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--light-gray);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--black) !important;
-      padding: 0.5rem 1.2rem;
-      transition: background 0.3s !important;
-    }
-
-    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--gold);
-      transition: 0.3s;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background-color: #1e2a44;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.042) 0px, rgba(255,255,255,0.042) 1px, transparent 1px, transparent 7px),
-        repeating-linear-gradient(-45deg, rgba(0,0,20,0.18) 0px, rgba(0,0,20,0.18) 1px, transparent 1px, transparent 7px),
-        repeating-linear-gradient(90deg, rgba(60,90,160,0.05) 0px, rgba(60,90,160,0.05) 3px, transparent 3px, transparent 14px);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.65) 100%);
-    }
-
-    .hero-lines {
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(184,150,90,0.04) 80px);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      flex: 1 1 54%;
-      padding: calc(8rem + var(--promo-h)) 4rem 4rem;
-    }
-
-    .hero-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 5vw, 4.6rem);
-      font-weight: 300;
-      line-height: 1;
-      color: var(--off-white);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-title span {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .hero-title-extra {
-      display: block;
-      margin-top: 1.2rem;
-      font-size: 0.42em;
-      font-style: normal;
-      line-height: 1.2;
-      color: var(--off-white);
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--warm-gray);
-      max-width: 440px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--black);
-      padding: 0.9rem 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      border: 1px solid rgba(184,150,90,0.5);
-      color: var(--gold);
-      padding: 0.9rem 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.3s, background 0.3s;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      background: rgba(184,150,90,0.08);
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 3rem;
-      left: 4rem;
-      text-align: left;
-    }
-
-    .hero-visual {
-      position: relative;
-      z-index: 2;
-      flex: 0 0 46%;
-      padding: calc(7rem + var(--promo-h)) 4rem 4rem 0;
-    }
-
-    .hero-visual img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid rgba(184,150,90,0.55);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    }
-
-    .hero-visual::after {
-      content: '';
-      position: absolute;
-      top: calc(7rem + var(--promo-h) + 14px);
-      right: calc(4rem - 14px);
-      bottom: calc(4rem - 14px);
-      left: 14px;
-      border: 1px solid rgba(184,150,90,0.25);
-      pointer-events: none;
-    }
-
-    .hero-badge-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      font-weight: 700;
-      color: rgba(184,150,90,0.15);
-      line-height: 1;
-    }
-
-    .hero-badge-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-    }
-
-    /* ── ABOUT ── */
-    .about {
-      background-color: #faf8f5;
-      background-image:
-        repeating-linear-gradient(0deg, rgba(0,0,0,0.055) 0px, rgba(0,0,0,0.055) 1px, transparent 1px, transparent 5px),
-        repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 9px);
-      padding: 7rem 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .section-eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .section-body {
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: var(--warm-gray);
-      margin-bottom: 1.2rem;
-    }
-
-    .stats-row {
-      display: flex;
-      gap: 2.5rem;
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    .stat-item { text-align: center; }
-
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      margin-top: 0.3rem;
-    }
-
-    .about-image-wrap {
-      position: relative;
-    }
-
-    .about-image-wrap img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      filter: grayscale(20%) contrast(1.05);
-    }
-
-    .about-image-wrap::before {
-      content: '';
-      position: absolute;
-      top: -16px;
-      left: -16px;
-      right: 16px;
-      bottom: 16px;
-      border: 1px solid var(--gold);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .about-image-wrap img { position: relative; z-index: 1; }
-
-    /* ── BRANDS ── */
-    .brands {
-      background: var(--black);
-      padding: 7rem 2rem;
-    }
-
-    .brands-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
-    .brands-header .section-title {
-      color: var(--off-white);
-    }
-
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1px;
-      background: rgba(184,150,90,0.15);
-      border: 1px solid rgba(184,150,90,0.15);
-    }
-
-    .brand-card {
-      background: var(--charcoal);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      transition: background 0.35s;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.35s;
-    }
-
-    .brand-card:hover { background: var(--dark); }
-    .brand-card:hover::after { transform: scaleX(1); }
-
-    .brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--light-gray);
-      transition: color 0.35s;
-    }
-
-    .brand-card:hover .brand-name { color: var(--gold); }
-
-    .brand-tag {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-top: 0.4rem;
-      transition: color 0.35s;
-    }
-
-    .brand-card:hover .brand-tag { color: var(--warm-gray); }
-
-    /* ── TEMPORADA ── */
-    .temporada {
-      background: linear-gradient(180deg, var(--cream) 0%, var(--off-white) 100%);
-      padding: 7rem 2rem;
-      border-top: 2px solid var(--gold);
-      border-bottom: 1px solid rgba(184,150,90,0.2);
-    }
-
-    .temporada-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .temporada-header .divider {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .temporada-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .temporada-grid .gallery-item img { min-height: 260px; }
-
-    .temporada-chombas {
-      max-width: 1040px;
-      margin: 4.5rem auto 0;
-    }
-
-    .temporada-chombas-head {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .temporada-chombas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .temporada-chombas-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
-
-    @media (max-width: 900px) {
-      .temporada-chombas-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 560px) {
-      .temporada-chombas-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── GALLERY ── */
-    .gallery {
-      background: var(--off-white);
-      padding: 7rem 2rem;
-    }
-
-    .gallery-header {
-      margin-bottom: 3.5rem;
-    }
-
-    /* === EDITABLE GALLERY SECTION === */
-    /* Para agregar fotos: añadí un elemento <div class="gallery-item"> con una etiqueta <img> dentro */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      background: var(--light-gray);
-      position: relative;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-      min-height: 280px;
-    }
-
-    .gallery-item:hover img { transform: scale(1.06); }
-
-    .gallery-item.tall { grid-row: span 2; }
-
-    .gallery-placeholder {
-      min-height: 280px;
-      background: linear-gradient(135deg, var(--cream) 0%, var(--light-gray) 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      border: 2px dashed rgba(184,150,90,0.3);
-      cursor: pointer;
-      transition: border-color 0.3s;
-    }
-
-    .gallery-placeholder:hover { border-color: var(--gold); }
-
-    .gallery-placeholder-icon {
-      font-size: 2rem;
-      opacity: 0.4;
-    }
-
-    .gallery-placeholder-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-    }
-
-    .gallery-note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.5rem;
-      background: rgba(184,150,90,0.08);
-      border-left: 3px solid var(--gold);
-      font-size: 0.85rem;
-      color: var(--warm-gray);
-      line-height: 1.6;
-    }
-
-    /* ── CONTACT ── */
-    .contact {
-      background: var(--charcoal);
-      padding: 7rem 2rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .contact .section-title { color: var(--off-white); }
-
-    .contact-items {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      margin-top: 2.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(184,150,90,0.12);
-      border: 1px solid rgba(184,150,90,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.1rem;
-    }
-
-    .contact-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-value {
-      font-size: 0.95rem;
-      color: var(--light-gray);
-      line-height: 1.5;
-    }
-
-    .contact-value a {
-      color: var(--light-gray);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-value a:hover { color: var(--gold); }
-
-    .map-wrap {
-      position: relative;
-    }
-
-    .map-wrap iframe {
-      width: 100%;
-      height: 380px;
-      border: 0;
-      filter: grayscale(50%) contrast(1.1);
-    }
-
-    .map-frame {
-      border: 1px solid rgba(184,150,90,0.25);
-      padding: 6px;
-      background: rgba(184,150,90,0.05);
-    }
-
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 200;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-    }
-
-    .wa-float svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--black);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(184,150,90,0.1);
-    }
-
-    footer .foot-logo {
-      display: inline-block;
-    }
-
-    footer .foot-logo img {
-      height: 56px;
-      width: 56px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    footer .foot-copy {
-      font-size: 0.75rem;
-      color: var(--mid);
-      margin-top: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── MOBILE NAV ── */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-
-      .nav-links {
-        display: none;
-        position: fixed;
-        top: calc(var(--promo-h) + 64px); left: 0; right: 0;
-        background: rgba(10,10,10,0.97);
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        gap: 1.5rem;
-        border-top: 1px solid rgba(184,150,90,0.2);
-      }
-
-      .nav-links.open { display: flex; }
-
-      .hero-content { padding: calc(7rem + var(--promo-h)) 1.5rem 3rem; }
-
-      .promo-item { font-size: 0.68rem; letter-spacing: 0.08em; padding: 0 1rem; }
-      .promo-item em { font-size: 0.85rem; }
-
-      .hero-badge { display: none; }
-
-      .hero { flex-direction: column; align-items: stretch; }
-      .hero-content { flex: none; }
-      .hero-visual { flex: none; padding: 0 1.5rem 3rem; }
-      .hero-visual::after { display: none; }
-
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about-image-wrap { order: -1; }
-      .about-image-wrap img { height: 300px; }
-
-      .brands-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-item.tall { grid-row: span 1; }
-
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-
-      .stats-row { gap: 1.5rem; }
-    }
-
-    @media (max-width: 480px) {
-      nav { padding: 1rem 1.5rem; }
-      .brands-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
-    .hero-title   { animation: fadeUp 0.8s ease 0.4s both; }
-    .hero-subtitle{ animation: fadeUp 0.8s ease 0.6s both; }
-    .hero-actions { animation: fadeUp 0.8s ease 0.8s both; }
-
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      margin: 1.5rem 0;
-    }
-
-    @keyframes marquee-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes leyenda-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .banner-pagos {
-      background: var(--black);
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
-      overflow: hidden;
-      position: relative;
-    }
-    .banner-pagos::before, .banner-pagos::after {
-      content: '';
-      position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
-    }
-    .banner-pagos::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
-    .banner-pagos::after  { right: 0; background: linear-gradient(to left, var(--black), transparent); }
-    .banner-marquee-wrap  { overflow: hidden; padding: 1.1rem 0; }
-    .banner-marquee-track {
-      display: flex; align-items: center; width: max-content;
-      animation: marquee-scroll 18s linear infinite; white-space: nowrap;
-    }
-    .banner-marquee-track:hover { animation-play-state: paused; }
-    .bm-item { display: inline-flex; align-items: baseline; gap: 0.5rem; padding: 0 2.5rem; }
-    .bm-gold { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 600; color: var(--gold); }
-    .bm-sep  { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); }
-    .bm-sub  { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light-gray); }
-    .bm-dot  { font-size: 0.65rem; color: var(--gold); padding: 0 0.5rem; opacity: 0.7; }
-    .leyenda-talles-wrap {
-      background: var(--charcoal);
-      border-top: 1px solid rgba(184,150,90,0.35);
-      border-bottom: 1px solid rgba(184,150,90,0.35);
-      overflow: hidden; position: relative; margin-top: 2rem;
-    }
-    .leyenda-talles-wrap::before, .leyenda-talles-wrap::after {
-      content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none;
-    }
-    .leyenda-talles-wrap::before { left: 0; background: linear-gradient(to right, var(--charcoal), transparent); }
-    .leyenda-talles-wrap::after  { right: 0; background: linear-gradient(to left, var(--charcoal), transparent); }
-    .leyenda-marquee-wrap  { overflow: hidden; padding: 1rem 0; }
-    .leyenda-marquee-track {
-      display: flex; align-items: center; width: max-content;
-      animation: leyenda-scroll 22s linear infinite; white-space: nowrap;
-    }
-    .leyenda-marquee-track:hover { animation-play-state: paused; }
-    .lm-item  { display: inline-flex; align-items: baseline; gap: 0.5rem; padding: 0 2.5rem; }
-    .lm-gold  { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; font-weight: 600; color: var(--gold); }
-    .lm-sep   { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); }
-    .lm-talle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); }
-    .lm-dot   { font-size: 0.6rem; color: var(--gold); padding: 0 0.4rem; opacity: 0.6; }
-
-    /* ── BANNER CAMPAÑA JUNIO ── */
-    .banner-campania {
-      position: relative;
-      background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6b 40%, #0d1f3c 100%);
-      border-top: 3px solid var(--gold);
-      border-bottom: 3px solid var(--gold);
-      padding: 2.8rem 2rem;
-      text-align: center;
-      overflow: hidden;
-    }
-    .banner-campania::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(45deg, rgba(184,150,90,0.04) 0px, rgba(184,150,90,0.04) 1px, transparent 1px, transparent 12px),
-        repeating-linear-gradient(-45deg, rgba(184,150,90,0.04) 0px, rgba(184,150,90,0.04) 1px, transparent 1px, transparent 12px);
-      pointer-events: none;
-    }
-    .banner-campania-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .banner-campania-mes {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-    }
-    .banner-campania-mes::before,
-    .banner-campania-mes::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.6;
-    }
-    .banner-campania-titulo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: 0.04em;
-      margin-bottom: 1rem;
-    }
-    .banner-campania-titulo span {
-      color: var(--gold);
-      font-style: italic;
-    }
-    .banner-campania-divider {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto 1.2rem;
-      opacity: 0.8;
-    }
-    .banner-campania-ofertas {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-    .banner-campania-oferta {
-      padding: 0.7rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.15rem;
-    }
-    .banner-campania-oferta:first-child {
-      border-right: 1px solid rgba(184,150,90,0.4);
-    }
-    .banner-campania-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .banner-campania-desc {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--light-gray);
-    }
-    .banner-campania-o {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: rgba(255,255,255,0.5);
-      padding: 0 0.5rem;
-      display: flex;
-      align-items: center;
-    }
-    @media (max-width: 600px) {
-      .banner-campania { padding: 2rem 1rem; }
-      .banner-campania-oferta:first-child { border-right: none; border-bottom: 1px solid rgba(184,150,90,0.4); padding-bottom: 1rem; margin-bottom: 0.5rem; }
-      .banner-campania-o { display: none; }
-      .banner-campania-ofertas { flex-direction: column; gap: 0.8rem; }
-    }
-
-    /* ── GIFT CARD ── */
-    .giftcard { background: var(--charcoal); border-top: 1px solid rgba(184,150,90,.35); border-bottom: 1px solid rgba(184,150,90,.35); padding: 3.2rem 2rem; text-align: center; }
-    .giftcard-inner { max-width: 760px; margin: 0 auto; }
-    .giftcard-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
-    .giftcard-titulo { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--off-white); line-height: 1.1; margin-bottom: .9rem; }
-    .giftcard-texto { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 3vw, 1.7rem); color: var(--light-gray); line-height: 1.4; margin-bottom: 1.8rem; }
-    .giftcard-texto em { color: var(--gold-light); }
-    @media (max-width: 600px) { .giftcard { padding: 2.4rem 1rem; } }
-
-    /* ── MEJORAS: accesibilidad, contraste, movimiento ── */
-    .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 300; background: var(--gold); color: var(--black); padding: .7rem 1.2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: top .2s; }
-    .skip-link:focus { top: 1rem; }
-    :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
-    button.hamburger { background: none; border: 0; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; flex-direction: column; }
-    .brand-tag { color: #9a9288 !important; }
-    .brand-card:hover .brand-tag { color: var(--light-gray) !important; }
-    footer .foot-copy { color: #9a9288 !important; }
-    .hero-subtitle { color: #b3ada3 !important; }
-    .hero-badge-num { color: rgba(184,150,90,0.45) !important; }
-    .hero-badge-text { color: #b3ada3 !important; }
-    .about .section-eyebrow, .temporada .section-eyebrow { color: #7d5f2a !important; }
-    .about .section-title em, .temporada .section-title em { color: #9a7a3c; }
-    .contact-value a { display: inline-block; padding: .55rem 0; }
-    .brands-grid { grid-template-columns: repeat(3, 1fr) !important; }
-    @media (max-width: 900px) { .brands-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-
-    .gi-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); padding: 1.6rem .8rem .8rem; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; line-height: 1.3; }
-    .temporada-grid { grid-template-columns: repeat(4, 1fr) !important; }
-    .temporada-grid .gallery-item { aspect-ratio: 3 / 4; }
-    .temporada-grid .gallery-item img { height: 100%; min-height: 0 !important; object-fit: cover; }
-    .temporada-grid .is-extra { display: none; }
-    .temporada-grid.show-all .is-extra { display: block; }
-    .temporada-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2.5rem; }
-    .btn-dark { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid #7d5f2a; color: #7d5f2a; background: transparent; padding: .9rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .3s, color .3s; }
-    .btn-dark:hover { background: #7d5f2a; color: #fff; }
-    .novedades { margin: 4.5rem 0 0; }
-    .novedades-head { text-align: center; margin-bottom: 1.8rem; }
-    .novedades-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem .2rem 1.2rem; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; -webkit-overflow-scrolling: touch; }
-    .novedades-track img { flex: 0 0 auto; height: 440px; width: auto; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
-    .novedades-hint { text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #7d5f2a; }
-    .estado-local { display: inline-block; margin-top: .5rem; padding: .25rem .7rem; border: 1px solid currentColor; font-family: 'Barlow Condensed', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    .estado-local[hidden] { display: none; }
-    .estado-local.abierto { color: #6ee7a0; }
-    .estado-local.cerrado { color: #fca5a5; }
-    .talles-strip .leyenda-talles-wrap { margin-top: 0; }
-    @media (max-width: 900px) { .temporada-grid { grid-template-columns: repeat(2, 1fr) !important; gap: .6rem !important; } }
-    @media (max-width: 600px) { .novedades-track img { height: 360px; } .gi-label { font-size: .64rem; letter-spacing: .1em; padding: 1.2rem .5rem .5rem; } .temporada { padding: 4.5rem 1rem !important; } }
-    .temporada-grid .gi-label { padding: 3.2rem 1rem 1rem; background: linear-gradient(transparent, rgba(20,16,10,.35) 30%, rgba(20,16,10,.82)); text-transform: none; letter-spacing: 0; display: flex; flex-direction: column; gap: .2rem; }
-    .gi-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.22rem; line-height: 1.1; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.35); }
-    .gi-colors { font-family: 'Barlow', sans-serif; font-weight: 400; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: #eadfca; }
-    .gi-price { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #fff; margin-top: .15rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; }
-    .gi-price s { color: #cfc6b6; text-decoration-thickness: 1px; }
-    .gi-efvo { color: #e8cf9a; font-style: italic; }
-    .gi-efvo b { font-style: normal; font-weight: 700; font-size: 1.15rem; color: #f1d9a4; }
-    @media (max-width: 600px) { .temporada-grid .gi-label { padding: 2.4rem .55rem .6rem; } .gi-name { font-size: 1.02rem; } .gi-colors { font-size: .58rem; letter-spacing: .06em; } .gi-price { font-size: .9rem; gap: 0 .4rem; } .gi-efvo b { font-size: .98rem; } }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .promo-marquee-track, .banner-marquee-track, .leyenda-marquee-track { transform: none !important; }
-      .promo-marquee-wrap, .leyenda-marquee-wrap { overflow-x: auto; }
-    }
-
-    /* Pedidos por WhatsApp */
-    .hero-wa { margin-top: 1.6rem; font-family: 'Barlow Condensed', sans-serif; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); }
-    .hero-wa a { color: var(--gold-light); }
-    .comprar { background: var(--charcoal); color: var(--off-white); padding: 6rem 2rem; border-top: 1px solid rgba(184,150,90,.3); }
-    .comprar-head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
-    .comprar .section-title { color: var(--off-white); }
-    .comprar .section-title em { color: var(--gold); }
-    .comprar-intro { color: var(--light-gray); line-height: 1.8; font-size: 1rem; }
-    .comprar-pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-    .comprar-paso { border: 1px solid rgba(184,150,90,.35); padding: 2rem 1.6rem; text-align: center; }
-    .comprar-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1; color: var(--gold); margin-bottom: .6rem; }
-    .comprar-paso h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--off-white); margin-bottom: .6rem; }
-    .comprar-paso p { color: var(--light-gray); font-size: .95rem; line-height: 1.7; }
-    .comprar-mas { max-width: 1000px; margin: 2rem auto 0; padding: 1.3rem 1.6rem; background: rgba(184,150,90,.12); border-left: 3px solid var(--gold); color: var(--light-gray); line-height: 1.7; }
-    .comprar-mas strong { color: var(--gold-light); }
-    .comprar-cta { text-align: center; margin-top: 2.5rem; }
-    @media (max-width: 800px) { .comprar { padding: 4.5rem 1rem; } .comprar-pasos { grid-template-columns: 1fr; } }
-    .temporada-tip { font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #7d5f2a; }
-    .temporada-mas { text-align: center; margin: 2rem auto 0; max-width: 640px; color: #5a524a; line-height: 1.7; }
-    .temporada-mas a { color: #7d5f2a; font-weight: 600; }
-    .contact-nota { font-size: .85rem; color: var(--gold-light); }
-    .prenda-wa { position: absolute; inset: 0; z-index: 2; }
-    .prenda-wa-tag { position: absolute; top: .6rem; right: .6rem; background: #1e8e4e; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .6rem; border-radius: 3px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
-    .nov-wa { position: relative; flex: 0 0 auto; scroll-snap-align: start; display: block; }
-    .nov-wa img { display: block; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    .hero-title .sr-only { color: inherit; font-style: normal; }
-    .filtro-prendas { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 auto 2rem; }
-    .filtro-btn { font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #7d5f2a; background: transparent; border: 1px solid rgba(125,95,42,.5); padding: .6rem 1.1rem; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s; }
-    .filtro-btn:hover { border-color: #7d5f2a; }
-    .filtro-btn.activo { background: #7d5f2a; color: #fff; border-color: #7d5f2a; }
-    .temporada-grid.filtrando .gallery-item { display: none; }
-    .temporada-grid.filtrando .gallery-item.coincide { display: block; }
-    .temporada.filtrando #verMas { display: none; }
-    @media (max-width: 600px) { .filtro-prendas { gap: .4rem; } .filtro-btn { font-size: .72rem; letter-spacing: .1em; padding: .5rem .85rem; } }
-    .opiniones { background: var(--cream); padding: 6rem 2rem; border-top: 1px solid rgba(184,150,90,0.2); }
-    .opiniones-head { text-align: center; margin-bottom: 2.5rem; }
-    .opiniones .section-eyebrow { color: #7d5f2a; }
-    .opiniones-head .divider { margin-left: auto; margin-right: auto; }
-    .opiniones-nota { color: #5e564e; font-size: 1rem; margin-top: 1rem; }
-    .opiniones-estrellas { color: var(--gold); letter-spacing: .1em; }
-    .opiniones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: 1200px; margin: 0 auto; }
-    .opinion { background: var(--off-white); border: 1px solid rgba(184,150,90,.35); padding: 1.8rem 1.5rem; margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem; }
-    .opinion blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.5; color: var(--charcoal); margin: 0; }
-    .opinion figcaption { font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #7d5f2a; }
-    .opiniones-cta { text-align: center; margin-top: 2.5rem; }
-    @media (max-width: 1000px) { .opiniones-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .opiniones { padding: 4.5rem 1rem; } .opiniones-grid { grid-template-columns: 1fr; } }
-    .faq { background: var(--off-white); padding: 6rem 2rem; border-top: 1px solid rgba(184,150,90,0.2); }
-    .faq-wrap { max-width: 820px; margin: 0 auto; }
-    .faq-head { text-align: center; margin-bottom: 2.5rem; }
-    .faq .section-eyebrow { color: #7d5f2a; }
-    .faq details { border-bottom: 1px solid var(--light-gray); padding: 1.2rem 0; }
-    .faq summary { cursor: pointer; list-style: none; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--charcoal); display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+    body { background: var(--blanco); color: var(--negro); font-family: var(--f-txt); font-size: 16px; font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--f-tit); font-weight: 400; line-height: 1.18; text-wrap: balance; }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .saltar { position: absolute; left: 1rem; top: -4rem; z-index: 300; background: var(--oro); color: var(--negro); padding: .6rem 1rem; text-decoration: none; font-weight: 600; border-radius: 6px; }
+    .saltar:focus { top: 1rem; }
+    :focus-visible { outline: 2px solid var(--oro-osc); outline-offset: 3px; }
+    section[id] { scroll-margin-top: var(--cab-h); }
+    .caja { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+    .angosta { max-width: 820px; }
+    .sup { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--oro-osc); }
+    .sec-cab { display: grid; gap: .5rem; margin-bottom: 1.6rem; max-width: 640px; }
+    .sec-txt { color: var(--tinta); max-width: 62ch; }
+    .centro { display: flex; justify-content: center; margin-top: 2rem; }
+    .seccion { padding-block: 3rem; }
+    .seccion-lino { background: var(--lino); }
+    @media (min-width: 900px) { .seccion { padding-block: 5rem; } }
+
+    /* Botones: negro lleno (principal), con borde (secundario), verde solo WhatsApp */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .7rem 1.4rem; border-radius: 6px; font-family: var(--f-txt); font-size: .92rem; font-weight: 500; text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background .2s, color .2s, border-color .2s; text-align: center; }
+    .btn-chico { min-height: 38px; padding: .45rem .9rem; font-size: .82rem; }
+    .btn-negro { background: var(--negro); color: #fff; }
+    .btn-negro:hover { background: #333; }
+    .btn-borde { border-color: var(--negro); color: var(--negro); background: transparent; }
+    .btn-borde:hover { background: var(--negro); color: #fff; }
+    .btn-claro { background: #fff; color: var(--negro); }
+    .btn-claro:hover { background: var(--crema); }
+    .btn-borde-claro { border-color: rgba(255,255,255,.85); color: #fff; }
+    .btn-borde-claro:hover { background: rgba(255,255,255,.12); }
+    .btn-wa { background: var(--verde-wa); color: #fff; }
+    .btn-wa:hover { background: var(--verde-wa-osc); }
+    .ico-wa { width: 1.1em; height: 1.1em; fill: currentColor; flex: none; }
+
+    /* Barra de promo (quieta) */
+    .promo { background: var(--negro); color: var(--crema); font-size: .78rem; text-align: center; padding: .5rem max(16px, env(safe-area-inset-right, 0px)) .5rem max(16px, env(safe-area-inset-left, 0px)); }
+    .promo b { color: var(--oro); font-weight: 600; }
+    .promo .sep { color: #6b6357; margin: 0 .3rem; }
+
+    /* Encabezado fijo */
+    .cab { position: sticky; top: 0; z-index: 100; background: rgba(250,248,244,.97); border-bottom: 1px solid var(--linea); backdrop-filter: blur(8px); }
+    .cab-in { max-width: 1200px; margin: 0 auto; height: var(--cab-h); display: flex; align-items: center; gap: 1rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+    .cab-logo img { width: 46px; height: 46px; }
+    .menu { display: flex; gap: 1.6rem; margin-left: auto; }
+    .menu a { font-size: .9rem; text-decoration: none; color: var(--tinta); padding-block: .3rem; border-bottom: 1px solid transparent; }
+    .menu a:hover { border-color: var(--oro); color: var(--negro); }
+    .cab-wa { margin-left: .4rem; }
+    .hamb { display: none; background: none; border: 0; width: 42px; height: 42px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+    .hamb span { display: block; width: 22px; height: 2px; background: var(--negro); transition: transform .2s, opacity .2s; }
+    .hamb[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamb[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamb[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 960px) {
+      .hamb { display: flex; }
+      .cab-wa { margin-left: auto; }
+      .menu { display: none; position: absolute; top: var(--cab-h); left: 0; right: 0; flex-direction: column; gap: 0; background: var(--blanco); border-bottom: 1px solid var(--linea); box-shadow: 0 12px 24px rgba(0,0,0,.08); padding: .4rem max(16px, env(safe-area-inset-right, 0px)) .8rem max(16px, env(safe-area-inset-left, 0px)); }
+      .menu.abierto { display: flex; }
+      .menu a { padding: .8rem 0; border-bottom: 1px solid var(--linea); font-size: 1rem; }
+      .menu a:last-child { border-bottom: 0; }
+    }
+    @media (max-width: 380px) { .cab-wa span { display: none; } }
+
+    /* Portada */
+    .portada { position: relative; background: var(--negro); color: #fff; overflow: hidden; }
+    .portada-foto { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+    .portada-txt { display: grid; gap: .8rem; padding: 1.5rem max(16px, env(safe-area-inset-right, 0px)) 2rem max(16px, env(safe-area-inset-left, 0px)); }
+    @media (max-width: 899px) { .portada .botones .btn { flex: 1 1 140px; } }
+    .portada-txt .sup { color: var(--crema); }
+    .portada h1 { font-size: clamp(1.85rem, 6.5vw, 3.4rem); max-width: 18ch; }
+    .portada h1 em { display: block; margin-top: .5rem; font-family: var(--f-txt); font-style: normal; font-weight: 300; font-size: .5em; color: var(--crema); line-height: 1.35; }
+    .portada-sub { color: #ddd6ca; font-size: .95rem; max-width: 46ch; }
+    .botones { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .3rem; }
+    @media (min-width: 900px) {
+      .portada { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+      .portada-foto { order: 2; aspect-ratio: auto; height: 100%; }
+      .portada-txt { align-content: center; padding: 4rem 3.5rem 4rem max(3rem, calc((100vw - 1200px) / 2 + 16px)); }
+    }
+    .datos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--lino); border-bottom: 1px solid var(--linea); }
+    .datos li { padding: .9rem .4rem; text-align: center; font-size: .74rem; line-height: 1.35; color: var(--tinta); }
+    .datos li + li { border-left: 1px solid var(--linea); }
+    .datos b { display: block; font-family: var(--f-tit); font-weight: 400; font-size: 1.1rem; color: var(--negro); }
+    @media (min-width: 900px) { .datos li { font-size: .88rem; padding: 1.3rem; } .datos b { font-size: 1.45rem; } }
+
+    /* Catálogo (opción A) */
+    .filtros { display: flex; gap: .45rem; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 1.4rem; padding: 2px max(16px, env(safe-area-inset-left, 0px)); }
+    .filtros::-webkit-scrollbar { display: none; }
+    .filtro { font: inherit; font-size: .85rem; white-space: nowrap; padding: .5rem 1.05rem; border-radius: 999px; border: 1px solid #c9bfae; background: transparent; color: var(--negro); cursor: pointer; }
+    .filtro:hover { border-color: var(--negro); }
+    .filtro[aria-pressed="true"] { background: var(--negro); border-color: var(--negro); color: #fff; }
+    .catalogo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem .8rem; }
+    @media (min-width: 700px) { .catalogo { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.2rem 1.2rem; } }
+    @media (min-width: 1000px) { .catalogo { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .prenda { display: flex; flex-direction: column; gap: .5rem; }
+    .prenda[hidden] { display: none; }
+    .catalogo:not(.ver-todo):not(.filtrando) .is-extra { display: none; }
+    .prenda-foto { position: relative; display: block; width: 100%; aspect-ratio: 900 / 1183; padding: 0; border: 0; border-radius: 4px; overflow: hidden; background: #b5aa9a; cursor: zoom-in; }
+    .prenda-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .prenda-foto:hover img { transform: scale(1.04); }
+    .et { position: absolute; top: .55rem; left: .55rem; background: var(--blanco); color: var(--negro); font-size: .64rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .22rem .5rem; border-radius: 3px; }
+    .prenda-info { display: grid; gap: .1rem; flex: 1; align-content: start; }
+    .marca { font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gris); }
+    .prenda .nombre { font-family: var(--f-txt); font-size: .92rem; font-weight: 400; line-height: 1.35; }
+    .colores { font-size: .76rem; color: var(--gris); }
+    .precio { font-size: .95rem; font-weight: 600; margin-top: .15rem; }
+    .precio span { display: block; font-size: .78rem; font-weight: 500; color: var(--verde-wa-osc); }
+    .consultar { font-size: .82rem; color: var(--oro-osc); margin-top: .15rem; }
+    .pedir { width: 100%; }
+    @media (max-width: 420px) { .pedir { font-size: .76rem; padding-inline: .4rem; } }
+    .nota-mas { margin: 2rem auto 0; max-width: 62ch; text-align: center; font-size: .9rem; color: var(--tinta); }
+    .nota-mas a { color: var(--verde-wa-osc); font-weight: 500; }
+
+    /* Novedades y marcas */
+    .novedades { display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: .9rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .6rem; margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); scroll-padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+    @media (min-width: 700px) { .novedades { grid-auto-columns: 31%; } }
+    @media (min-width: 1000px) { .novedades { grid-auto-columns: 22%; } }
+    .nov { scroll-snap-align: start; display: grid; gap: .15rem; align-content: start; }
+    .nov-foto { display: block; width: 100%; aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 4px; overflow: hidden; background: var(--blanco); cursor: zoom-in; margin-bottom: .4rem; }
+    .nov-foto img { width: 100%; height: 100%; object-fit: contain; }
+    .nov .nombre { font-size: .9rem; }
+    .marcas { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2.2rem; margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid #d3c9b8; }
+    .marcas li { display: grid; text-align: center; }
+    .marcas b { font-family: var(--f-tit); font-weight: 400; font-size: 1.1rem; }
+    .marcas span { font-size: .75rem; color: var(--gris); }
+
+    /* Talles especiales */
+    .talles { background: var(--negro); color: #fff; padding-block: 3rem; }
+    .talles .sup { color: var(--oro); }
+    .talles .sec-txt { color: #cfc8bc; margin-top: .5rem; }
+    .talles-in { display: grid; gap: 1.4rem; align-items: center; }
+    .talle { border-top: 1px solid rgba(194,160,90,.45); padding-top: .9rem; display: grid; }
+    .talle b { font-family: var(--f-tit); font-weight: 400; font-size: 2.6rem; line-height: 1; color: var(--oro); }
+    .talle span { font-size: .9rem; color: #ddd6ca; margin-top: .3rem; }
+    .talles .btn { justify-self: start; }
+    @media (max-width: 899px) { .talles-in { grid-template-columns: 1fr 1fr; } .talles-in > div:first-child, .talles .btn { grid-column: 1 / -1; } }
+    @media (min-width: 900px) { .talles { padding-block: 4rem; } .talles-in { grid-template-columns: 1.6fr 1fr 1fr auto; gap: 2.5rem; } .talle { border-top: 0; border-left: 1px solid rgba(194,160,90,.45); padding: 0 0 0 1.5rem; } }
+
+    /* Cómo comprar */
+    .pasos { list-style: none; display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .pasos { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; } }
+    .pasos li { background: var(--lino); border-radius: 8px; padding: 1.3rem 1.3rem 1.4rem; display: grid; gap: .35rem; align-content: start; }
+    .num { font-family: var(--f-tit); font-size: 1.9rem; line-height: 1; color: var(--oro-osc); }
+    .pasos h3 { font-size: 1.2rem; }
+    .pasos p { color: var(--tinta); font-size: .92rem; }
+
+    /* Opiniones */
+    .estrellas { font-size: .92rem; color: var(--tinta); }
+    .estrellas span { color: var(--oro); letter-spacing: .1em; }
+    .opiniones { display: grid; gap: 1rem; }
+    @media (min-width: 700px) { .opiniones { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .opiniones { grid-template-columns: repeat(4, 1fr); } }
+    .opinion { background: var(--blanco); border-radius: 8px; padding: 1.3rem; display: grid; gap: .8rem; align-content: space-between; }
+    .opinion blockquote { font-family: var(--f-tit); font-size: 1.02rem; line-height: 1.55; }
+    .opinion figcaption { font-size: .8rem; font-weight: 600; color: var(--oro-osc); }
+
+    /* Gift card */
+    .regalo { background: var(--oro); color: var(--negro); padding-block: 2rem; }
+    .regalo .sup { color: var(--negro); opacity: .75; }
+    .regalo h2 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin: .2rem 0; }
+    .regalo-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+
+    /* Nosotros */
+    .nosotros { display: grid; gap: 2rem; align-items: center; }
+    .nosotros h2 { margin: .5rem 0 1rem; }
+    .nosotros .sec-txt + .sec-txt { margin-top: .8rem; }
+    .nosotros-foto { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; max-height: 520px; }
+    @media (min-width: 900px) { .nosotros { grid-template-columns: 1.2fr 1fr; gap: 4rem; } }
+    .cifras { list-style: none; display: flex; gap: 2.2rem; margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--linea); }
+    .cifras li { display: grid; }
+    .cifras b { font-family: var(--f-tit); font-weight: 400; font-size: 2rem; line-height: 1.1; }
+    .cifras span { font-size: .78rem; color: var(--gris); }
+
+    /* Preguntas */
+    .faq details { border-bottom: 1px solid var(--linea); }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; font-size: 1rem; font-weight: 500; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: '+'; color: #7d5f2a; font-size: 1.6rem; line-height: 1; transition: transform .2s; }
+    .faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--oro-osc); transition: transform .2s; }
     .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { margin-top: .9rem; font-size: .97rem; line-height: 1.8; color: #5e564e; }
-    .faq details a { color: #7d5f2a; }
+    .faq details p { padding-bottom: 1.1rem; color: var(--tinta); font-size: .95rem; }
+    .faq a { color: var(--verde-wa-osc); }
+
+    /* Contacto */
+    .contacto { display: grid; gap: 2rem; }
+    .contacto h2 { margin: .5rem 0 1.4rem; }
+    @media (min-width: 900px) { .contacto { grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; } }
+    .datos-contacto { list-style: none; display: grid; gap: 1.1rem; margin-bottom: 1.8rem; }
+    .datos-contacto li { display: grid; grid-template-columns: 26px 1fr; gap: .8rem; align-items: start; }
+    .ico { width: 24px; height: 24px; color: var(--oro-osc); margin-top: .1rem; }
+    .et-c { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); }
+    .datos-contacto a { color: var(--negro); font-weight: 500; }
+    .estado-local { display: inline-block; margin-top: .4rem; padding: .15rem .6rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+    .estado-local.abierto { background: #dff1e6; color: var(--verde-wa-osc); }
+    .estado-local.cerrado { background: #efe7e5; color: #8e2b22; }
+    .mapa { border-radius: 8px; overflow: hidden; border: 1px solid var(--linea); aspect-ratio: 4 / 3; background: var(--lino); }
+    .mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* Pie */
+    .pie { background: var(--negro); color: #a49c90; text-align: center; padding: 2.4rem max(16px, env(safe-area-inset-right, 0px)) 2rem max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: .6rem; justify-items: center; font-size: .8rem; }
+    .pie img { width: 64px; height: 64px; }
+    .pie .version { font-size: .72rem; color: #7d766c; }
+
+    /* Foto ampliada con zoom */
+    .zoom { position: fixed; inset: 0; z-index: 500; background: rgba(15,14,12,.95); color: #fff; display: grid; grid-template-rows: auto 1fr auto; gap: .6rem; padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(14px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+    .zoom[hidden] { display: none; }
+    .zoom-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: .9rem; }
+    .zoom-area { overflow: hidden; display: grid; place-items: center; cursor: zoom-in; min-height: 0; }
+    .zoom-area img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform .25s ease; }
+    .zoom-area.ampliada { cursor: zoom-out; }
+    .zoom-area.ampliada img { transform: scale(2.2); }
+    .zoom-bot { display: flex; justify-content: center; align-items: center; gap: .6rem; flex-wrap: wrap; }
+    .zoom-btn { font: inherit; font-size: .88rem; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 6px; padding: .5rem .9rem; cursor: pointer; min-height: 38px; }
+    .aviso-vista { background: #8e2b22; color: #fff; text-align: center; font-size: .82rem; padding: .5rem 16px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "¿Cómo compro?", "acceptedAnswer": {"@type": "Answer", "text": "Escribinos por WhatsApp al 11 7058-3706. Te atendemos de forma personalizada: te asesoramos con el talle, el color y el modelo, te confirmamos disponibilidad y coordinamos el envío o el retiro en el local."}},
-      {"@type": "Question", "name": "¿Hacen envíos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, hacemos envíos a toda la Capital Federal (CABA). Coordinamos todo por WhatsApp. También podés retirar tu pedido en el local, en La Rioja 2186."}},
-      {"@type": "Question", "name": "¿Tienen prendas que no están en la web?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, muchas. En la web mostramos solo una parte de lo que tenemos. Si buscás algo en particular, consultanos por WhatsApp aunque no lo veas acá."}},
-      {"@type": "Question", "name": "¿MIO y \"El buen vestir\" son la misma tienda?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. MIO, El buen vestir, es el nombre completo de nuestra tienda de ropa de hombre en La Rioja 2186, Parque Patricios, Ciudad de Buenos Aires."}},
-      {"@type": "Question", "name": "¿Dónde queda MIO?", "acceptedAnswer": {"@type": "Answer", "text": "Estamos en La Rioja 2186, Parque Patricios, Ciudad Autónoma de Buenos Aires."}},
-      {"@type": "Question", "name": "¿Cuál es el horario de atención?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos de lunes a sábados de 9:30 a 13:30 hs y de 15:30 a 19:30 hs."}},
-      {"@type": "Question", "name": "¿Tienen talles grandes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Tenemos ambos y sacos hasta talle 64, y remeras y chombas hasta talle 5XL."}},
-      {"@type": "Question", "name": "¿Qué marcas de ropa de hombre venden?", "acceptedAnswer": {"@type": "Answer", "text": "Trabajamos Wrangler, Taverniti, New Man, Stone, Worren, Rochas, Yves Saint Laurent, Village Polo Club y Posto 5, entre otras."}},
-      {"@type": "Question", "name": "¿Cómo consulto por un producto, un talle o un color?", "acceptedAnswer": {"@type": "Answer", "text": "Escribinos por WhatsApp al 11 7058-3706 o llamanos al 11 4943-3076."}}
-    ]
-  }
-  </script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <!-- PROMO BAR -->
-  <div class="promo-bar">
-    <div class="promo-marquee-wrap">
-      <div class="promo-marquee-track" id="promoTrack">
-        <span class="promo-item">✦ <em>Llegó la nueva temporada</em> Primavera-Verano 2026/27 · 3 Cuotas Sin Interés · 10% de Descuento en Efectivo</span>
-      </div>
+  <div class="promo"><p><b>3 cuotas sin interés</b> con Visa y Mastercard <span class="sep">·</span> <b>10% off</b> en efectivo <span class="sep">·</span> Envíos a toda CABA</p></div>
+
+  <header class="cab">
+    <div class="cab-in">
+      <a class="cab-logo" href="#inicio"><img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/></a>
+      <nav class="menu" id="menu" aria-label="Secciones">
+        <a href="#prendas">Prendas</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#talles">Talles grandes</a>
+        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-wa btn-chico cab-wa" href="https://wa.me/541170583706?text=Hola%2C%20consulta%20desde%20la%20web" target="_blank" rel="noopener noreferrer"><svg class="ico-wa" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg><span>WhatsApp</span></a>
+      <button class="hamb" id="hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
-  </div>
-
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#">
-      <img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#como-comprar">Cómo comprar</a></li>
-      <li><a href="#temporada">Nueva Temporada</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#marcas">Marcas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer" class="nav-cta">WhatsApp</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  </header>
 
   <main id="contenido">
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-lines"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Ropa de hombre · Parque Patricios · Buenos Aires</div>
-      <h1 class="hero-title">
-        <span class="sr-only">MIO, El buen vestir. Ropa de hombre en Parque Patricios: </span>
-        Desde 1968<br>
-        <span>vistiendo a los hombres.</span>
-        <em class="hero-title-extra">Incluso cuando encontrar talle es difícil.</em>
-      </h1>
-      <p class="hero-subtitle">
-        Las mejores marcas de ropa de hombre, en un solo lugar.
-      </p>
-      <div class="hero-actions">
-        <a href="#temporada" class="btn-primary">Ver temporada</a>
-        <a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer" class="btn-outline">Instagram ↗</a>
-      </div>
-      <p class="hero-wa">Pedidos por <a href="#como-comprar">WhatsApp</a> con atención personalizada · Envíos a toda la Capital</p>
-    </div>
-    <div class="hero-visual">
-      <img src="local-mio.jpg" alt="Frente del local MIO — La Rioja 2186, Parque Patricios" width="1400" height="1203" fetchpriority="high"/>
-    </div>
-    <div class="hero-badge">
-      <div class="hero-badge-num" data-anios>58</div>
-      <div class="hero-badge-text">años de historia</div>
-    </div>
-  </section>
-
-
-  <!-- BANNER CAMPAÑA TEMPORADA -->
-  <div class="banner-campania">
-    <div class="banner-campania-inner">
-      <div class="banner-campania-mes">✦ &nbsp; Llegó la Nueva Temporada &nbsp; ✦</div>
-      <div class="banner-campania-titulo">Primavera &amp; <span>Verano</span> 2026/27</div>
-      <div class="banner-campania-divider"></div>
-      <div class="banner-campania-ofertas">
-        <div class="banner-campania-oferta">
-          <div class="banner-campania-num">3 Cuotas</div>
-          <div class="banner-campania-desc">Sin Interés · Visa &amp; Mastercard</div>
-        </div>
-        <div class="banner-campania-o">+</div>
-        <div class="banner-campania-oferta">
-          <div class="banner-campania-num">10% Off</div>
-          <div class="banner-campania-desc">Pagando en Efectivo</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CÓMO COMPRAR -->
-  <section class="comprar" id="como-comprar">
-    <div class="container">
-      <div class="comprar-head">
-        <div class="section-eyebrow">Cómo comprar</div>
-        <h2 class="section-title">Comprá por <em>WhatsApp</em>,<br>con atención personalizada</h2>
-        <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
-        <p class="comprar-intro">Vendemos por WhatsApp con el mismo asesoramiento que te damos en el local. Te ayudamos a elegir el talle, el color y el modelo justo para vos.</p>
-      </div>
-      <div class="comprar-pasos">
-        <div class="comprar-paso">
-          <div class="comprar-num">1</div>
-          <h3>Escribinos</h3>
-          <p>Mandanos la foto de la prenda que te gustó o contanos qué estás buscando.</p>
-        </div>
-        <div class="comprar-paso">
-          <div class="comprar-num">2</div>
-          <h3>Te asesoramos</h3>
-          <p>Te confirmamos talles, colores y disponibilidad, y te recomendamos opciones.</p>
-        </div>
-        <div class="comprar-paso">
-          <div class="comprar-num">3</div>
-          <h3>Lo recibís</h3>
-          <p>Hacemos envíos a toda la Capital Federal. Si preferís, lo retirás en el local.</p>
-        </div>
-      </div>
-      <div class="comprar-mas">
-        <strong>¿No encontrás lo que buscás?</strong> En la web mostramos solo una parte: en el local tenemos mucha más variedad de prendas, marcas y talles. Consultanos igual.
-      </div>
-      <div class="comprar-cta">
-        <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">Hacé tu pedido por WhatsApp ↗</a>
+  <section class="portada" id="inicio">
+    <img class="portada-foto" src="local-mio.jpg" alt="Frente del local MIO — La Rioja 2186, Parque Patricios" width="1400" height="1203" fetchpriority="high"/>
+    <div class="portada-txt">
+      <p class="sup">Ropa de hombre · Parque Patricios · Buenos Aires</p>
+      <h1><span class="sr-only">MIO, El buen vestir. Ropa de hombre en Parque Patricios: </span>Desde 1968 vistiendo a los hombres. <em>Incluso cuando encontrar talle es difícil.</em></h1>
+      <p class="portada-sub">Las mejores marcas de ropa de hombre, en un solo lugar. Pedidos por WhatsApp con atención personalizada.</p>
+      <div class="botones">
+        <a href="#prendas" class="btn btn-claro">Ver prendas</a>
+        <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn btn-borde-claro">Pedir por WhatsApp</a>
       </div>
     </div>
   </section>
+  <ul class="datos" aria-label="Por qué MIO">
+    <li><b><span data-anios>58</span> años</b>en Parque Patricios</li>
+    <li><b>Hasta 5XL</b>y sacos talle 64</li>
+    <li><b>Envíos</b>a toda la Capital</li>
+  </ul>
 
-  <!-- GIFT CARD -->
-  <section class="giftcard" id="gift-card" aria-label="Gift Card">
-    <div class="giftcard-inner">
-      <div class="giftcard-eyebrow">✦ &nbsp; Gift Card MIO &nbsp; ✦</div>
-      <h2 class="giftcard-titulo">¿No sabés qué regalarle?</h2>
-      <p class="giftcard-texto">Regalale una <em>Gift Card de MIO</em> y que él elija.</p>
-      <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20una%20Gift%20Card%20de%20MIO" target="_blank" rel="noopener noreferrer" class="btn-primary">Pedí tu Gift Card por WhatsApp ↗</a>
+  <section class="seccion" id="prendas">
+    <div class="caja">
+      <div class="sec-cab">
+        <p class="sup">Nueva temporada</p>
+        <h2>Primavera · Verano 2026/27</h2>
+        <p class="sec-txt">Remeras, chombas, jeans y bermudas para el calor porteño. Tocá una foto para verla grande, o pedila directo por WhatsApp.</p>
+      </div>
+      <div class="filtros" role="group" aria-label="Filtrar prendas por tipo">
+        <button type="button" class="filtro" data-filtro="todo" aria-pressed="true">Todo</button>
+        <button type="button" class="filtro" data-filtro="remeras" aria-pressed="false">Remeras</button>
+        <button type="button" class="filtro" data-filtro="chombas" aria-pressed="false">Chombas</button>
+        <button type="button" class="filtro" data-filtro="jeans" aria-pressed="false">Jeans y pantalones</button>
+        <button type="button" class="filtro" data-filtro="bermudas" aria-pressed="false">Bermudas</button>
+      </div>
+      <div class="catalogo" id="catalogo">
+        <article class="prenda" data-tipo="jeans" data-nombre="Jean Wrangler Greensboro · Regular">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Jean Wrangler Greensboro · Regular">
+            <img src="wrangler-greensboro.jpg" alt="Jean Wrangler Greensboro · Regular hombre" width="900" height="1183"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Jean Greensboro · Regular</h3>
+            <p class="colores">Azul · Celeste · Gris</p>
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="chombas" data-nombre="Chomba piqué New Man">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Chomba piqué New Man">
+            <img src="newman-chomba-turquesa.jpg" alt="Chomba piqué New Man hombre" width="900" height="1183"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">New Man</p>
+            <h3 class="nombre">Chomba piqué</h3>
+            <p class="colores">Turquesa · Coral</p>
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="remeras" data-nombre="Remera Wrangler logo">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Wrangler logo">
+            <img src="wrangler-remera-logo-bordo.jpg" alt="Remera Wrangler logo hombre" width="900" height="1183"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Remera logo</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="bermudas" data-nombre="Bermuda de jean Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda de jean Worren">
+            <img src="worren-bermuda-jean.jpg" alt="Bermuda de jean Worren hombre" width="900" height="1183"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Bermuda de jean</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="remeras" data-nombre="Remera Batman · Gotham City">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Batman · Gotham City">
+            <img src="remera-batman-gotham.jpg" alt="Remera Batman · Gotham City hombre" width="900" height="1183" loading="lazy" decoding="async"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Remera Batman · Gotham City</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="bermudas" data-nombre="Bermuda cargo Wrangler">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda cargo Wrangler">
+            <img src="wrangler-bermuda-cargo.jpg" alt="Bermuda cargo Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Bermuda cargo</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="chombas" data-nombre="Chomba piqué Wrangler">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Chomba piqué Wrangler">
+            <img src="wrangler-chomba-pique.jpg" alt="Chomba piqué Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Chomba piqué</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda" data-tipo="remeras" data-nombre="Remera Worren · Talle especial">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Worren · Talle especial">
+            <img src="worren-remera-talle-especial.jpg" alt="Remera Worren · Talle especial hombre" width="900" height="1183" loading="lazy" decoding="async"/><span class="et">Nuevo</span>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Remera · Talle especial</h3>
+            <p class="colores">Azul · Verde</p>
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda cargo Stone">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda cargo Stone">
+            <img src="stone-bermuda-cargo.jpg" alt="Bermuda cargo Stone hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Stone</p>
+            <h3 class="nombre">Bermuda cargo</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda gabardina cargo Village Polo Club">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda gabardina cargo Village Polo Club">
+            <img src="villagepolo-bermuda-gabardina-gris.jpg" alt="Bermuda gabardina cargo Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Bermuda gabardina cargo</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda de jean gris">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda de jean gris">
+            <img src="bermuda-jean-gris.jpg" alt="Bermuda de jean gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Bermuda de jean gris</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda de jean Village Polo Club">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda de jean Village Polo Club">
+            <img src="villagepolo-bermuda-jean.jpg" alt="Bermuda de jean Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Bermuda de jean</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda de lino Stone">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda de lino Stone">
+            <img src="stone-bermuda-lino.jpg" alt="Bermuda de lino Stone hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Stone</p>
+            <h3 class="nombre">Bermuda de lino</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Short de algodón Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Short de algodón Worren">
+            <img src="worren-short-algodon.jpg" alt="Short de algodón Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Short de algodón</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Pantalón cargo desmontable Wrangler">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Pantalón cargo desmontable Wrangler">
+            <img src="wrangler-cargo-desmontable.jpg" alt="Pantalón cargo desmontable Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Pantalón cargo desmontable</h3>
+            <p class="colores">Verde · Beige</p>
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Jogging de verano Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Jogging de verano Worren">
+            <img src="worren-jogging-verano.jpg" alt="Jogging de verano Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Jogging de verano</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Batman · Logo clásico">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Batman · Logo clásico">
+            <img src="remera-batman-logo.jpg" alt="Remera Batman · Logo clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Remera Batman · Logo clásico</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Superman">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Superman">
+            <img src="remera-superman.jpg" alt="Remera Superman hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Remera Superman</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Village Polo Club">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Village Polo Club">
+            <img src="villagepolo-remera-always.jpg" alt="Remera Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Remera</h3>
+            
+            <p class="precio">$27.000 <span>$24.300 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Worren">
+            <img src="worren-remera-rayas.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Remera</h3>
+            
+            <p class="precio">$26.000 <span>$23.400 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Wrangler blanca">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Wrangler blanca">
+            <img src="wrangler-remera-blanca.jpg" alt="Remera Wrangler blanca hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Remera blanca</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Wrangler Motorcycles">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Wrangler Motorcycles">
+            <img src="wrangler-remera-motorcycles.jpg" alt="Remera Wrangler Motorcycles hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Remera Motorcycles</h3>
+            
+            <p class="precio">$29.000 <span>$26.100 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="chombas" data-nombre="Chomba Worren c/ bolsillo">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Chomba Worren c/ bolsillo">
+            <img src="polo-celeste.jpg" alt="Chomba Worren c/ bolsillo hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Chomba c/ bolsillo</h3>
+            
+            <p class="precio">$42.000 <span>$37.800 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="chombas" data-nombre="Chomba Taverniti micropiqué">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Chomba Taverniti micropiqué">
+            <img src="taverniti-polo-turquesa.jpg" alt="Chomba Taverniti micropiqué hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Taverniti</p>
+            <h3 class="nombre">Chomba micropiqué</h3>
+            <p class="colores">Varios colores</p>
+            <p class="precio">$46.000 <span>$41.400 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Posto 5">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Posto 5">
+            <img src="posto5-remera-verde.jpg" alt="Remera Posto 5 hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Posto 5</p>
+            <h3 class="nombre">Remera</h3>
+            <p class="colores">Negro · Verde · Natural</p>
+            <p class="precio">$25.000 <span>$22.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Worren">
+            <img src="remera-denim-brooklyn.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Remera</h3>
+            <p class="colores">Negro · Beige</p>
+            <p class="precio">$26.000 <span>$23.400 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Jean Village Polo Club">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Jean Village Polo Club">
+            <img src="villagepolo-jean-azul.jpg" alt="Jean Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Jean</h3>
+            
+            <p class="precio">$45.000 <span>$40.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Jean Village Polo Club negro clásico">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Jean Village Polo Club negro clásico">
+            <img src="jean-negro.jpg" alt="Jean Village Polo Club negro clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Jean negro clásico</h3>
+            
+            <p class="precio">$45.000 <span>$40.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda gabardina Village Polo Club">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda gabardina Village Polo Club">
+            <img src="villagepolo-bermuda-beige-1.jpg" alt="Bermuda gabardina Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Village Polo Club</p>
+            <h3 class="nombre">Bermuda gabardina</h3>
+            <p class="colores">Azul · Negro · Beige</p>
+            <p class="precio">$39.000 <span>$35.000 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Wrangler Montana · Regular Fit">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Wrangler Montana · Regular Fit">
+            <img src="wrangler-jean-montana.jpg" alt="Wrangler Montana · Regular Fit hombre" width="900" height="1298" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Jean Montana · Regular Fit</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Worren">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Worren">
+            <img src="wrnzone-remera-beige.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Worren</p>
+            <h3 class="nombre">Remera</h3>
+            <p class="colores">Mostaza · Natural · Salmón</p>
+            <p class="precio">$25.000 <span>$22.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Taverniti súper liviana">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Taverniti súper liviana">
+            <img src="taverniti-remera-gris.jpg" alt="Remera Taverniti súper liviana hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Taverniti</p>
+            <h3 class="nombre">Remera súper liviana</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Remera Posto 5">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Remera Posto 5">
+            <img src="special-edition-remera.jpg" alt="Remera Posto 5 hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Posto 5</p>
+            <h3 class="nombre">Remera</h3>
+            <p class="colores">Verde · Blanco</p>
+            <p class="precio">$25.000 <span>$22.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="remeras" data-nombre="Wrangler · Remera">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Wrangler · Remera">
+            <img src="wrangler-remera-celeste.jpg" alt="Wrangler · Remera hombre" width="900" height="1298" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Wrangler</p>
+            <h3 class="nombre">Remera</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Taverniti · Jean Clarito">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Taverniti · Jean Clarito">
+            <img src="taverniti-jean-clarito.jpg" alt="Taverniti · Jean Clarito hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Taverniti</p>
+            <h3 class="nombre">Jean Clarito</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Taverniti · Jean Gris">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Taverniti · Jean Gris">
+            <img src="taverniti-jean-gris.jpg" alt="Taverniti · Jean Gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">Taverniti</p>
+            <h3 class="nombre">Jean Gris</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="jeans" data-nombre="Pantalón de lino">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Pantalón de lino">
+            <img src="jogger-beige.jpg" alt="Pantalón de lino hombre" width="900" height="1182" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Pantalón de lino</h3>
+            <p class="colores">Beige · Negro</p>
+            <p class="precio">$65.000 <span>$58.500 en efectivo</span></p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+        <article class="prenda is-extra" data-tipo="bermudas" data-nombre="Bermuda Beige · Corte Clásico">
+          <button type="button" class="prenda-foto" aria-label="Ver grande: Bermuda Beige · Corte Clásico">
+            <img src="bermuda-beige-2.jpg" alt="Bermuda Beige · Corte Clásico hombre" width="900" height="1182" loading="lazy" decoding="async"/>
+          </button>
+          <div class="prenda-info">
+            <p class="marca">&nbsp;</p>
+            <h3 class="nombre">Bermuda Beige · Corte Clásico</h3>
+            
+            <p class="consultar">Consultá el precio</p>
+          </div>
+          <a class="btn btn-borde btn-chico pedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </article>
+      </div>
+      <div class="centro">
+        <button type="button" class="btn btn-negro" id="verMas" aria-expanded="false" aria-controls="catalogo">Ver todas las prendas (38)</button>
+      </div>
+      <p class="nota-mas"><b>¿No encontrás lo que buscás?</b> En la web mostramos solo una parte. En el local hay mucha más variedad de prendas, marcas y talles: <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20consultar%20por%20talles%20y%20colores%20de%20la%20nueva%20temporada" target="_blank" rel="noopener noreferrer">consultanos por WhatsApp</a>.</p>
     </div>
   </section>
 
-  <!-- NUEVA TEMPORADA -->
-  <section class="temporada" id="temporada">
-    <div class="container">
-      <div class="temporada-header">
-        <div class="section-eyebrow">Nueva Temporada</div>
-        <h2 class="section-title">Primavera <em>·</em> Verano 2026/27</h2>
-        <div class="divider"></div>
-        <p class="section-body">Ya llegaron las primeras prendas de la temporada: remeras, polos, jeans y bermudas para el calor porteño.</p>
-        <p class="temporada-tip">Tocá cualquier prenda para pedirla o consultarla por WhatsApp</p>
+  <section class="seccion seccion-lino" id="marcas">
+    <div class="caja">
+      <div class="sec-cab">
+        <p class="sup">Novedades y marcas</p>
+        <h2>Lo nuevo de cada marca</h2>
       </div>
-
-      <div class="filtro-prendas" role="group" aria-label="Filtrar prendas por tipo">
-        <button type="button" class="filtro-btn activo" data-filtro="todo" aria-pressed="true">Todo</button>
-        <button type="button" class="filtro-btn" data-filtro="remeras" aria-pressed="false">Remeras</button>
-        <button type="button" class="filtro-btn" data-filtro="chombas" aria-pressed="false">Chombas</button>
-        <button type="button" class="filtro-btn" data-filtro="jeans" aria-pressed="false">Jeans y pantalones</button>
-        <button type="button" class="filtro-btn" data-filtro="bermudas" aria-pressed="false">Bermudas</button>
+      <div class="novedades" tabindex="0" role="region" aria-label="Novedades por marca, deslizá para ver más">
+          <article class="nov" data-nombre="New Man — chombas piqué turquesa y coral con jean">
+            <button type="button" class="nov-foto" aria-label="Ver grande: New Man Chombas piqué turquesa y coral"><img src="novedad-newman.jpg" alt="New Man — chombas piqué turquesa y coral con jean" width="800" height="900" loading="lazy" decoding="async"/></button>
+            <p class="marca">New Man</p><p class="nombre">Chombas piqué turquesa y coral</p>
+          </article>
+          <article class="nov" data-nombre="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Taverniti Chombas micropiqué"><img src="chombas-taverniti.jpg" alt="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta" width="572" height="916" loading="lazy" decoding="async"/></button>
+            <p class="marca">Taverniti</p><p class="nombre">Chombas micropiqué</p>
+          </article>
+          <article class="nov" data-nombre="YSL — chombas nueva colección verano 2026/27">
+            <button type="button" class="nov-foto" aria-label="Ver grande: YSL Chombas nueva colección"><img src="chombas-ysl.jpg" alt="YSL — chombas nueva colección verano 2026/27" width="572" height="902" loading="lazy" decoding="async"/></button>
+            <p class="marca">YSL</p><p class="nombre">Chombas nueva colección</p>
+          </article>
+          <article class="nov" data-nombre="Village Polo Club — chombas, oferta $31.500 efectivo">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Village Polo Club Chombas · $31.500 efectivo"><img src="novedad-village-polos.jpg" alt="Village Polo Club — chombas, oferta $31.500 efectivo" width="572" height="1024" loading="lazy" decoding="async"/></button>
+            <p class="marca">Village Polo Club</p><p class="nombre">Chombas · $31.500 efectivo</p>
+          </article>
+          <article class="nov" data-nombre="Village Polo Club — remeras con cierre: blanca, negra, fucsia y azul">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Village Polo Club Remeras con cierre"><img src="novedad-villagepolo-cierre.jpg" alt="Village Polo Club — remeras con cierre: blanca, negra, fucsia y azul" width="1000" height="620" loading="lazy" decoding="async"/></button>
+            <p class="marca">Village Polo Club</p><p class="nombre">Remeras con cierre</p>
+          </article>
+          <article class="nov" data-nombre="Village Polo Club — bermudas gabardina beige, negro y azul">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Village Polo Club Bermudas gabardina"><img src="novedad-village-bermudas.jpg" alt="Village Polo Club — bermudas gabardina beige, negro y azul" width="572" height="918" loading="lazy" decoding="async"/></button>
+            <p class="marca">Village Polo Club</p><p class="nombre">Bermudas gabardina</p>
+          </article>
+          <article class="nov" data-nombre="South — colección Essential, chombas de algodón pima con bolsillo">
+            <button type="button" class="nov-foto" aria-label="Ver grande: South Chombas de algodón pima"><img src="novedad-south.jpg" alt="South — colección Essential, chombas de algodón pima con bolsillo" width="572" height="1024" loading="lazy" decoding="async"/></button>
+            <p class="marca">South</p><p class="nombre">Chombas de algodón pima</p>
+          </article>
+          <article class="nov" data-nombre="Wrangler — gorras azul, negra, verde y beige">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Wrangler Gorras"><img src="novedad-wrangler-gorras.jpg" alt="Wrangler — gorras azul, negra, verde y beige" width="900" height="760" loading="lazy" decoding="async"/></button>
+            <p class="marca">Wrangler</p><p class="nombre">Gorras</p>
+          </article>
+          <article class="nov" data-nombre="Posto 5 — buzo con capucha celeste">
+            <button type="button" class="nov-foto" aria-label="Ver grande: Posto 5 Buzo con capucha"><img src="novedad-posto5.jpg" alt="Posto 5 — buzo con capucha celeste" width="572" height="885" loading="lazy" decoding="async"/></button>
+            <p class="marca">Posto 5</p><p class="nombre">Buzo con capucha</p>
+          </article>
       </div>
-
-      <div class="gallery-grid temporada-grid" id="temporadaGrid">
-
-        <div class="gallery-item" data-tipo="jeans">
-          <img src="wrangler-greensboro.jpg" alt="Jean Wrangler Greensboro · Regular hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Jean Wrangler Greensboro · Regular</span><span class="gi-colors">Azul · Celeste · Gris</span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="chombas">
-          <img src="newman-chomba-turquesa.jpg" alt="Chomba piqué New Man hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Chomba piqué New Man</span><span class="gi-colors">Turquesa · Coral</span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="remeras">
-          <img src="wrangler-remera-logo-bordo.jpg" alt="Remera Wrangler logo hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Remera Wrangler logo</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="bermudas">
-          <img src="worren-bermuda-jean.jpg" alt="Bermuda de jean Worren hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Bermuda de jean Worren</span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="remeras">
-          <img src="remera-batman-gotham.jpg" alt="Remera Batman · Gotham City hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Batman · Gotham City</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="bermudas">
-          <img src="wrangler-bermuda-cargo.jpg" alt="Bermuda cargo Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda cargo Wrangler</span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="chombas">
-          <img src="wrangler-chomba-pique.jpg" alt="Chomba piqué Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Chomba piqué Wrangler</span></div>
-        </div>
-
-        <div class="gallery-item" data-tipo="remeras">
-          <img src="worren-remera-talle-especial.jpg" alt="Remera Worren · Talle especial hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Worren · Talle especial</span><span class="gi-colors">Azul · Verde</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="stone-bermuda-cargo.jpg" alt="Bermuda cargo Stone hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda cargo Stone</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="villagepolo-bermuda-gabardina-gris.jpg" alt="Bermuda gabardina cargo Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda gabardina cargo Village Polo Club</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="bermuda-jean-gris.jpg" alt="Bermuda de jean gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda de jean gris</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="villagepolo-bermuda-jean.jpg" alt="Bermuda de jean Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda de jean Village Polo Club</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="stone-bermuda-lino.jpg" alt="Bermuda de lino Stone hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda de lino Stone</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="worren-short-algodon.jpg" alt="Short de algodón Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Short de algodón Worren</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="wrangler-cargo-desmontable.jpg" alt="Pantalón cargo desmontable Wrangler hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Pantalón cargo desmontable Wrangler</span><span class="gi-colors">Verde · Beige</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="worren-jogging-verano.jpg" alt="Jogging de verano Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Jogging de verano Worren</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="remera-batman-logo.jpg" alt="Remera Batman · Logo clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Batman · Logo clásico</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="remera-superman.jpg" alt="Remera Superman hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Superman</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="villagepolo-remera-always.jpg" alt="Remera Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Village Polo Club</span><span class="gi-price"><span class="gi-lista">$27.000</span> <span class="gi-efvo"><b>$24.300</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="worren-remera-rayas.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Worren</span><span class="gi-price"><span class="gi-lista">$26.000</span> <span class="gi-efvo"><b>$23.400</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="wrangler-remera-blanca.jpg" alt="Remera Wrangler blanca hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Wrangler blanca</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="wrangler-remera-motorcycles.jpg" alt="Remera Wrangler Motorcycles hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Wrangler Motorcycles</span><span class="gi-price"><span class="gi-lista">$29.000</span> <span class="gi-efvo"><b>$26.100</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="chombas">
-          <img src="polo-celeste.jpg" alt="Chomba Worren con bolsillo celeste hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Chomba Worren c/ bolsillo</span><span class="gi-price"><span class="gi-lista">$42.000</span> <span class="gi-efvo"><b>$37.800</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="chombas">
-          <img src="taverniti-polo-turquesa.jpg" alt="Chomba Taverniti micropiqué hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Chomba Taverniti micropiqué</span><span class="gi-colors">Varios colores</span><span class="gi-price"><span class="gi-lista">$46.000</span> <span class="gi-efvo"><b>$41.400</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="posto5-remera-verde.jpg" alt="Remera Posto 5 estampada hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Remera Posto 5</span><span class="gi-colors">Negro · Verde · Natural</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="remera-denim-brooklyn.jpg" alt="Remera Worren estampada hombre" width="900" height="1183"/>
-          <div class="gi-label"><span class="gi-name">Remera Worren</span><span class="gi-colors">Negro · Beige</span><span class="gi-price"><span class="gi-lista">$26.000</span> <span class="gi-efvo"><b>$23.400</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="villagepolo-jean-azul.jpg" alt="Jean Village Polo Club azul hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Jean Village Polo Club</span><span class="gi-price"><span class="gi-lista">$45.000</span> <span class="gi-efvo"><b>$40.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="jean-negro.jpg" alt="Jean Village Polo Club negro corte clásico hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Jean Village Polo Club negro clásico</span><span class="gi-price"><span class="gi-lista">$45.000</span> <span class="gi-efvo"><b>$40.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="villagepolo-bermuda-beige-1.jpg" alt="Bermuda de gabardina Village Polo Club hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda gabardina Village Polo Club</span><span class="gi-colors">Azul · Negro · Beige</span><span class="gi-price"><span class="gi-lista">$39.000</span> <span class="gi-efvo"><b>$35.000</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="wrangler-jean-montana.jpg" alt="Wrangler Montana Regular Fit — jean azul hombre" width="900" height="1298" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Wrangler Montana · Regular Fit</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="wrnzone-remera-beige.jpg" alt="Remera Worren hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Worren</span><span class="gi-colors">Mostaza · Natural · Salmón</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="taverniti-remera-gris.jpg" alt="Remera Taverniti súper liviana hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Taverniti súper liviana</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="special-edition-remera.jpg" alt="Remera Posto 5 hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Remera Posto 5</span><span class="gi-colors">Verde · Blanco</span><span class="gi-price"><span class="gi-lista">$25.000</span> <span class="gi-efvo"><b>$22.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="remeras">
-          <img src="wrangler-remera-celeste.jpg" alt="Wrangler — remera con logo hombre" width="900" height="1298" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Wrangler · Remera</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="taverniti-jean-clarito.jpg" alt="Taverniti — jean clarito hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Taverniti · Jean Clarito</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="taverniti-jean-gris.jpg" alt="Taverniti — jean gris hombre" width="900" height="1183" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Taverniti · Jean Gris</span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="jeans">
-          <img src="jogger-beige.jpg" alt="Pantalón de lino hombre" width="900" height="1182" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Pantalón de lino</span><span class="gi-colors">Beige · Negro</span><span class="gi-price"><span class="gi-lista">$65.000</span> <span class="gi-efvo"><b>$58.500</b> efectivo</span></span></div>
-        </div>
-
-        <div class="gallery-item is-extra" data-tipo="bermudas">
-          <img src="bermuda-beige-2.jpg" alt="Bermuda beige corte clásico hombre" width="900" height="1182" loading="lazy" decoding="async"/>
-          <div class="gi-label"><span class="gi-name">Bermuda Beige · Corte Clásico</span></div>
-        </div>
-
-      </div>
-
-      <p class="temporada-mas">¿Buscás otra prenda? Esto es solo una parte: tenemos mucha más variedad. <a href="https://wa.me/541170583706?text=Hola%2C%20busco%20una%20prenda%20que%20no%20vi%20en%20la%20web" target="_blank" rel="noopener noreferrer">Consultanos por WhatsApp</a>.</p>
-
-      <div class="temporada-actions">
-        <button type="button" class="btn-dark" id="verMas" aria-expanded="false" aria-controls="temporadaGrid">Ver más prendas</button>
-        <a class="btn-dark" href="https://wa.me/541170583706?text=Hola%2C%20quiero%20consultar%20por%20talles%20y%20colores%20de%20la%20nueva%20temporada" target="_blank" rel="noopener noreferrer">Consultá talles y colores ↗</a>
-      </div>
-
-      <div class="novedades">
-        <div class="novedades-head">
-          <div class="section-eyebrow">Novedades</div>
-          <h2 class="section-title">Nueva <em>colección</em> verano</h2>
-          <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
-        </div>
-        <div class="novedades-track" tabindex="0" role="region" aria-label="Novedades de la colección, deslizá para ver más">
-          <img src="novedad-newman.jpg" alt="New Man — chombas piqué turquesa y coral con jean" width="800" height="900" loading="lazy" decoding="async"/>
-          <img src="novedad-villagepolo-cierre.jpg" alt="Village Polo Club — remeras con cierre: blanca, negra, fucsia y azul" width="1000" height="620" loading="lazy" decoding="async"/>
-          <img src="novedad-wrangler-gorras.jpg" alt="Wrangler — gorras azul, negra, verde y beige" width="900" height="760" loading="lazy" decoding="async"/>
-          <img src="chombas-taverniti.jpg" alt="Taverniti — chombas micropiqué nueva colección: turquesa, blanca, negra y violeta" width="572" height="916" loading="lazy" decoding="async"/>
-          <img src="chombas-ysl.jpg" alt="YSL — chombas nueva colección verano 2026/27" width="572" height="902" loading="lazy" decoding="async"/>
-          <img src="novedad-village-polos.jpg" alt="Village Polo Club — chombas, oferta $31.500 efectivo" width="572" height="1024" loading="lazy" decoding="async"/>
-          <img src="novedad-village-bermudas.jpg" alt="Village Polo Club — bermudas gabardina beige, negro y azul" width="572" height="918" loading="lazy" decoding="async"/>
-          <img src="novedad-south.jpg" alt="South — colección Essential, chombas de algodón pima con bolsillo" width="572" height="1024" loading="lazy" decoding="async"/>
-          <img src="novedad-posto5.jpg" alt="Posto 5 — buzo con capucha celeste" width="572" height="885" loading="lazy" decoding="async"/>
-        </div>
-        <div class="novedades-hint">Deslizá para ver más →</div>
-      </div>
+      <ul class="marcas"><li><b>Wrangler</b><span>Denim</span></li><li><b>Taverniti</b><span>Jeans premium</span></li><li><b>New Man</b><span>Clásico</span></li><li><b>Stone</b><span>Urbano</span></li><li><b>Worren</b><span>Casual</span></li><li><b>Rochas</b><span>Premium</span></li><li><b>YSL</b><span>Sastrería</span></li><li><b>Village Polo Club</b><span>Sport</span></li><li><b>Posto 5</b><span>Casual</span></li></ul>
     </div>
   </section>
 
-  <!-- TALLES -->
-  <div class="talles-strip">
-    <div class="leyenda-talles-wrap">
-      <div class="leyenda-marquee-wrap">
-        <div class="leyenda-marquee-track">
-            <span class="lm-item"><em class="lm-gold">Ambos y Sacos</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 64</strong></span>
-            <span class="lm-dot">✦</span>
-            <span class="lm-item"><em class="lm-gold">Remeras y Chombas</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 5XL</strong></span>
-            <span class="lm-dot">✦</span>
-            <span class="lm-item"><em class="lm-gold">Ambos y Sacos</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 64</strong></span>
-            <span class="lm-dot">✦</span>
-            <span class="lm-item"><em class="lm-gold">Remeras y Chombas</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 5XL</strong></span>
-            <span class="lm-dot">✦</span>
-            <span class="lm-item"><em class="lm-gold">Ambos y Sacos</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 64</strong></span>
-            <span class="lm-dot">✦</span>
-            <span class="lm-item"><em class="lm-gold">Remeras y Chombas</em> <span class="lm-sep">hasta</span> <strong class="lm-talle">Talle 5XL</strong></span>
-            <span class="lm-dot">✦</span>
-        </div>
+  <section class="talles" id="talles">
+    <div class="caja talles-in">
+      <div>
+        <p class="sup">Talles especiales</p>
+        <h2>Tu talle, sin vueltas</h2>
+        <p class="sec-txt">Desde siempre vestimos a hombres de todos los tamaños, con las mismas marcas y la misma atención.</p>
       </div>
+      <div class="talle"><b>Talle 64</b><span>Ambos y sacos</span></div>
+      <div class="talle"><b>5XL</b><span>Remeras y chombas</span></div>
+      <a class="btn btn-claro" href="https://wa.me/541170583706?text=Hola%2C%20quiero%20consultar%20por%20talles%20especiales" target="_blank" rel="noopener noreferrer">Consultar mi talle</a>
     </div>
-  </div>
+  </section>
 
-  <!-- OPINIONES DE CLIENTES (copiadas de Google Maps, 02/11/2026) -->
-  <section class="opiniones" id="opiniones">
-    <div class="container">
-      <div class="opiniones-head">
-        <div class="section-eyebrow">Opiniones en Google</div>
-        <h2 class="section-title">Lo que dicen <em>nuestros clientes</em></h2>
-        <div class="divider"></div>
-        <p class="opiniones-nota"><span class="opiniones-estrellas" aria-hidden="true">★</span> <strong>4,7</strong> de 5 · 56 opiniones en Google</p>
+  <section class="seccion" id="como-comprar">
+    <div class="caja">
+      <div class="sec-cab">
+        <p class="sup">Cómo comprar</p>
+        <h2>Comprá por WhatsApp, con atención personalizada</h2>
+        <p class="sec-txt">Te damos el mismo asesoramiento que en el local: te ayudamos a elegir el talle, el color y el modelo justo para vos.</p>
       </div>
-      <div class="opiniones-grid">
+      <ol class="pasos">
+        <li><span class="num">1</span><h3>Escribinos</h3><p>Mandanos la foto de la prenda que te gustó o contanos qué estás buscando.</p></li>
+        <li><span class="num">2</span><h3>Te asesoramos</h3><p>Te confirmamos talles, colores y disponibilidad, y te recomendamos opciones.</p></li>
+        <li><span class="num">3</span><h3>Lo recibís</h3><p>Hacemos envíos a toda la Capital Federal. Si preferís, lo retirás en el local.</p></li>
+      </ol>
+      <div class="centro"><a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn btn-wa"><svg class="ico-wa" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg><span>Hacé tu pedido por WhatsApp</span></a></div>
+    </div>
+  </section>
+
+  <section class="seccion seccion-lino" id="opiniones">
+    <div class="caja">
+      <div class="sec-cab">
+        <p class="sup">Opiniones en Google</p>
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p class="estrellas"><span aria-hidden="true">★★★★★</span> <b>4,7</b> de 5 · 56 opiniones en Google</p>
+      </div>
+      <div class="opiniones">
         <figure class="opinion">
           <blockquote>“Hace 25 años que compró en Mío El buen vestir, excelente precios y calidad, de primera la atención, sin dudas el 1 en ropa masculina de Parque Patricios”</blockquote>
           <figcaption>Carlos L.</figcaption>
@@ -1634,20 +921,42 @@
           <figcaption>Cliente en Google</figcaption>
         </figure>
       </div>
-      <div class="opiniones-cta">
-        <a class="btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Mio+El+Buen+Vestir+La+Rioja+2186+CABA" target="_blank" rel="noopener noreferrer">Ver todas las opiniones en Google ↗</a>
-      </div>
+      <div class="centro"><a class="btn btn-borde" href="https://www.google.com/maps/search/?api=1&amp;query=Mio+El+Buen+Vestir+La+Rioja+2186+CABA" target="_blank" rel="noopener noreferrer">Ver todas las opiniones en Google</a></div>
     </div>
   </section>
 
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="faq" id="preguntas">
-    <div class="faq-wrap">
-      <div class="faq-head">
-        <div class="section-eyebrow">Preguntas frecuentes</div>
-        <h2 class="section-title">Lo que más <em>nos preguntan</em></h2>
+  <section class="regalo" id="gift-card" aria-label="Gift Card">
+    <div class="caja regalo-in">
+      <div><p class="sup">Gift Card MIO</p><h2>¿No sabés qué regalarle?</h2><p>Regalale una Gift Card de MIO y que él elija.</p></div>
+      <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20una%20Gift%20Card%20de%20MIO" target="_blank" rel="noopener noreferrer" class="btn btn-claro">Pedí tu Gift Card</a>
+    </div>
+  </section>
+
+  <section class="seccion" id="nosotros">
+    <div class="caja nosotros">
+      <div>
+        <p class="sup">Quiénes somos</p>
+        <h2>Una tradición que viste bien</h2>
+        <p class="sec-txt">MIO, «El buen vestir», es una boutique de indumentaria masculina en el corazón de Parque Patricios. Desde 1968 ofrecemos a los hombres porteños las marcas más reconocidas del mercado: desde el denim icónico hasta el estilo premium.</p>
+        <p class="sec-txt">Nuestro objetivo es simple: que cada cliente encuentre exactamente lo que busca, con la mejor atención personalizada y un surtido cuidadosamente seleccionado.</p>
+        <p class="sec-txt">En MIO encontrás ropa de hombre para todos los días y para ocasiones especiales: jeans, pantalones, bermudas, remeras, chombas, buzos, sacos y trajes. Tenemos talles especiales: ambos y sacos hasta talle 64, y remeras y chombas hasta 5XL.</p>
+        <ul class="cifras">
+          <li><b data-anios>58</b><span>años</span></li>
+          <li><b>9+</b><span>marcas</span></li>
+          <li><b>5XL</b><span>talle máximo</span></li>
+        </ul>
       </div>
-      <details>
+      <img class="nosotros-foto" src="about-vidriera.jpg" alt="Vidriera de MIO con la marca Yves Saint Laurent" width="700" height="908" loading="lazy" decoding="async"/>
+    </div>
+  </section>
+
+  <section class="seccion seccion-lino" id="preguntas">
+    <div class="caja angosta">
+      <div class="sec-cab">
+        <p class="sup">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq"><details>
         <summary>¿Cómo compro?</summary>
         <p>Escribinos por <a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">WhatsApp al 11 7058-3706</a>. Te atendemos de forma personalizada: te asesoramos con el talle, el color y el modelo, te confirmamos disponibilidad y coordinamos el envío o el retiro en el local.</p>
       </details>
@@ -1682,223 +991,69 @@
       <details>
         <summary>¿Cómo consulto por un producto, un talle o un color?</summary>
         <p>Escribinos por <a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">WhatsApp al 11 7058-3706</a> o llamanos al 11 4943-3076.</p>
-      </details>
+      </details></div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="nosotros">
-    <div class="container">
-      <div class="about-grid">
-        <div>
-          <div class="section-eyebrow">Quiénes somos</div>
-          <h2 class="section-title">Una <em>tradición</em><br>que viste bien</h2>
-          <div class="divider"></div>
-          <p class="section-body">
-            MIO, «El buen vestir», es una boutique de indumentaria masculina ubicada en el corazón de Parque Patricios. Desde 1968 ofrecemos a los hombres porteños las marcas más reconocidas del mercado: desde el denim icónico hasta el estilo premium.
-          </p>
-          <p class="section-body">
-            Nuestro objetivo es simple: que cada cliente encuentre exactamente lo que busca, con la mejor atención personalizada y un surtido cuidadosamente seleccionado.
-          </p>
-          <p class="section-body">
-            En MIO encontrás ropa de hombre para todos los días y para ocasiones especiales: jeans, pantalones, bermudas, remeras, chombas, buzos, sacos y trajes. Tenemos talles especiales: ambos y sacos hasta talle 64, y remeras y chombas hasta 5XL. Estamos en La Rioja 2186, en Parque Patricios, Ciudad de Buenos Aires.
-          </p>
-          <div class="stats-row">
-            <div class="stat-item">
-              <div class="stat-num" data-anios>58</div>
-              <div class="stat-label">Años</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">9+</div>
-              <div class="stat-label">Marcas</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">1</div>
-              <div class="stat-label">Pasión</div>
-            </div>
-          </div>
+  <section class="seccion" id="contacto">
+    <div class="caja contacto">
+      <div>
+        <p class="sup">Visitanos</p>
+        <h2>Encontranos en Parque Patricios</h2>
+        <ul class="datos-contacto">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><p class="et-c">Dirección</p><p>La Rioja 2186, Parque Patricios, CABA</p></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><p class="et-c">Horario de atención</p><p>Lunes a sábados de 9:30 a 13:30 y de 15:30 a 19:30 hs</p><span id="estadoLocal" class="estado-local" hidden></span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><div><p class="et-c">WhatsApp · pedidos y asesoramiento</p><p><a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">11 7058-3706</a> · Envíos a toda la Capital</p></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><div><p class="et-c">Línea fija</p><p><a href="tel:+541149433076">11 4943-3076</a></p></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><div><p class="et-c">Instagram</p><p><a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer">@mioparquepatricios</a></p></div></li>
+        </ul>
+        <div class="botones">
+          <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn btn-wa"><svg class="ico-wa" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg><span>Pedir por WhatsApp</span></a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Rioja+2186%2C+Parque+Patricios%2C+CABA" target="_blank" rel="noopener noreferrer" class="btn btn-borde">Cómo llegar</a>
         </div>
-        <div class="about-image-wrap">
-          <img src="about-vidriera.jpg" alt="Vidriera de MIO con la marca Yves Saint Laurent" width="700" height="908" loading="lazy" decoding="async"/>
-        </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://maps.google.com/maps?q=La%20Rioja%202186%2C%20Parque%20Patricios%2C%20CABA&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación MIO - La Rioja 2186, Parque Patricios"></iframe>
       </div>
     </div>
   </section>
-
-  <!-- BRANDS -->
-  <section class="brands" id="marcas">
-    <div class="container">
-      <div class="brands-header">
-        <div class="section-eyebrow" style="color:var(--gold)">Lo que encontrás en MIO</div>
-        <h2 class="section-title">Nuestras <em style="color:var(--gold)">marcas</em></h2>
-      </div>
-      <div class="brands-grid">
-        <div class="brand-card">
-          <div class="brand-name">Wrangler</div>
-          <div class="brand-tag">Denim · Americana</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Taverniti</div>
-          <div class="brand-tag">Jeans · Premium</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">New Man</div>
-          <div class="brand-tag">Casual · Clásico</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Stone</div>
-          <div class="brand-tag">Urban · Contemporáneo</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Worren</div>
-          <div class="brand-tag">Casual · Moderno</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Rochas</div>
-          <div class="brand-tag">Premium · Estilo</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">YSL</div>
-          <div class="brand-tag">Haute · Prestige</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Village Polo Club</div>
-          <div class="brand-tag">Sport · Élite</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-name">Posto 5</div>
-          <div class="brand-tag">Casual · Argentino</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contacto">
-    <div class="container">
-      <div class="contact-grid">
-        <div>
-          <div class="section-eyebrow">Visitanos</div>
-          <h2 class="section-title">Encontranos<br>en Parque Patricios</h2>
-          <div class="divider"></div>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <div class="contact-label">Dirección</div>
-                <div class="contact-value">La Rioja 2186<br>Parque Patricios, CABA</div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">🕒</div>
-              <div>
-                <div class="contact-label">Horario de atención</div>
-                <div class="contact-value">
-                  Lunes a sábados<br>
-                  9:30 a 13:30 hs y 15:30 a 19:30 hs<br>
-                  <span id="estadoLocal" class="estado-local" hidden></span>
-                </div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
-              <div>
-                <div class="contact-label">WhatsApp · Pedidos y asesoramiento</div>
-                <div class="contact-value">
-                  <a href="https://wa.me/541170583706" target="_blank" rel="noopener noreferrer">11 7058-3706</a><br>
-                  <span class="contact-nota">Envíos a toda la Capital Federal</span>
-                </div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">☎️</div>
-              <div>
-                <div class="contact-label">Línea Fija</div>
-                <div class="contact-value">
-                  <a href="tel:+541149433076">11 4943-3076</a>
-                </div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📸</div>
-              <div>
-                <div class="contact-label">Instagram</div>
-                <div class="contact-value">
-                  <a href="https://www.instagram.com/mioparquepatricios" target="_blank" rel="noopener noreferrer">@mioparquepatricios</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;">
-            <a href="https://wa.me/541170583706?text=Hola%2C%20quiero%20hacer%20un%20pedido%20%2F%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">
-              Hacé tu pedido por WhatsApp ↗
-            </a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=La+Rioja+2186%2C+Parque+Patricios%2C+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Cómo llegar ↗</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Mio+El+Buen+Vestir+La+Rioja+2186+CABA" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver opiniones en Google ↗</a>
-          </div>
-        </div>
-
-        <div class="map-wrap">
-          <div class="map-frame">
-            <iframe
-              src="https://maps.google.com/maps?q=La%20Rioja%202186%2C%20Parque%20Patricios%2C%20CABA&t=&z=16&ie=UTF8&iwloc=&output=embed"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Ubicación MIO - La Rioja 2186, Parque Patricios">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="foot-logo"><img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128"/></div>
-    <div class="foot-copy">© <span id="anio">2026</span> MIO, El buen vestir — Indumentaria Masculina · La Rioja 2186, Parque Patricios, CABA · Todos los derechos reservados</div>
-    <div class="foot-version" style="margin-top:8px;padding-bottom:4px;font-size:11px;color:#9a9288;letter-spacing:.05em;">Versión <span id="web-version">1.5</span> · actualizada el 15/11/2026</div>
+  <footer class="pie">
+    <img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128" loading="lazy"/>
+    <p>© <span id="anio">2026</span> MIO, El buen vestir · Indumentaria masculina · La Rioja 2186, Parque Patricios, CABA</p>
+    <p class="version">Versión <span id="web-version">1.6</span> · actualizada el 16/11/2026</p>
   </footer>
 
-  <!-- WHATSAPP FLOAT -->
-  <a class="wa-float" href="https://wa.me/541170583706?text=Hola%2C%20consulta%20desde%20la%20web" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <div class="zoom" id="zoom" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <div class="zoom-top"><p id="zoomTxt"></p><button type="button" class="zoom-btn" id="zoomCerrar">Cerrar ✕</button></div>
+    <div class="zoom-area" id="zoomArea"><img id="zoomImg" alt=""/></div>
+    <div class="zoom-bot">
+      <button type="button" class="zoom-btn" id="zoomAnt" aria-label="Foto anterior">‹ Anterior</button>
+      <a class="btn btn-wa btn-chico" id="zoomPedir" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+      <button type="button" class="zoom-btn" id="zoomSig" aria-label="Foto siguiente">Siguiente ›</button>
+    </div>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      const btn = document.getElementById('hamburger');
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    }
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.remove('open');
-        const btn = document.getElementById('hamburger');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Abrir menú');
-      });
+    // Menú del celular
+    const menu = document.getElementById('menu');
+    const hamb = document.getElementById('hamb');
+    function cerrarMenu() { menu.classList.remove('abierto'); hamb.setAttribute('aria-expanded', 'false'); hamb.setAttribute('aria-label', 'Abrir menú'); }
+    hamb.addEventListener('click', () => {
+      const abierto = menu.classList.toggle('abierto');
+      hamb.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      hamb.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
     });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarMenu));
 
     // Años de historia (fundación 1968) y año del pie: se actualizan solos
     const anioActual = new Date().getFullYear();
     document.querySelectorAll('[data-anios]').forEach(el => { el.textContent = anioActual - 1968; });
     const anioEl = document.getElementById('anio');
     if (anioEl) anioEl.textContent = anioActual;
-
-    // Cinta superior: se escribe una sola vez en el HTML y acá se repite para que no tenga cortes
-    const promoTrack = document.getElementById('promoTrack');
-    if (promoTrack && promoTrack.children.length === 1) {
-      for (let i = 0; i < 5; i++) promoTrack.appendChild(promoTrack.children[0].cloneNode(true));
-    }
 
     // Horario: lunes a sábados de 9:30 a 13:30 y de 15:30 a 19:30 (hora de Buenos Aires)
     function localAbierto(fecha) {
@@ -1916,67 +1071,98 @@
       estadoEl.hidden = false;
     }
 
-    // Ver más prendas
-    const verMas = document.getElementById('verMas');
-    if (verMas) {
-      verMas.addEventListener('click', () => {
-        const grid = document.getElementById('temporadaGrid');
-        const abierto = grid.classList.toggle('show-all');
-        verMas.textContent = abierto ? 'Ver menos' : 'Ver más prendas';
-        verMas.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-      });
-    }
+    
 
-    // Filtro de prendas por tipo
-    (function () {
-      const grid = document.getElementById('temporadaGrid');
-      const seccion = document.getElementById('temporada');
-      const botones = document.querySelectorAll('.filtro-btn');
-      if (!grid || !botones.length) return;
-      botones.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filtro = btn.dataset.filtro;
-          botones.forEach(b => {
-            const activo = b === btn;
-            b.classList.toggle('activo', activo);
-            b.setAttribute('aria-pressed', activo ? 'true' : 'false');
-          });
-          const filtrando = filtro !== 'todo';
-          grid.classList.toggle('filtrando', filtrando);
-          seccion.classList.toggle('filtrando', filtrando);
-          grid.querySelectorAll('.gallery-item').forEach(item => {
-            const coincide = item.dataset.tipo === filtro;
-            item.classList.toggle('coincide', coincide);
-            if (coincide) { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }
-          });
-        });
-      });
-    })();
-
-    // Fotos de prendas: al tocarlas se abre WhatsApp con el nombre de la prenda
+    // Cada prenda: botón "Pedir por WhatsApp" con el nombre de la prenda
     function linkWhatsApp(prenda) {
       return 'https://wa.me/541170583706?text=' + encodeURIComponent('Hola! Vi en la web: ' + prenda + '. ¿Me pasás talles y colores disponibles?');
     }
-    function crearLinkPrenda(prenda, clase) {
-      const a = document.createElement('a');
-      a.className = clase;
-      a.href = linkWhatsApp(prenda);
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.setAttribute('aria-label', 'Pedir por WhatsApp: ' + prenda);
-      a.innerHTML = '<span class="prenda-wa-tag">Pedir por WhatsApp</span>';
-      return a;
-    }
-    document.querySelectorAll('.temporada-grid .gallery-item').forEach(item => {
-      const nombre = item.querySelector('.gi-name');
-      const img = item.querySelector('img');
-      const prenda = nombre ? nombre.textContent.trim() : (img ? img.alt : 'una prenda');
-      item.appendChild(crearLinkPrenda(prenda, 'prenda-wa'));
+    document.querySelectorAll('.prenda').forEach(p => {
+      const a = p.querySelector('.pedir');
+      a.href = linkWhatsApp(p.dataset.nombre);
+      a.setAttribute('aria-label', 'Pedir por WhatsApp: ' + p.dataset.nombre);
     });
-    document.querySelectorAll('.novedades-track > img').forEach(img => {
-      const a = crearLinkPrenda(img.alt, 'nov-wa');
-      img.parentNode.insertBefore(a, img);
-      a.insertBefore(img, a.firstChild);
+
+    // Ver todas las prendas / ver menos
+    const catalogo = document.getElementById('catalogo');
+    const verMas = document.getElementById('verMas');
+    const textoVerMas = verMas.textContent;
+    verMas.addEventListener('click', () => {
+      const todo = catalogo.classList.toggle('ver-todo');
+      verMas.textContent = todo ? 'Ver menos' : textoVerMas;
+      verMas.setAttribute('aria-expanded', todo ? 'true' : 'false');
+      if (!todo) document.getElementById('prendas').scrollIntoView();
+    });
+
+    // Filtro por tipo de prenda (al filtrar se muestran todas las de ese tipo)
+    const filtros = document.querySelectorAll('.filtro');
+    filtros.forEach(btn => btn.addEventListener('click', () => {
+      const f = btn.dataset.filtro;
+      filtros.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      catalogo.classList.toggle('filtrando', f !== 'todo');
+      catalogo.querySelectorAll('.prenda').forEach(p => { p.hidden = f !== 'todo' && p.dataset.tipo !== f; });
+      verMas.parentElement.hidden = f !== 'todo';
+    }));
+
+    // Foto ampliada: tocar abre grande, tocar de nuevo hace zoom
+    const zoom = document.getElementById('zoom');
+    const zImg = document.getElementById('zoomImg');
+    const zArea = document.getElementById('zoomArea');
+    const zTxt = document.getElementById('zoomTxt');
+    const zPedir = document.getElementById('zoomPedir');
+    let zLista = [], zPos = 0, zOrigen = null;
+    function visibles(cont) {
+      return [...cont.querySelectorAll('.prenda, .nov')].filter(el => !el.hidden && el.offsetParent !== null);
+    }
+    function mostrarZoom() {
+      const el = zLista[zPos];
+      const img = el.querySelector('img');
+      zImg.src = img.currentSrc || img.src;
+      zImg.alt = img.alt;
+      zTxt.textContent = el.dataset.nombre + '  ·  ' + (zPos + 1) + ' de ' + zLista.length;
+      zPedir.href = linkWhatsApp(el.dataset.nombre);
+      zArea.classList.remove('ampliada');
+    }
+    document.addEventListener('click', e => {
+      const b = e.target.closest('.prenda-foto, .nov-foto');
+      if (!b) return;
+      const item = b.closest('.prenda, .nov');
+      zLista = visibles(item.parentElement);
+      zPos = Math.max(0, zLista.indexOf(item));
+      zOrigen = b;
+      mostrarZoom();
+      zoom.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.getElementById('zoomCerrar').focus();
+    });
+    function cerrarZoom() {
+      zoom.hidden = true;
+      document.body.style.overflow = '';
+      if (zOrigen) zOrigen.focus();
+    }
+    const moverZoom = d => { zPos = (zPos + d + zLista.length) % zLista.length; mostrarZoom(); };
+    zArea.addEventListener('click', e => {
+      if (e.target !== zImg) { cerrarZoom(); return; }
+      const r = zImg.getBoundingClientRect();
+      zImg.style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+      zArea.classList.toggle('ampliada');
+    });
+    document.getElementById('zoomCerrar').addEventListener('click', cerrarZoom);
+    document.getElementById('zoomAnt').addEventListener('click', () => moverZoom(-1));
+    document.getElementById('zoomSig').addEventListener('click', () => moverZoom(1));
+    document.addEventListener('keydown', e => {
+      if (zoom.hidden) { if (e.key === 'Escape') cerrarMenu(); return; }
+      if (e.key === 'Escape') cerrarZoom();
+      if (e.key === 'ArrowLeft') moverZoom(-1);
+      if (e.key === 'ArrowRight') moverZoom(1);
+    });
+    let toqueX = null;
+    zArea.addEventListener('touchstart', e => { toqueX = e.touches[0].clientX; }, { passive: true });
+    zArea.addEventListener('touchend', e => {
+      if (toqueX === null || zArea.classList.contains('ampliada')) return;
+      const dx = e.changedTouches[0].clientX - toqueX;
+      if (Math.abs(dx) > 50) moverZoom(dx < 0 ? 1 : -1);
+      toqueX = null;
     });
 
     // Contador de visitas privado (no se muestra en la página; no guarda datos personales)
@@ -1998,222 +1184,6 @@
       });
     })();
 
-    // Aparición suave al hacer scroll (se desactiva si la persona pidió menos movimiento)
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll('.brand-card, .gallery-item, .contact-item, .stat-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-    }
   </script>
-
-  <!-- ══ HALLOWEEN (se muestra solo hasta el 1/11; para quitarla, borrar este bloque) ══ -->
-  <style>
-    html.hw-on {
-      --hw-naranja: #e8892b;
-      --hw-naranja-osc: #b4561a;
-      --hw-luz: #ffcf7a;
-    }
-
-    /* Cinta superior y banner de promos en tonos de noche de Halloween */
-    html.hw-on .promo-bar { background: linear-gradient(90deg, #1a0c04, var(--hw-naranja-osc) 30%, var(--hw-naranja) 50%, var(--hw-naranja-osc) 70%, #1a0c04); color: #fff6ea; }
-    html.hw-on .banner-campania { background: radial-gradient(ellipse at 50% 120%, rgba(232,137,43,.35), transparent 60%), linear-gradient(135deg, #0c0704 0%, #2a1406 45%, #0c0704 100%); }
-    html.hw-on .divider { background: linear-gradient(90deg, var(--gold), var(--hw-naranja)); width: 56px; }
-    html.hw-on .gallery-item, html.hw-on .novedades-track img { transition: box-shadow .4s ease; }
-    html.hw-on .gallery-item:hover, html.hw-on .novedades-track img:hover { box-shadow: 0 0 0 1px rgba(232,137,43,.6), 0 12px 40px rgba(232,137,43,.28); }
-
-    .hw-deco { position: absolute; pointer-events: none; }
-
-    /* ── Portada: luna, murciélagos, niebla ── */
-    .hw-luna {
-      z-index: 1; top: calc(var(--hw-top, 0px) + 2rem); left: 47%; width: 230px; height: 230px; border-radius: 50%;
-      background: radial-gradient(circle at 38% 35%, #fff4dc 0%, #f3d9a4 45%, #d9b06a 75%, #b8965a 100%);
-      box-shadow: 0 0 60px 18px rgba(255,214,140,.22), 0 0 160px 60px rgba(232,137,43,.12);
-      opacity: .92;
-    }
-    .hw-luna::after { content: ''; position: absolute; inset: 0; border-radius: 50%;
-      background: radial-gradient(circle at 62% 60%, rgba(150,110,60,.25) 0 9%, transparent 10%), radial-gradient(circle at 30% 68%, rgba(150,110,60,.18) 0 6%, transparent 7%), radial-gradient(circle at 70% 30%, rgba(150,110,60,.15) 0 5%, transparent 6%); }
-    .hw-niebla { z-index: 1; left: -10%; right: -10%; bottom: 0; height: 180px;
-      background: radial-gradient(ellipse at 20% 100%, rgba(240,236,228,.10), transparent 60%), radial-gradient(ellipse at 60% 100%, rgba(240,236,228,.08), transparent 55%), radial-gradient(ellipse at 95% 100%, rgba(240,236,228,.10), transparent 60%);
-      animation: hw-niebla 18s ease-in-out infinite alternate; }
-    @keyframes hw-niebla { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
-    .hw-tela { z-index: 3; top: var(--hw-top, 0); width: 170px; height: 170px; }
-    .hw-tela.izq { left: 0; } .hw-tela.der { right: 0; transform: scaleX(-1); }
-    .hw-tela.clara path { stroke: #f0ece4; } .hw-tela.oscura path { stroke: #3a3a3a; }
-    .hw-tela.clara { opacity: .42; } .hw-tela.oscura { opacity: .28; }
-    .hw-arana { z-index: 3; top: var(--hw-top, 0); width: 22px; animation: hw-baja 6s ease-in-out infinite alternate; }
-    .hw-arana i { display: block; width: 1px; height: 110px; margin: 0 auto; background: currentColor; opacity: .5; }
-    @keyframes hw-baja { from { transform: translateY(-50px); } to { transform: translateY(10px); } }
-
-    /* Rótulo de la portada */
-    .hw-rotulo { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.6rem; position: relative; z-index: 3; }
-    .hw-rotulo svg { width: 30px; height: 30px; flex: none; }
-    .hw-rotulo-txt { display: flex; flex-direction: column; line-height: 1.15; }
-    .hw-rotulo-txt em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.45rem; color: var(--hw-naranja); }
-    .hw-rotulo-txt span { font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); }
-    .hw-rotulo::after { content: ''; flex: 0 0 60px; height: 1px; background: linear-gradient(90deg, var(--hw-naranja), transparent); }
-
-    /* ── Capa de toda la página: chispas y murciélagos ── */
-    .hw-capa { position: fixed; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; }
-    .hw-chispa { position: absolute; bottom: -10px; width: 4px; height: 4px; border-radius: 50%;
-      background: var(--hw-luz); box-shadow: 0 0 6px 2px rgba(232,137,43,.7); opacity: 0;
-      animation: hw-sube linear infinite; }
-    @keyframes hw-sube { 0% { transform: translate(0,0); opacity: 0; } 10% { opacity: .85; } 50% { transform: translate(18px,-50vh); } 90% { opacity: .5; } 100% { transform: translate(-12px,-105vh); opacity: 0; } }
-    .hw-murcielago { position: absolute; left: -80px; width: 54px; animation: hw-vuela linear infinite; }
-    .hw-murcielago svg { display: block; animation: hw-aletea .3s ease-in-out infinite alternate; }
-    @keyframes hw-vuela { 0% { left: -80px; transform: translateY(0) rotate(-4deg); } 30% { transform: translateY(-40px) rotate(3deg); } 60% { transform: translateY(25px) rotate(-3deg); } 100% { left: 110%; transform: translateY(-10px) rotate(2deg); } }
-    @keyframes hw-aletea { from { transform: scaleY(1); } to { transform: scaleY(.4); } }
-
-    /* ── Secciones ── */
-    .hw-brillo { z-index: -1; width: 380px; height: 70%; top: 15%; }
-    .hw-brillo.izq { left: 0; background: radial-gradient(ellipse at 0% 50%, rgba(232,137,43,.14), transparent 70%); }
-    .hw-brillo.der { right: 0; background: radial-gradient(ellipse at 100% 50%, rgba(232,137,43,.14), transparent 70%); }
-    .hw-farol { z-index: 2; width: 74px; top: 50%; transform: translateY(-50%); }
-    .hw-farol.izq { left: 8%; } .hw-farol.der { right: 8%; }
-    .hw-farol .hw-cara { animation: hw-vela 2.2s ease-in-out infinite alternate; }
-    @keyframes hw-vela { 0% { fill: #ffd27a; } 50% { fill: #ffb347; } 100% { fill: #ff8c1a; } }
-    .hw-farol svg { filter: drop-shadow(0 0 18px rgba(232,137,43,.45)); }
-
-    /* ── Pie de página: escena ── */
-    .hw-escena { position: relative; display: block; width: 100%; height: clamp(110px, 13vw, 210px); margin-bottom: -1px; pointer-events: none; }
-    .hw-escena .hw-cara { animation: hw-vela 2.2s ease-in-out infinite alternate; }
-
-    @media (max-width: 768px) {
-      .hw-luna { width: 86px; height: 86px; left: auto; right: 6%; top: calc(var(--hw-top, 0px) + 9.5rem); }
-      .hw-rotulo::after { display: none; }
-      #inicio .hw-arana { left: 80% !important; }
-      #inicio .hw-arana i { height: 70px; }
-      .hw-tela { width: 100px; height: 100px; }
-      .hw-farol, .hw-brillo { display: none; }
-      .hw-murcielago { width: 32px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hw-niebla, .hw-arana, .hw-farol .hw-cara, .hw-escena .hw-cara { animation: none; }
-    }
-  </style>
-  <script>
-    (function () {
-      if (new Date() >= new Date(2026, 10, 2)) return; // se apaga sola el 2/11/2026
-      var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      document.documentElement.classList.add('hw-on');
-
-      var NS = 'xmlns="http://www.w3.org/2000/svg"';
-      function tela(lado, tono) {
-        return '<svg class="hw-deco hw-tela ' + lado + ' ' + tono + '" ' + NS + ' viewBox="0 0 100 100" fill="none" stroke-width=".45" aria-hidden="true">' +
-          '<path d="M0 0L100 0M0 0L96 30M0 0L80 58M0 0L58 80M0 0L30 96M0 0L0 100"/>' +
-          '<path d="M14 0Q12 4 13 4Q11 7 11 8Q8 10 7 11Q5 12 4 13Q4 12 0 14"/>' +
-          '<path d="M32 0Q28 9 30 10Q24 17 25 19Q18 23 19 25Q12 29 10 30Q9 28 0 32"/>' +
-          '<path d="M52 0Q46 14 49 16Q39 28 40 31Q29 38 31 40Q20 47 16 49Q14 46 0 52"/>' +
-          '<path d="M74 0Q66 20 70 22Q56 40 57 44Q42 54 44 57Q28 67 22 70Q20 66 0 74"/>' +
-          '<path d="M98 0Q88 27 93 29Q75 53 76 58Q57 72 58 76Q38 89 29 93Q27 88 0 98"/></svg>';
-      }
-      function calabaza(cls) {
-        return '<svg ' + NS + ' viewBox="0 0 64 64" aria-hidden="true" class="' + (cls || '') + '">' +
-          '<path d="M32 15c0-6 3-9 7-10" stroke="#4d5e2f" stroke-width="3.5" fill="none" stroke-linecap="round"/>' +
-          '<path d="M38 9c5-2 9 0 10 3" stroke="#4d5e2f" stroke-width="1.6" fill="none" stroke-linecap="round"/>' +
-          '<ellipse cx="20" cy="38" rx="16" ry="21" fill="#a94c12"/><ellipse cx="44" cy="38" rx="16" ry="21" fill="#a94c12"/>' +
-          '<ellipse cx="26" cy="38" rx="13" ry="22" fill="#d06a1c"/><ellipse cx="38" cy="38" rx="13" ry="22" fill="#d06a1c"/>' +
-          '<ellipse cx="32" cy="38" rx="11" ry="22.5" fill="#e8892b"/>' +
-          '<path class="hw-cara" fill="#ffd27a" d="M18 31l7 7H14zM46 31l7 7h-11zM29 40l3-5 3 5zM15 45q17 13 34 0l-3 6-4-3-4 4-4-3-4 3-4-4-4 3-4-3z"/></svg>';
-      }
-      function icono() {
-        return '<svg ' + NS + ' viewBox="0 0 24 24" fill="none" stroke="#d4b078" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">' +
-          '<path d="M12 6.5c0-2 .8-3.3 2.3-3.8"/><path d="M12 6.5c-5 0-9 3.2-9 8s4 8 9 8 9-3.2 9-8-4-8-9-8z"/>' +
-          '<path d="M12 6.5c-2.4 0-4 3.4-4 8s1.6 8 4 8 4-3.4 4-8-1.6-8-4-8z"/><path d="M8 13l1.5 1.5H6.5zM16 13l1.5 1.5h-3z" fill="#e8892b" stroke="none"/></svg>';
-      }
-      var bat = '<svg ' + NS + ' viewBox="0 0 64 28"><path fill="#1a1208" stroke="#b8965a" stroke-width=".8" d="M32 8c2-4 3-6 3-6l1 4c2 0 3 1 4 2 4-4 12-6 24-4-5 2-7 6-7 10-3-2-7-2-9 1-2-2-5-2-7 1-3-1-6 1-9 6-3-5-6-7-9-6-2-3-5-3-7-1-2-3-6-3-9-1 0-4-2-8-7-10 12-2 20 0 24 4 1-1 2-2 4-2l1-4s1 2 3 6z"/></svg>';
-      function arana(left, color) {
-        return '<div class="hw-deco hw-arana" style="left:' + left + ';color:' + color + '" aria-hidden="true"><i></i>' +
-          '<svg ' + NS + ' viewBox="0 0 40 34" width="22"><g stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round">' +
-          '<path d="M14 15L4 6 1 12M14 18H2L0 24M15 21L5 28 4 33M16 23L10 32M26 15L36 6 39 12M26 18H38L40 24M25 21L35 28 36 33M24 23L30 32"/></g>' +
-          '<ellipse cx="20" cy="20" rx="6.5" ry="7.5" fill="currentColor"/><circle cx="20" cy="10.5" r="4" fill="currentColor"/></svg></div>';
-      }
-
-      function arrancar() {
-        var nav = document.querySelector('nav');
-        var top = nav ? nav.getBoundingClientRect().bottom : 0;
-
-        // Portada
-        var hero = document.getElementById('inicio');
-        if (hero) {
-          hero.style.setProperty('--hw-top', top + 'px');
-          hero.insertAdjacentHTML('beforeend',
-            '<div class="hw-deco hw-luna" aria-hidden="true"></div><div class="hw-deco hw-niebla" aria-hidden="true"></div>' +
-            tela('izq', 'clara') + tela('der', 'clara') + arana('34%', '#d4b078'));
-          var cont = hero.querySelector('.hero-content');
-          if (cont) cont.insertAdjacentHTML('afterbegin',
-            '<div class="hw-rotulo">' + icono() + '<div class="hw-rotulo-txt"><em>Feliz Halloween</em><span>Te esperamos en La Rioja 2186</span></div></div>');
-        }
-
-        // Banner de promos
-        var banner = document.querySelector('.banner-campania');
-        if (banner) banner.insertAdjacentHTML('beforeend', tela('izq', 'clara') + tela('der', 'clara'));
-
-        // Resto de las secciones: telaraña en una esquina, brillo de vela en las oscuras
-        var claras = { temporada: 1, preguntas: 1, nosotros: 1 };
-        var n = 0;
-        document.querySelectorAll('main section:not(#inicio)').forEach(function (sec) {
-          if (getComputedStyle(sec).position === 'static') sec.style.position = 'relative';
-          sec.style.isolation = 'isolate';
-          var clara = claras[sec.id], lado = n % 2 ? 'izq' : 'der', otro = n % 2 ? 'der' : 'izq';
-          var html = tela(lado, clara ? 'oscura' : 'clara');
-          if (!clara) html += '<div class="hw-deco hw-brillo ' + otro + '" aria-hidden="true"></div>';
-          if (clara && n % 2 === 0) html += arana(lado === 'der' ? '88%' : '10%', '#3a3a3a');
-          sec.insertAdjacentHTML('afterbegin', html);
-          n++;
-        });
-
-        // Gift card: dos faroles de calabaza
-        var gift = document.getElementById('gift-card');
-        if (gift) gift.insertAdjacentHTML('beforeend',
-          '<div class="hw-deco hw-farol izq">' + calabaza() + '</div><div class="hw-deco hw-farol der">' + calabaza() + '</div>');
-
-        // Pie de página: escena con reja, árbol y calabazas
-        var pie = document.querySelector('footer');
-        if (pie) pie.insertAdjacentHTML('beforebegin',
-          '<svg class="hw-escena" ' + NS + ' viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true" style="background:var(--charcoal)">' +
-          '<defs><pattern id="hwReja" width="22" height="90" patternUnits="userSpaceOnUse"><path d="M11 90V12M7 16l4-10 4 10" stroke="#0a0a0a" stroke-width="3" fill="none"/></pattern></defs>' +
-          '<rect x="0" y="70" width="1200" height="90" fill="url(#hwReja)"/>' +
-          '<path d="M0 82H1200M0 128H1200" stroke="#0a0a0a" stroke-width="4"/>' +
-          '<path d="M300 160C304 120 300 95 292 70 284 52 270 44 252 40M296 96C312 78 330 70 352 68M292 72C298 52 296 36 288 22M352 68C362 60 366 50 364 40M252 40C244 36 236 38 228 44M288 22C292 14 300 10 308 9" stroke="#0a0a0a" stroke-width="7" fill="none" stroke-linecap="round"/>' +
-          '<path d="M0 148Q300 136 600 146T1200 144V160H0Z" fill="#0a0a0a"/>' +
-          '<g transform="translate(520 104) scale(.75)">' + calabaza() .replace(/<svg[^>]*>|<\/svg>/g, '') + '</g>' +
-          '<g transform="translate(572 118) scale(.52)">' + calabaza().replace(/<svg[^>]*>|<\/svg>/g, '') + '</g>' +
-          '<g transform="translate(640 98) scale(.85)">' + calabaza().replace(/<svg[^>]*>|<\/svg>/g, '') + '</g>' +
-          '</svg>');
-
-        // Capa de toda la página: chispas que suben y murciélagos que cruzan
-        if (!quieto) {
-          var capa = document.createElement('div');
-          capa.className = 'hw-capa';
-          capa.setAttribute('aria-hidden', 'true');
-          var h = '', i;
-          for (i = 0; i < 16; i++) {
-            h += '<span class="hw-chispa" style="left:' + (Math.random() * 100).toFixed(1) + '%;animation-duration:' +
-              (11 + Math.random() * 10).toFixed(1) + 's;animation-delay:-' + (Math.random() * 20).toFixed(1) + 's;transform:scale(' +
-              (0.5 + Math.random() * 0.8).toFixed(2) + ')"></span>';
-          }
-          [[18, 24, -2], [34, 31, -14], [60, 27, -22]].forEach(function (b) {
-            h += '<div class="hw-murcielago" style="top:' + b[0] + '%;animation-duration:' + b[1] + 's;animation-delay:' + b[2] + 's">' + bat + '</div>';
-          });
-          capa.innerHTML = h;
-          document.body.appendChild(capa);
-        }
-      }
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arrancar); else arrancar();
-    })();
-  </script>
-  <!-- ══ FIN HALLOWEEN ══ -->
 </body>
 </html>
