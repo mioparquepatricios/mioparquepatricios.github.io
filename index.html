@@ -285,8 +285,8 @@
     .zoom { position: fixed; inset: 0; z-index: 500; background: rgba(15,14,12,.95); color: #fff; display: grid; grid-template-rows: auto 1fr auto; gap: .6rem; padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(14px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
     .zoom[hidden] { display: none; }
     .zoom-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: .9rem; }
-    .zoom-area { overflow: hidden; display: grid; place-items: center; cursor: zoom-in; min-height: 0; }
-    .zoom-area img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform .25s ease; }
+    .zoom-area { overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: zoom-in; min-height: 0; height: 100%; }
+    .zoom-area img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; min-width: 0; min-height: 0; object-fit: contain; transition: transform .25s ease; }
     .zoom-area.ampliada { cursor: zoom-out; }
     .zoom-area.ampliada img { transform: scale(2.2); }
     .zoom-bot { display: flex; justify-content: center; align-items: center; gap: .6rem; flex-wrap: wrap; }
@@ -1024,7 +1024,7 @@
   <footer class="pie">
     <img src="logo-mio.png" alt="MIO — La Rioja 2186" width="128" height="128" loading="lazy"/>
     <p>© <span id="anio">2026</span> MIO, El buen vestir · Indumentaria masculina · La Rioja 2186, Parque Patricios, CABA</p>
-    <p class="version">Versión <span id="web-version">1.6</span> · actualizada el 16/11/2026</p>
+    <p class="version">Versión <span id="web-version">1.7</span> · actualizada el 17/11/2026</p>
   </footer>
 
   <div class="zoom" id="zoom" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
